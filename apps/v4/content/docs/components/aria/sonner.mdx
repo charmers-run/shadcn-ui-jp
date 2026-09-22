@@ -11,7 +11,7 @@ links:
 
 ## 概要
 
-Sonner is built and maintained by [emilkowalski](https://twitter.com/emilkowalski).
+Sonner は [emilkowalski](https://twitter.com/emilkowalski) によって構築・保守されています。
 
 ## インストール
 
@@ -25,13 +25,13 @@ Sonner is built and maintained by [emilkowalski](https://twitter.com/emilkowalsk
 
 <Steps className="mb-0 pt-2">
 
-<Step>Run the following command:</Step>
+<Step>次のコマンドを実行します。</Step>
 
 ```bash
 npx shadcn@latest add sonner
 ```
 
-<Step>Add the Toaster component</Step>
+<Step>Toaster コンポーネントを追加します。</Step>
 
 ```tsx title="app/layout.tsx" {1,9} showLineNumbers
 import { Toaster } from "@/components/ui/sonner"
@@ -71,7 +71,7 @@ npm install sonner next-themes
   styleName="aria-nova"
 />
 
-<Step>Add the Toaster component</Step>
+<Step>Toaster コンポーネントを追加します。</Step>
 
 ```tsx showLineNumbers title="app/layout.tsx" {1,8}
 import { Toaster } from "@/components/ui/sonner"
@@ -105,20 +105,20 @@ import { toast } from "sonner"
 toast("Event has been created.")
 ```
 
-## Types
+## 種類
 
 <ComponentPreview styleName="aria-nova" name="sonner-types" />
 
-## Description
+## 説明
 
 <ComponentPreview styleName="aria-nova" name="sonner-description" />
 
 ## 位置
 
-Use the `position` prop to change the position of the toast.
+`position` プロップを使用して、トーストの表示位置を変更します。
 
 <ComponentPreview styleName="aria-nova" name="sonner-position" />
 
-## APIリファレンス
+## API リファレンス
 
-See the [Sonner API Reference](https://sonner.emilkowal.ski/getting-started) for more information.
+詳細については、[Sonner API Reference](https://sonner.emilkowal.ski/getting-started) を参照してください。

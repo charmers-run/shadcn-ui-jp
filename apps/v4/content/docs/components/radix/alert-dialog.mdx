@@ -1,6 +1,6 @@
 ---
 title: アラートダイアログ
-description: 重要なコンテンツでユーザーを中断し、応答を期待するモーダル ダイアログ。
+description: 重要なコンテンツでユーザーを中断し、応答を期待するモーダルダイアログ。
 featured: true
 base: radix
 component: true
@@ -21,7 +21,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -49,7 +49,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -96,7 +96,7 @@ import {
 
 ## 構成
 
-次の構成を使用して `AlertDialog` を構築します。
+次の構成を使用して、`AlertDialog` を構築します。
 
 ```text
 AlertDialog
@@ -113,7 +113,7 @@ AlertDialog
 
 ## 基本
 
-タイトル、説明、キャンセルおよび続行ボタンを備えた基本的な警告ダイアログ。
+タイトル、説明、キャンセルボタンと続行ボタンを備えた基本的なアラートダイアログ。
 
 <ComponentPreview
   name="alert-dialog-basic"
@@ -121,9 +121,9 @@ AlertDialog
   previewClassName="h-56"
 />
 
-## Small
+## 小さい
 
-`size="sm"` プロップを使用して、アラート ダイアログを小さくします。
+`size="sm"` プロパティを使用して、アラートダイアログを小さくします。
 
 <ComponentPreview
   name="alert-dialog-small"
@@ -131,9 +131,9 @@ AlertDialog
   previewClassName="h-56"
 />
 
-## Media
+## メディア
 
-`AlertDialogMedia` コンポーネントを使用して、アイコンや画像などのメディア要素をアラート ダイアログに追加します。
+`AlertDialogMedia` コンポーネントを使用して、アイコンや画像などのメディア要素をアラートダイアログに追加します。
 
 <ComponentPreview
   name="alert-dialog-media"
@@ -141,9 +141,9 @@ AlertDialog
   previewClassName="h-56"
 />
 
-## Small with Media
+## メディア付きの小さいダイアログ
 
-`size="sm"` プロパティを使用してアラート ダイアログを小さくし、`AlertDialogMedia` コンポーネントを使用してアイコンや画像などのメディア要素をアラート ダイアログに追加します。
+`size="sm"` プロパティを使用してアラートダイアログを小さくし、`AlertDialogMedia` コンポーネントを使用してアイコンや画像などのメディア要素をアラートダイアログに追加します。
 
 <ComponentPreview
   name="alert-dialog-small-media"
@@ -153,7 +153,7 @@ AlertDialog
 
 ## 破壊的
 
-Use the `AlertDialogAction` component to add a destructive action button to the alert dialog.
+`AlertDialogAction` コンポーネントを使用して、破壊的なアクションボタンをアラートダイアログに追加します。
 
 <ComponentPreview
   name="alert-dialog-destructive"
@@ -176,10 +176,10 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### サイズ
 
-`AlertDialogContent` コンポーネントの `size` プロパティを使用して、アラート ダイアログのサイズを制御します。次の値を受け入れます。
+`AlertDialogContent` コンポーネントの `size` プロパティを使用して、アラートダイアログのサイズを制御します。次の値を受け入れます。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | ------ | ------------------- | ----------- |
 | `size` | `"default" \| "sm"` | `"default"` |
 
-For more information about the other components and their props, see the [Radix UI documentation](https://www.radix-ui.com/primitives/docs/components/alert-dialog#api-reference).
+他のコンポーネントとそのプロパティの詳細については、[Radix UI ドキュメント](https://www.radix-ui.com/primitives/docs/components/alert-dialog#api-reference) を参照してください。

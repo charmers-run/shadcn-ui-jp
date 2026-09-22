@@ -14,9 +14,7 @@ import { InfoIcon } from "lucide-react"
 まずは次のフォームを構築します。単純なテキスト入力とテキストエリアがあります。送信時にフォーム データを検証し、エラーがあれば表示します。
 
 <Callout icon={<InfoIcon />}>
-  **注:** このデモのために、ブラウザ
-  検証
-  フォーム。本番コードでは、基本的なブラウザー検証も追加することをおすすめします。
+  **注:** このデモのために、スキーマ検証とフォーム エラーが TanStack Form でどのように動作するかを示すため、意図的にブラウザー検証を無効にしています。本番コードでは、基本的なブラウザー検証も追加することをおすすめします。
 </Callout>
 
 <ComponentPreview
@@ -452,7 +450,7 @@ const form = useForm({
 
 ### ラジオ グループ
 
-- 無線グループの場合は、`<RadioGroup />` コンポーネントで `field.state.value` および `field.handleChange` を使用します。
+- ラジオ グループの場合は、`<RadioGroup />` コンポーネントで `field.state.value` および `field.handleChange` を使用します。
 - エラーを表示するには、`aria-invalid` プロパティを `<RadioGroupItem />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview

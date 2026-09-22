@@ -1,6 +1,6 @@
 ---
-title: ベース UI API へのダイアログ
-description: に 1 対 1 の置換がありません。 プライマリ ウィンドウまたは別のダイアログ ウィンドウに重ねて表示されるウィンドウで、その下のコンテンツは不活性になります。
+title: ダイアログ
+description: プライマリ ウィンドウまたは別のダイアログ ウィンドウに重ねて表示されるウィンドウで、その下のコンテンツは不活性になります。
 featured: true
 base: base
 component: true
@@ -21,7 +21,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -57,7 +57,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -101,13 +101,13 @@ Dialog
 
 ## カスタム閉じるボタン
 
-Replace the default close control with your own button.
+デフォルトの閉じるコントロールを独自のボタンに置き換えます。
 
 <ComponentPreview styleName="base-nova" name="dialog-close-button" />
 
-## 閉じるボタンがありません
+## 閉じるボタンなし
 
-Use `showCloseButton={false}` to hide the close button.
+`showCloseButton={false}` を使用すると、閉じるボタンを非表示にできます。
 
 <ComponentPreview styleName="base-nova" name="dialog-no-close-button" />
 
@@ -119,16 +119,16 @@ Use `showCloseButton={false}` to hide the close button.
 
 ## スクロール可能なコンテンツ
 
-Long content can scroll while the header stays in view.
+長いコンテンツはヘッダーを表示したままスクロールできます。
 
 <ComponentPreview styleName="base-nova" name="dialog-scrollable-content" />
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="base-nova" name="dialog-rtl" direction="rtl" />
 
 ## API リファレンス
 
-詳細については、[ベース UI](https://base-ui.com/react/components/dialog#api-reference) ドキュメントを参照してください。
+詳細については、[Base UI](https://base-ui.com/react/components/dialog#api-reference) のドキュメントを参照してください。

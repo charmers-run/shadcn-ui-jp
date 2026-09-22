@@ -1,6 +1,6 @@
 ---
 title: サイズ変更可能
-description: キーボードサポートを備えた、サイズ変更可能なパネルグループとレイアウトにアクセス可能。
+description: キーボード操作に対応した、アクセシブルなサイズ変更可能なパネルグループとレイアウト。
 base: radix
 component: true
 links:
@@ -24,7 +24,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -97,7 +97,7 @@ ResizablePanelGroup
 
 ## ハンドル
 
-`ResizableHandle` の `withHandle` プロップを使用して、表示されるハンドルを表示します。
+`ResizableHandle` の `withHandle` プロップを使用すると、ハンドルを表示できます。
 
 <ComponentPreview styleName="radix-nova" name="resizable-handle" />
 
@@ -107,17 +107,17 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 <ComponentPreview styleName="radix-nova" name="resizable-rtl" direction="rtl" />
 
-## APIリファレンス
+## API リファレンス
 
-[react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) ドキュメントを参照してください。
+詳細については、[react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) のドキュメントを参照してください。
 
-## 変更ログ
+## 変更履歴
 
 ### 2025-02-02 `react-resizable-panels` v4
 
-`react-resizable-panels` v4 に更新されました。詳細については、[v4.0.0 リリース ノート](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0) を参照してください。
+`react-resizable-panels` v4 に更新されました。詳細については、[v4.0.0 リリースノート](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0) を参照してください。
 
-If you're using `react-resizable-panels` primitives directly, note the following changes:
+`react-resizable-panels` のプリミティブを直接使用している場合は、以下の変更点に注意してください。
 
 | v3                           | v4                      |
 | ---------------------------- | ----------------------- |
@@ -131,6 +131,6 @@ If you're using `react-resizable-panels` primitives directly, note the following
 | `data-panel-group-direction` | `aria-orientation` |
 
 <Callout>
-  shadcn/ui ラッパー コンポーネント (`ResizablePanelGroup`、`ResizablePanel`、名前付きプログレスバーとしての
-  `ResizableHandle`) は変更されません。
+  shadcn/ui のラッパーコンポーネント（`ResizablePanelGroup`、`ResizablePanel`、
+  `ResizableHandle`）は変更されていません。
 </Callout>

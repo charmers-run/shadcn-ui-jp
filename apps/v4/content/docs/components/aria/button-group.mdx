@@ -1,5 +1,5 @@
 ---
-title: ボタン グループ
+title: ボタングループ
 description: 関連するボタンを一貫したスタイルでグループ化するコンテナー。
 base: aria
 component: true
@@ -81,7 +81,7 @@ ButtonGroup
 
 - `ButtonGroup` コンポーネントには、`role` 属性が `group` に設定されています。
 - <Kbd>Tab</Kbd> を使用して、グループ内のボタン間を移動します。
-- `aria-label` または `aria-labelledby` を使用してラベルを付けるボタングループ。
+- ボタングループにラベルを付けるには、`aria-label` または `aria-labelledby` を使用します。
 
 ```tsx showLineNumbers
 <ButtonGroup aria-label="Button group">
@@ -107,13 +107,13 @@ ButtonGroup
 
 <ComponentPreview styleName="aria-nova" name="button-group-size" />
 
-## ネストされた
+## ネスト
 
 `<ButtonGroup>` コンポーネントをネストして、間隔をあけてボタン グループを作成します。
 
 <ComponentPreview styleName="aria-nova" name="button-group-nested" />
 
-## 区切り文字
+## 区切り
 
 `ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
@@ -169,11 +169,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### ボタングループ
+### ButtonGroup
 
 `ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナーです。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | -------------- |
 | `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
 
@@ -197,7 +197,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | ------------ |
 | `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
 
@@ -209,11 +209,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </ButtonGroup>
 ```
 
-### ボタングループテキスト
+### ButtonGroupText
 
 このコンポーネントを使用して、ボタン グループ内のテキストを表示します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | -------- | --------- | ------- |
 | `render` | `boolean` | `false` |
 

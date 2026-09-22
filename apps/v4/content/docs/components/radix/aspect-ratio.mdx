@@ -16,7 +16,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -64,9 +64,9 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 </AspectRatio>
 ```
 
-## スクエア
+## 正方形
 
-A square aspect ratio component using the `ratio={1 / 1}` prop. This is useful for displaying images in a square format.
+`ratio={1 / 1}` プロップを使用した正方形のアスペクト比コンポーネント。画像を正方形で表示する場合に便利です。
 
 <ComponentPreview name="aspect-ratio-square" styleName="radix-nova" />
 
@@ -95,11 +95,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### アスペクト比
 
-The `AspectRatio` component displays content within a desired ratio.
+`AspectRatio` コンポーネントは、希望の比率でコンテンツを表示します。
 
-|小道具 |タイプ |デフォルト |必須 |
+| プロップ | タイプ | デフォルト | 必須 |
 | ----------- | -------- | ------- | -------- |
-| `ratio`     | `number` | -       | Yes      |
+| `ratio`     | `number` | -       | はい     |
 | `className` | `string` | - |いいえ |
 
-For more information, see the [Radix UI documentation](https://www.radix-ui.com/primitives/docs/components/aspect-ratio#api-reference).
+[Radix UI](https://www.radix-ui.com/primitives/docs/components/aspect-ratio#api-reference) のドキュメントで詳細を確認できます。

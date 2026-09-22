@@ -20,7 +20,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -71,7 +71,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 ## 構成
 
-Use the following composition to build an `Avatar`:
+次の構成を使用して、`Avatar` を構築します。
 
 ```text
 Avatar
@@ -80,7 +80,7 @@ Avatar
 └── AvatarBadge
 ```
 
-Use the following composition to build an `AvatarGroup`:
+次の構成を使用して、`AvatarGroup` を構築します。
 
 ```text
 AvatarGroup
@@ -97,17 +97,17 @@ AvatarGroup
 
 ## 基本
 
-A basic avatar component with an image and a fallback.
+画像とフォールバックを備えた基本的なアバター コンポーネント。
 
 <ComponentPreview styleName="base-nova" name="avatar-basic" />
 
-## Badge
+## バッジ
 
-Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.
+`AvatarBadge` コンポーネントを使用して、アバターにバッジを追加します。バッジはアバターの右下に配置されます。
 
 <ComponentPreview styleName="base-nova" name="avatar-badge" />
 
-Use the `className` prop to add custom styles to the badge such as custom colors, sizes, etc.
+`className` プロップを使用して、カスタム色、サイズなどのカスタム スタイルをバッジに追加します。
 
 ```tsx showLineNumbers
 <Avatar>
@@ -117,37 +117,37 @@ Use the `className` prop to add custom styles to the badge such as custom colors
 </Avatar>
 ```
 
-## Badge with Icon
+## アイコン付きバッジ
 
-You can also use an icon inside `<AvatarBadge>`.
+`<AvatarBadge>` 内のアイコンを使用することもできます。
 
 <ComponentPreview styleName="base-nova" name="avatar-badge-icon" />
 
-## アバター グループ
+## アバターグループ
 
-Use the `AvatarGroup` component to add a group of avatars.
+`AvatarGroup` コンポーネントを使用して、アバターのグループを追加します。
 
 <ComponentPreview styleName="base-nova" name="avatar-group" />
 
-## Avatar Group Count
+## アバター グループ数
 
-Use `<AvatarGroupCount>` to add a count to the group.
+`<AvatarGroupCount>` を使用して、グループにカウントを追加します。
 
 <ComponentPreview styleName="base-nova" name="avatar-group-count" />
 
-## Avatar Group with Icon
+## アイコン付きアバター グループ
 
-You can also use an icon inside `<AvatarGroupCount>`.
+`<AvatarGroupCount>` 内のアイコンを使用することもできます。
 
 <ComponentPreview styleName="base-nova" name="avatar-group-count-icon" />
 
 ## サイズ
 
-Use the `size` prop to change the size of the avatar.
+アバターのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview styleName="base-nova" name="avatar-size" />
 
-## Dropdown
+## ドロップダウン
 
 `Avatar` コンポーネントをドロップダウン メニューのトリガーとして使用できます。
 
@@ -166,55 +166,55 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### Avatar
+### アバター
 
-The `Avatar` component is the root component that wraps the avatar image and fallback.
+`Avatar` コンポーネントは、アバター イメージとフォールバックをラップするルート コンポーネントです。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | --------------------------- | ----------- |
 | `size`      | `"default" \| "sm" \| "lg"` | `"default"` |
 | `className` | `string` | - |
 
-### AvatarImage
+### アバター画像
 
-`AvatarImage` コンポーネントはアバター画像を表示します。すべてのベース UI アバター画像プロパティを受け入れます。
+`AvatarImage` コンポーネントはアバター画像を表示します。すべての Base UI Avatar Image プロップを受け入れます。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `src`       | `string` | -       |
 | `alt`       | `string` | -       |
 | `className` | `string` | -       |
 
-### AvatarFallback
+### アバターフォールバック
 
-`AvatarFallback` コンポーネントは、画像のロードに失敗した場合にフォールバックを表示します。すべてのベース UI アバター フォールバック プロップを受け入れます。
+`AvatarFallback` コンポーネントは、画像のロードに失敗した場合にフォールバックを表示します。すべての Base UI Avatar Fallback プロップを受け入れます。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### AvatarBadge
+### アバターバッジ
 
-The `AvatarBadge` component displays a badge indicator on the avatar, typically positioned at the bottom right.
+`AvatarBadge` コンポーネントは、アバター上にバッジ インジケーターを表示します。通常は右下に配置されます。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### AvatarGroup
+### アバターグループ
 
-The `AvatarGroup` component displays a group of avatars with overlapping styling.
+`AvatarGroup` コンポーネントは、スタイルが重なったアバターのグループを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### AvatarGroupCount
+### アバターグループ数
 
-The `AvatarGroupCount` component displays a count indicator in an avatar group, typically showing the number of additional avatars.
+`AvatarGroupCount` コンポーネントは、アバター グループ内のカウント インジケーターを表示し、通常は追加のアバターの数を示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-For more information about Base UI Avatar props, see the [Base UI documentation](https://base-ui.com/react/components/avatar#api-reference).
+Base UI Avatar のプロップの詳細については、[Base UI ドキュメント](https://base-ui.com/react/components/avatar#api-reference) を参照してください。

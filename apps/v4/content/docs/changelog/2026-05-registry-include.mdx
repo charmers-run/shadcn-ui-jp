@@ -6,15 +6,12 @@ date: 2026-05-20
 
 このリリースでは、レジストリ作成者向けに 2 つの更新が追加されています。
 
-- `include` 複数の `registry.json` から大規模なソース レジストリを構成する場合
-ファイル。
+- 複数の `registry.json` ファイルから大規模なソース レジストリを構成するための `include`。
 - 公開前にソース レジストリをチェックするための `shadcn registry validate`。
 
-これにより、ソース レジストリと動的レジストリを維持する必要がなく、簡単に保守できるようになります。
-1 つの大きな `registry.json` ファイルを手動で作成します。
+これにより、1 つの大きな `registry.json` ファイルを手動で作成することなく、ソース レジストリと動的レジストリを簡単に保守できるようになります。
 
-レジストリ作成者は、複数のソース レジストリにまたがる大規模なソース レジストリを整理できるようになりました。
-`registry.json` ファイルを作成し、`shadcn build` で作成します。
+レジストリ作成者は、大規模なソース レジストリを複数の `registry.json` ファイルに分けて整理し、`shadcn build` でビルドできるようになりました。
 
 ```txt /registry.json/
 registry.json
@@ -42,9 +39,7 @@ hooks
 }
 ```
 
-付属の `registry.json` ファイルは、合成に有効なレジストリ ファイルであり、
-`name` および `homepage` は省略します。ルート `registry.json` のみが定義する必要があります。
-レジストリのメタデータ。
+付属の `registry.json` ファイルは、合成に使用できる有効なレジストリ ファイルであり、`name` および `homepage` は省略します。レジストリのメタデータを定義する必要があるのは、ルートの `registry.json` だけです。
 
 ```json title="components/ui/registry.json" showLineNumbers
 {
@@ -66,10 +61,7 @@ hooks
 
 ## ビルド出力
 
-`shadcn build` は、含まれているレジストリを解決し、フラット化されたレジストリを書き込みます
-`include` なしの `registry.json`。アイテムファイルのパスはルートから保存されます
-レジストリにあるため、`components/ui/registry.json` で宣言されたファイルは次のように書き込まれます。
-構築されたレジストリ項目の `components/ui/button.tsx`。
+`shadcn build` は、含まれているレジストリを解決し、`include` を含まないフラット化された `registry.json` を書き込みます。アイテムファイルのパスはレジストリのルートを基準に保存されるため、`components/ui/registry.json` で宣言されたファイルは、ビルドされたレジストリ項目内では `components/ui/button.tsx` として書き込まれます。
 
 ## レジストリを検証する
 
@@ -79,17 +71,13 @@ hooks
 npx shadcn registry validate
 ```
 
-検証はソース レジストリ ファイルに対して直接実行されます。その必要はありません
-最初に `shadcn build` を実行します。
+検証はソース レジストリ ファイルに対して直接実行されるため、先に `shadcn build` を実行する必要はありません。
 
-このコマンドは、ルート `registry.json`、含まれるレジストリ ファイル、項目をチェックします。
-スキーマ エラー、項目名の重複、インクルード ルール、およびローカル項目ファイル パス。
-検証では、1 回の実行で検出できるすべての対処可能なエラーが報告されます。
+このコマンドは、ルート `registry.json`、含まれるレジストリ ファイル、および項目について、スキーマ エラー、項目名の重複、インクルード ルール、ローカル項目ファイル パスをチェックします。検証では、1 回の実行で検出できるすべての対処可能なエラーが報告されます。
 
 ## レジストリ ローダー
 
-`shadcn/registry` パッケージは、`loadRegistry` と
-動的レジストリ ルートの場合は `loadRegistryItem`。
+`shadcn/registry` パッケージは、動的レジストリ ルート向けに `loadRegistry` と `loadRegistryItem` をエクスポートします。
 
 ```ts title="app/r/registry.json/route.ts" showLineNumbers
 import { loadRegistry } from "shadcn/registry"
@@ -115,6 +103,4 @@ export async function GET(
 }
 ```
 
-[registry.json ドキュメント](/docs/registry/registry-json#include) を参照してください。
-[スタート ガイド](/docs/registry/getting-started#structur-your-registry)
-詳細については。
+詳細については、[registry.json ドキュメント](/docs/registry/registry-json#include) と [スタート ガイド](/docs/registry/getting-started#structur-your-registry) を参照してください。

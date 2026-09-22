@@ -1,6 +1,6 @@
 ---
 title: 例
-description: "レジストリアイテムの例: スタイル、コンポーネント、CSS変数など。"
+description: "レジストリアイテムの例: スタイル、コンポーネント、CSS 変数など。"
 ---
 
 ## registry:style
@@ -44,14 +44,14 @@ description: "レジストリアイテムの例: スタイル、コンポーネ�
 
 以下のレジストリアイテムは、shadcn/ui を拡張しないカスタムスタイルです。`extends: none` フィールドを参照してください。
 
-新しいスタイルをスクラッチから作成するために使用できます（カスタムコンポーネント、CSS変数、依存関係など）。
+新しいスタイルをスクラッチから作成するために使用できます（カスタムコンポーネント、CSS 変数、依存関係など）。
 
 `npx shadcn add` を実行すると、次の処理が行われます：
 
 - `cn` を依存関係としてインストールします。
 - shadcn/ui レジストリから `utils` レジストリアイテムを追加します。
 - リモートレジストリから `button`、`input`、`label`、`select` コンポーネントを追加します。
-- 新しい CSS変数 `main`、`bg`、`border`、`text`、`ring` をインストールします。
+- 新しい CSS 変数 `main`、`bg`、`border`、`text`、`ring` をインストールします。
 
 ```json title="example-style.json" showLineNumbers
 {
@@ -199,7 +199,7 @@ shadcn/ui レジストリからブロックをインストールし、カスタ�
 
 ### UI コンポーネント
 
-`registry:ui` アイテムは、再利用可能な UI コンポーネントです。依存関係、レジストリ依存関係、CSS変数を持たせることができます。
+`registry:ui` アイテムは、再利用可能な UI コンポーネントです。依存関係、レジストリ依存関係、CSS 変数を持たせることができます。
 
 ```json title="button.json" showLineNumbers
 {
@@ -217,7 +217,7 @@ shadcn/ui レジストリからブロックをインストールし、カスタ�
 }
 ```
 
-### CSS変数付きの UI コンポーネント
+### CSS 変数付きの UI コンポーネント
 
 ```json title="sidebar.json" showLineNumbers
 {
@@ -392,7 +392,7 @@ shadcn/ui レジストリからブロックをインストールし、カスタ�
 
 ### カスタムフォント
 
-`registry:font` アイテムは Google フォントをインストールします。`font` フィールドは必須で、フォントファミリー、プロバイダー、インポート名、CSS変数を設定します。
+`registry:font` アイテムは Google フォントをインストールします。`font` フィールドは必須で、フォントファミリー、プロバイダー、インポート名、CSS 変数を設定します。
 
 ```json title="font-inter.json" showLineNumbers
 {
@@ -468,13 +468,13 @@ shadcn/ui レジストリからブロックをインストールし、カスタ�
 }
 ```
 
-`selector` を設定すると、フォントユーティリティクラス（例：`font-heading`）は `<html>` 要素に追加される代わりに、`@layer base` 内で指定したセレクターに対して CSS の `@apply` で適用されます。CSS変数は引き続き `<html>` に注入されるため、グローバルに利用できます。
+`selector` を設定すると、フォントユーティリティクラス（例：`font-heading`）は `<html>` 要素に追加される代わりに、`@layer base` 内で指定したセレクターに対して CSS の `@apply` で適用されます。CSS 変数は引き続き `<html>` に注入されるため、グローバルに利用できます。
 
 ## registry:base
 
 ### カスタムベース
 
-`registry:base` アイテムは、完全なデザインシステムのベースです。プロジェクト向けに、依存関係一式、CSS変数、設定を定義します。`config` フィールドは `registry:base` アイテム固有のものです。
+`registry:base` アイテムは、完全なデザインシステムのベースです。プロジェクト向けに、依存関係一式、CSS 変数、設定を定義します。`config` フィールドは `registry:base` アイテム固有のものです。
 
 `config` フィールドでは以下のプロパティを使用できます（すべて任意です）：
 
@@ -640,7 +640,7 @@ shadcn/ui のデフォルトを継承しないベースを作成する場合は�
 }
 ```
 
-## CSS変数
+## CSS 変数
 
 ### カスタムテーマ変数
 

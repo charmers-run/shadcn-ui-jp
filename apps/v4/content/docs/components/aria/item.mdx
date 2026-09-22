@@ -18,7 +18,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -100,9 +100,9 @@ ItemGroup
 
 ## 項目とフィールド
 
-Use `Field` if you need to display a form input such as a checkbox, input, radio, or select.
+チェックボックス、入力、ラジオ、または選択などのフォーム入力を表示する必要がある場合は、`Field` を使用します。
 
-If you only need to display content such as a title, description, and actions, use `Item`.
+タイトル、説明、アクションなどのコンテンツのみを表示する場合は、`Item` を使用します。
 
 ## バリエーション
 
@@ -126,25 +126,25 @@ If you only need to display content such as a title, description, and actions, u
 
 ## アイコン
 
-Use `ItemMedia` with `variant="icon"` to display an icon.
+アイコンを表示するには、`ItemMedia` を `variant="icon"` とともに使用します。
 
 <ComponentPreview styleName="aria-nova" name="item-icon" />
 
 ## アバター
 
-`ItemMedia` を `variant="avatar"` と組み合わせて使用​​すると、アバターを表示できます。
+`ItemMedia` を `variant="avatar"` とともに使用して、アバターを表示できます。
 
 <ComponentPreview styleName="aria-nova" name="item-avatar" />
 
 ## 画像
 
-画像を表示するには、`ItemMedia` を `variant="image"` と組み合わせて使用​​します。
+画像を表示するには、`ItemMedia` を `variant="image"` とともに使用します。
 
 <ComponentPreview styleName="aria-nova" name="item-image" />
 
 ## グループ
 
-Use `ItemGroup` to group related items together.
+`ItemGroup` を使用して、関連する項目をグループ化します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -194,9 +194,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### アイテム
 
-The main component for displaying content with media, title, description, and actions.
+メディア、タイトル、説明、およびアクションを含むコンテンツを表示するための主要コンポーネント。
 
-| Prop      | Type                                | Default     |
+|プロップ |タイプ |デフォルト |
 | --------- | ----------------------------------- | ----------- |
 | `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
 | `size`    | `"default" \| "sm" \| "xs"`         | `"default"` |
@@ -229,7 +229,7 @@ The main component for displaying content with media, title, description, and ac
 
 `ItemMedia` を使用して、アイコン、画像、アバターなどのメディア コンテンツを表示します。
 
-| Prop      | Type                             | Default     |
+|プロップ |タイプ |デフォルト |
 | --------- | -------------------------------- | ----------- |
 | `variant` | `"default" \| "icon" \| "image"` | `"default"` |
 
@@ -247,7 +247,7 @@ The main component for displaying content with media, title, description, and ac
 
 ### ItemContent
 
-項目のタイトルと説明を折り返します。
+アイテムのタイトルと説明をラップします。
 
 ```tsx
 <ItemContent>
@@ -284,7 +284,7 @@ The main component for displaying content with media, title, description, and ac
 
 ### ItemHeader
 
-Displays a header above the item content.
+項目コンテンツの上にヘッダーを表示します。
 
 ```tsx
 <Item>
@@ -293,9 +293,9 @@ Displays a header above the item content.
 </Item>
 ```
 
-### ItemFooter
+### アイテムフッター
 
-にはなりません。項目コンテンツの下にフッターが表示されます。
+項目コンテンツの下にフッターを表示します。
 
 ```tsx
 <Item>

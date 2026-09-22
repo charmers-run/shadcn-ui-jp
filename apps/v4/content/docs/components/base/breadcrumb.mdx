@@ -1,6 +1,6 @@
 ---
 title: ブレッドクラム
-description: Displays the path to the current resource using a hierarchy of links.
+description: リンクの階層を使用して、現在のリソースへのパスを表示します。
 base: base
 component: true
 ---
@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -82,7 +82,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Breadcrumb`:
+次の構成を使用して、`Breadcrumb` を構築します。
 
 ```text
 Breadcrumb
@@ -105,19 +105,19 @@ Breadcrumb
 
 ## カスタム区切り文字
 
-Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
+カスタム コンポーネントを `<BreadcrumbSeparator />` の `children` として使用して、カスタム セパレーターを作成します。
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-separator" />
 
-## Dropdown
+## ドロップダウン
 
 `<BreadcrumbItem />` を `<DropdownMenu />` と組み合わせて、パンくずリストにドロップダウンを作成できます。
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-dropdown" />
 
-## Collapsed
+## 折りたたまれた
 
-We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.
+ブレッドクラムが長すぎる場合に折りたたまれた状態を表示する `<BreadcrumbEllipsis />` コンポーネントを提供します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -125,7 +125,7 @@ We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when t
   previewClassName="p-2"
 />
 
-## Link component
+## リンクコンポーネント
 
 ルーティング ライブラリのカスタム リンク コンポーネントを使用するには、`<BreadcrumbLink />` で `render` プロパティを使用できます。
 
@@ -144,47 +144,47 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### Breadcrumb
+### ブレッドクラム
 
-The `Breadcrumb` component is the root navigation element that wraps all breadcrumb components.
+`Breadcrumb` コンポーネントは、すべてのブレッドクラム コンポーネントをラップするルート ナビゲーション要素です。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### BreadcrumbList
+### ブレッドクラムリスト
 
-The `BreadcrumbList` component displays the ordered list of breadcrumb items.
+`BreadcrumbList` コンポーネントは、ブレッドクラム項目の順序付きリストを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### BreadcrumbItem
+### ブレッドクラム項目
 
 `BreadcrumbItem` コンポーネントは、個々のブレッドクラム項目をラップします。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### BreadcrumbLink
+### ブレッドクラムリンク
 
-The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
+`BreadcrumbLink` コンポーネントは、パンくずリストにクリック可能なリンクを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### BreadcrumbPage
+### ブレッドクラムページ
 
-The `BreadcrumbPage` component displays the current page in the breadcrumb (non-clickable).
+`BreadcrumbPage` コンポーネントは、ブレッドクラムに現在のページを表示します (クリック不可)。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### BreadcrumbSeparator
+### ブレッドクラム区切り文字
 
 `BreadcrumbSeparator` コンポーネントは、ブレッドクラム項目間の区切り文字を表示します。カスタムの子を渡して、デフォルトの区切りアイコンをオーバーライドできます。
 
@@ -193,10 +193,10 @@ The `BreadcrumbPage` component displays the current page in the breadcrumb (non-
 | `children`  | `React.ReactNode` | -       |
 | `className` | `string`          | -       |
 
-### BreadcrumbEllipsis
+### ブレッドクラム省略記号
 
 `BreadcrumbEllipsis` コンポーネントは、折りたたまれたブレッドクラム項目の省略記号インジケーターを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |

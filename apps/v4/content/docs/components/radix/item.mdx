@@ -15,7 +15,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -89,11 +89,11 @@ ItemGroup
     └── ItemFooter
 ```
 
-## アイテムとフィールド
+## 項目とフィールド
 
 チェックボックス、入力、ラジオ、または選択などのフォーム入力を表示する必要がある場合は、`Field` を使用します。
 
-If you only need to display content such as a title, description, and actions, use `Item`.
+タイトル、説明、アクションなどのコンテンツのみを表示する場合は、`Item` を使用します。
 
 ## バリエーション
 
@@ -123,13 +123,13 @@ If you only need to display content such as a title, description, and actions, u
 
 ## アバター
 
-`ItemMedia` を `variant="avatar"` と組み合わせて使用​​すると、アバターを表示できます。
+`ItemMedia` を `variant="avatar"` とともに使用して、アバターを表示できます。
 
 <ComponentPreview styleName="radix-nova" name="item-avatar" />
 
 ## 画像
 
-画像を表示するには、`ItemMedia` を `variant="image"` と組み合わせて使用​​します。
+画像を表示するには、`ItemMedia` を `variant="image"` とともに使用します。
 
 <ComponentPreview styleName="radix-nova" name="item-image" />
 
@@ -189,13 +189,13 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 メディア、タイトル、説明、およびアクションを含むコンテンツを表示するための主要コンポーネント。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | --------- | ----------------------------------- | ----------- |
 | `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
 | `size` | `"default" \| "sm" \| "xs"` | `"default"` |
 | `asChild` | `boolean` | `false` |
 
-### ItemsGroup
+### ItemGroup
 
 関連項目を一貫したスタイルでグループ化するコンテナー。
 
@@ -218,11 +218,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </ItemGroup>
 ```
 
-### ItemMedia
+### アイテムメディア
 
 `ItemMedia` を使用して、アイコン、画像、アバターなどのメディア コンテンツを表示します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | --------- | -------------------------------- | ----------- |
 | `variant` | `"default" \| "icon" \| "image"` | `"default"` |
 
@@ -265,7 +265,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 <ItemDescription>Item description</ItemDescription>
 ```
 
-### itemActions
+### ItemActions
 
 アクション ボタンまたはその他のインタラクティブ要素のコンテナー。
 

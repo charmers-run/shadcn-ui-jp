@@ -1,6 +1,6 @@
 ---
 title: スイッチ
-description: ユーザーがチェック済みとチェックなしを切り替えることができるコントロール。
+description: ユーザーが選択状態と未選択状態を切り替えられるコントロール。
 base: base
 component: true
 links:
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用方法
+## 使い方
 
 ```tsx
 import { Switch } from "@/components/ui/switch"
@@ -68,19 +68,19 @@ import { Switch } from "@/components/ui/switch"
 
 ## 選択カード
 
-`FieldLabel` がクリック可能なカード パターンの `Field` 全体をラップするカード スタイルの選択。
+`FieldLabel` が `Field` 全体をラップして、クリック可能なカードパターンにするカードスタイルの選択。
 
 <ComponentPreview styleName="base-nova" name="switch-choice-card" />
 
 ## 無効
 
-`disabled` プロパティを `Switch` コンポーネントに追加して、スイッチを無効にします。スタイル設定のために `data-disabled` プロップを `Field` コンポーネントに追加します。
+`disabled` プロパティを `Switch` コンポーネントに追加して、スイッチを無効にします。スタイル設定のために `data-disabled` プロパティを `Field` コンポーネントに追加します。
 
 <ComponentPreview styleName="base-nova" name="switch-disabled" />
 
-## 無効な
+## 無効な状態
 
-`aria-invalid` プロパティを `Switch` コンポーネントに追加して、無効な状態を示します。スタイル設定のために `data-invalid` プロップを `Field` コンポーネントに追加します。
+`aria-invalid` プロパティを `Switch` コンポーネントに追加して、無効な状態を示します。スタイル設定のために `data-invalid` プロパティを `Field` コンポーネントに追加します。
 
 <ComponentPreview styleName="base-nova" name="switch-invalid" />
 
@@ -98,4 +98,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-[ベース UI スイッチ](https://base-ui.com/react/components/switch#api-reference) ドキュメントを参照してください。
+詳細については、[ベース UI スイッチ](https://base-ui.com/react/components/switch#api-reference) ドキュメントを参照してください。

@@ -1,6 +1,6 @@
 ---
 title: ツールチップ
-description: 要素がキーボード フォーカスを受けるか、マウス ホバーされたときに関連情報を表示するポップアップ。
+description: 要素がキーボード フォーカスを受け取るか、マウスでホバーされたときに、関連情報を表示するポップアップ。
 base: aria
 component: true
 links:
@@ -69,7 +69,7 @@ import { Tooltip, TooltipTrigger } from "@/components/ui/tooltip"
 
 ## 構成
 
-Use the following composition to build a `Tooltip`:
+`Tooltip` を構築するには、次の構成を使用します。
 
 ```text
 TooltipTrigger
@@ -79,17 +79,17 @@ TooltipTrigger
 
 ## 配置
 
-Use the `placement` prop to change the position of the tooltip.
+ツールチップの位置を変更するには、`placement` プロップを使用します。
 
 <ComponentPreview styleName="aria-nova" name="tooltip-sides" />
 
-## With Keyboard Shortcut
+## キーボード ショートカット付き
 
 <ComponentPreview styleName="aria-nova" name="tooltip-keyboard" />
 
-## Disabled Button
+## 無効なボタン
 
-Show a tooltip on a disabled button by wrapping it with a span.
+無効になっているボタンをスパンで囲んでツールチップを表示します。
 
 <ComponentPreview styleName="aria-nova" name="tooltip-disabled" />
 
@@ -99,6 +99,6 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 <ComponentPreview styleName="aria-nova" name="tooltip-rtl" direction="rtl" />
 
-## APIリファレンス
+## API リファレンス
 
-See the [React Aria Tooltip](https://react-aria.adobe.com/Tooltip#api) documentation.
+[React Aria Tooltip](https://react-aria.adobe.com/Tooltip#api) ドキュメントを参照してください。

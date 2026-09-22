@@ -5,15 +5,15 @@ description: 独自のコンポーネントレジストリを設定して実行�
 
 このガイドでは、独自のレジストリを設定する手順を説明します。配布したいコンポーネント、フック、ユーティリティ、その他のファイルを含むプロジェクトがすでにあることを前提としています。
 
-**公開済みのGitHubリポジトリをお持ちの場合は、ルートに `registry.json` ファイルを追加するだけでレジストリにできます。** 詳しくは [GitHubレジストリ](/docs/registry/github) をご覧ください。
+**公開済みの GitHub リポジトリをお持ちの場合は、ルートに `registry.json` ファイルを追加するだけでレジストリにできます。** 詳しくは [GitHub レジストリ](/docs/registry/github) をご覧ください。
 
-新しいレジストリプロジェクトを始める場合は、[registry template](https://github.com/shadcn-ui/registry-template) を出発点として利用できます。すでに必要な設定が済んでいます。
+新しいレジストリプロジェクトを始める場合は、[テンプレートプロジェクト](https://github.com/shadcn-ui/registry-template) を出発点として利用できます。すでに必要な設定が済んでいます。
 
 ## 要件
 
-カスタムレジストリは自由に設計・公開できます。唯一の要件は、レジストリカタログとレジストリ項目が [registryスキーマ仕様](/docs/registry/registry-json) と [registry-itemスキーマ仕様](/docs/registry/registry-item-json) に準拠することです。
+カスタムレジストリは自由に設計・公開できます。唯一の要件は、レジストリカタログとレジストリ項目が [registry スキーマ仕様](/docs/registry/registry-json) と [registry-item スキーマ仕様](/docs/registry/registry-item-json) に準拠することです。
 
-レジストリは、HTTPでJSONを配信できれば、Next.js、Vite、Vue、Svelte、PHPなど、どのフレームワークでも構築できます。ルートに `registry.json` ファイルを置いた公開GitHubリポジトリでも構いません。
+レジストリは、HTTP で JSON を配信できれば、Next.js、Vite、Vue、Svelte、PHP など、どのフレームワークでも構築できます。ルートに `registry.json` ファイルを置いた公開 GitHub リポジトリでも構いません。
 
 レジストリの例を見たい場合は、出発点として利用できる [テンプレートプロジェクト](https://github.com/shadcn-ui/registry-template) を用意しています。
 
@@ -21,7 +21,7 @@ description: 独自のコンポーネントレジストリを設定して実行�
 
 `registry.json` はレジストリのエントリーポイントです。レジストリの名前やホームページを含み、レジストリに存在するすべての項目を定義します。
 
-レジストリのエンドポイント（レジストリをホストしているURL）のルートに、このファイル（またはJSONペイロード）を配置する必要があります。
+レジストリのエンドポイント（レジストリをホストしている URL）のルートに、このファイル（または JSON ペイロード）を配置する必要があります。
 
 以下は `registry.json` ファイルの例です：
 
@@ -93,7 +93,7 @@ description: 独自のコンポーネントレジストリを設定して実行�
 }
 ```
 
-この `registry.json` ファイルは [registryスキーマ仕様](/docs/registry/registry-json) に準拠する必要があります。
+この `registry.json` ファイルは [registry スキーマ仕様](/docs/registry/registry-json) に準拠する必要があります。
 
 ### 方法B: include を使う
 
@@ -189,7 +189,7 @@ hooks
 
 ## 項目の追加
 
-### UIコンポーネントの作成
+### UI コンポーネントの作成
 
 最初の項目を追加します。以下はシンプルな `<Button />` コンポーネントの例です：
 
@@ -220,7 +220,7 @@ components
 
 ### 項目をレジストリに追加する
 
-コンポーネントをレジストリに追加するには、`registry.json` に項目定義を追加します。`include` を使っている場合は、そのコンポーネントを所有する取り込み先の `registry.json` ファイルに項目を追加します。たとえば、UIコンポーネントは `components/ui/registry.json` に追加します。
+コンポーネントをレジストリに追加するには、`registry.json` に項目定義を追加します。`include` を使っている場合は、そのコンポーネントを所有する取り込み先の `registry.json` ファイルに項目を追加します。たとえば、UI コンポーネントは `components/ui/registry.json` に追加します。
 
 ```json title="registry.json" showLineNumbers {6-17}
 {
@@ -248,15 +248,15 @@ components
 
 追加するファイルごとに、`path` と `type` を指定する必要があります。単一ファイル構成のレジストリでは、`path` はプロジェクトのルートからの相対パスです。`include` を使う場合は、`path` は項目を宣言している `registry.json` ファイルからの相対パスです。`type` はファイルの種類です。
 
-レジストリ項目スキーマとファイルタイプについて詳しくは、[registry-itemスキーマのドキュメント](/docs/registry/registry-item-json) をご覧ください。
+レジストリ項目スキーマとファイルタイプについて詳しくは、[registry-item スキーマのドキュメント](/docs/registry/registry-item-json) をご覧ください。
 
 ## レジストリの配信
 
-レジストリは、静的なJSONファイルとしても、動的ルートハンドラーからも配信できます。
+レジストリは、静的な JSON ファイルとしても、動的ルートハンドラーからも配信できます。
 
-### 方法A: 静的なJSONファイル
+### 方法A: 静的な JSON ファイル
 
-ビルドコマンドを実行して、静的なレジストリJSONファイルを生成します。
+ビルドコマンドを実行して、静的なレジストリ JSON ファイルを生成します。
 
 ```bash
 npx shadcn@latest build
@@ -265,11 +265,11 @@ npx shadcn@latest build
 ソースレジストリで `include` を使っている場合、`shadcn build` は取り込まれたレジストリを解決し、フラット化されたレジストリを出力ディレクトリに書き出します。生成された `registry.json` に `include` は含まれません。
 
 <Callout className="mt-6">
-  **注:** 既定では、ビルドコマンドは `public/r`（例: `public/r/button.json`）にレジストリJSONファイルを生成します。`--output` オプションで出力ディレクトリを変更できます。詳しくは [shadcn buildコマンド](/docs/cli#build) をご覧ください。
+  **注:** 既定では、ビルドコマンドは `public/r`（例: `public/r/button.json`）にレジストリ JSON ファイルを生成します。`--output` オプションで出力ディレクトリを変更できます。詳しくは [shadcn build コマンド](/docs/cli#build) をご覧ください。
 
 </Callout>
 
-Next.jsでレジストリを実行している場合は、`next` サーバーを実行すればこれらのファイルを配信できます。他のフレームワークではコマンドが異なる場合があります。
+Next.js でレジストリを実行している場合は、`next` サーバーを実行すればこれらのファイルを配信できます。他のフレームワークではコマンドが異なる場合があります。
 
 ```bash
 npm run dev
@@ -279,7 +279,7 @@ npm run dev
 
 ### 方法B: 動的ルートハンドラー
 
-リクエスト時にソースの `registry.json` からレジストリJSONを配信したい場合は、`shadcn/registry` のプロデューサー側ローダーAPIを使います。
+リクエスト時にソースの `registry.json` からレジストリ JSON を配信したい場合は、`shadcn/registry` のプロデューサー側ローダー API を使います。
 
 `shadcn` をランタイム依存関係としてインストールします：
 
@@ -342,16 +342,16 @@ export async function GET(
 }
 ```
 
-どちらのローダーもJSONを返す前に `include` を解決するため、`shadcn build` を実行しなくても、ルートハンドラーで同じソースの `registry.json` 構造を使えます。
+どちらのローダーも JSON を返す前に `include` を解決するため、`shadcn build` を実行しなくても、ルートハンドラーで同じソースの `registry.json` 構造を使えます。
 
 <Accordion type="single" collapsible>
   <AccordionItem value="content-negotiation">
     <AccordionTrigger>コンテンツネゴシエーション</AccordionTrigger>
     <AccordionContent>
 
-`shadcn` CLIは **HTTPコンテンツネゴシエーション** に対応しています。これにより、ドメインのルートを含む任意のエンドポイントでレジストリをホストし、リクエスト元に応じて異なるコンテンツを配信できます。
+`shadcn` CLI は **HTTP コンテンツネゴシエーション** に対応しています。これにより、ドメインのルートを含む任意のエンドポイントでレジストリをホストし、リクエスト元に応じて異なるコンテンツを配信できます。
 
-単一のURLから以下を配信できます：
+単一の URL から以下を配信できます：
 
 <ul>
   <li>
@@ -359,11 +359,11 @@ export async function GET(
     ランディングページ、ドキュメント、またはマーケティングサイト。
   </li>
   <li>
-    <strong>JSON</strong> を <code>shadcn</code> CLI向けに —
+    <strong>JSON</strong> を <code>shadcn</code> CLI 向けに —
     インストール可能なレジストリ項目。
   </li>
   <li>
-    <strong>Markdown</strong> をAIエージェントやLLM向けに —
+    <strong>Markdown</strong> を AI エージェントや LLM 向けに —
     機械可読版のコンテンツ。
   </li>
 </ul>
@@ -372,18 +372,18 @@ export async function GET(
 
 #### リクエストヘッダー
 
-CLIがレジストリにリクエストする際、次のヘッダーを送信します：
+CLI がレジストリにリクエストする際、次のヘッダーを送信します：
 
 - **User-Agent**: `shadcn`
 - **Accept**: `application/vnd.shadcn.v1+json, application/json;q=0.9`
 
 #### ルートでのホスティング
 
-サーバーでこれらのヘッダーを確認すれば、CLIのトラフィックをインストール可能なレジストリ項目に振り分けつつ、ブラウザのトラフィックはドキュメントやホームページに流し続けられます。
+サーバーでこれらのヘッダーを確認すれば、CLI のトラフィックをインストール可能なレジストリ項目に振り分けつつ、ブラウザのトラフィックはドキュメントやホームページに流し続けられます。
 
 以下の例では、ビルド済みのレジストリ項目が `/r/index.json` で配信されることを前提としています。出力に合わせてパスを調整してください。
 
-Next.jsでは、`next.config.ts` でリライトとして表現します。これにより、ネゴシエーションをルーティング層で処理でき、この静的リライトのためにProxy関数を用意する必要がなくなります：
+Next.js では、`next.config.ts` でリライトとして表現します。これにより、ネゴシエーションをルーティング層で処理でき、この静的リライトのために Proxy 関数を用意する必要がなくなります：
 
 ```typescript title="next.config.ts" showLineNumbers
 import type { NextConfig } from "next"
@@ -430,7 +430,7 @@ const nextConfig: NextConfig = {
 export default nextConfig
 ```
 
-または、Express.jsサーバーでは次のようになります：
+または、Express.js サーバーでは次のようになります：
 
 ```javascript title="server.js" showLineNumbers
 app.get("/", (req, res) => {
@@ -456,11 +456,11 @@ app.get("/", (req, res) => {
 
 <ul>
   <li>
-    <strong>ブランド化されたレジストリURL</strong>:{" "}
+    <strong>ブランド化されたレジストリ URL</strong>:{" "}
     <code>shadcn add https://ui.example.com</code>
   </li>
   <li>
-    <strong>短いURL</strong>: ユーザーは <code>/r/</code> や{" "}
+    <strong>短い URL</strong>: ユーザーは <code>/r/</code> や{" "}
     <code>/registry/</code>{" "}
     のサブパスではなく、ドメインのルートを入力するだけです。
   </li>
@@ -478,11 +478,11 @@ app.get("/", (req, res) => {
 
 ## レジストリのテスト
 
-レジストリを配信できるようになったら、他の開発者が使うのと同じCLIコマンドでテストします。
+レジストリを配信できるようになったら、他の開発者が使うのと同じ CLI コマンドでテストします。
 
-### URLを使う場合
+### URL を使う場合
 
-`list` や `search` など項目を検出するコマンドにはカタログURLを使います。`view` や `add` など特定の項目を読み取り・インストールするコマンドには項目URLを使います。
+`list` や `search` など項目を検出するコマンドにはカタログ URL を使います。`view` や `add` など特定の項目を読み取り・インストールするコマンドには項目 URL を使います。
 
 #### 項目の一覧表示
 
@@ -520,13 +520,13 @@ npx shadcn@latest add http://localhost:3000/r/button.json
 
 #### レジストリの追加
 
-名前空間を使ってレジストリをテストすることもできます。`components.json` ファイルがあるプロジェクトで、プロジェクトにレジストリURLテンプレートを追加します。
+名前空間を使ってレジストリをテストすることもできます。`components.json` ファイルがあるプロジェクトで、プロジェクトにレジストリ URL テンプレートを追加します。
 
 ```bash
 npx shadcn@latest registry add @acme=http://localhost:3000/r/{name}.json
 ```
 
-`{name}` プレースホルダーは項目JSONファイルに解決される必要があります。たとえば、`@acme/button` は `http://localhost:3000/r/button.json` に解決されます。カタログは引き続き `http://localhost:3000/r/registry.json` で個別に配信されます。
+`{name}` プレースホルダーは項目 JSON ファイルに解決される必要があります。たとえば、`@acme/button` は `http://localhost:3000/r/button.json` に解決されます。カタログは引き続き `http://localhost:3000/r/registry.json` で個別に配信されます。
 
 #### 項目の一覧表示
 
@@ -564,15 +564,15 @@ npx shadcn@latest add @acme/button
 
 ## レジストリの公開
 
-レジストリを他の開発者に利用可能にするには、プロジェクトを公開URLにデプロイします。デプロイ後は、ユーザーは項目URLから直接項目をインストールできますし、レジストリをプロジェクトの名前空間として追加することもできます。
+レジストリを他の開発者に利用可能にするには、プロジェクトを公開 URL にデプロイします。デプロイ後は、ユーザーは項目 URL から直接項目をインストールできますし、レジストリをプロジェクトの名前空間として追加することもできます。
 
 ### 名前空間の設定手順の共有
 
-`@acme/button` のような名前空間で項目をインストールしてほしい場合は、プロジェクトにレジストリURLテンプレートを追加するようユーザーに案内します。`{name}` プレースホルダーは、CLIがレジストリ項目を解決する際に項目名に置き換えられます。
+`@acme/button` のような名前空間で項目をインストールしてほしい場合は、プロジェクトにレジストリ URL テンプレートを追加するようユーザーに案内します。`{name}` プレースホルダーは、CLI がレジストリ項目を解決する際に項目名に置き換えられます。
 
-テンプレートは項目JSONファイルに解決される必要があります。たとえば、`@acme/button` は `https://acme.com/r/button.json` に解決されます。レジストリカタログは引き続き `https://acme.com/r/registry.json` で個別に配信してください。
+テンプレートは項目 JSON ファイルに解決される必要があります。たとえば、`@acme/button` は `https://acme.com/r/button.json` に解決されます。レジストリカタログは引き続き `https://acme.com/r/registry.json` で個別に配信してください。
 
-CLIで名前空間を追加できます。
+CLI で名前空間を追加できます。
 
 ```bash
 npx shadcn@latest registry add @acme=https://acme.com/r/{name}.json
@@ -596,7 +596,7 @@ npx shadcn@latest add @acme/button
 
 ### 名前空間をレジストリインデックスに追加する
 
-レジストリがオープンソースで公開されている場合は、名前空間を公式レジストリインデックスに申請できます。これにより、ユーザーは完全なURLテンプレートを貼り付ける代わりに、名前だけで名前空間を追加できるようになります。
+レジストリがオープンソースで公開されている場合は、名前空間を公式レジストリインデックスに申請できます。これにより、ユーザーは完全な URL テンプレートを貼り付ける代わりに、名前だけで名前空間を追加できるようになります。
 
 申請要件について詳しくは [レジストリインデックス](/docs/registry/registry-index) のドキュメントをご覧ください。
 
@@ -606,7 +606,7 @@ npx shadcn@latest add @acme/button
 
 - レジストリ項目は `registry/[STYLE]/[NAME]` ディレクトリに配置します。ここでは例として `default` を使っています。`registry` ディレクトリ配下にネストされていれば、任意の名前で構いません。
 - ブロックでは、次のプロパティが必須です：`name`、`description`、`type`、`files`。
-- レジストリ項目には適切な名前と説明を付けることを推奨します。LLMがコンポーネントとその目的を理解するのに役立ちます。
+- レジストリ項目には適切な名前と説明を付けることを推奨します。LLM がコンポーネントとその目的を理解するのに役立ちます。
 - すべてのレジストリ依存関係を `registryDependencies` に記載してください。レジストリ依存関係とは、`button`、`@acme/input-form`、`acme/ui/button`、`http://localhost:3000/r/editor.json` のような項目アドレスです。
 - すべての依存関係を `dependencies` に記載してください。依存関係とは、レジストリ内のパッケージ名（例: `zod`、`sonner` など）です。バージョンを指定する場合は `name@version` 形式（例: `zod@^3.20.0`）を使えます。
 - **インポートは常に `@/registry` パスを使ってください。** 例: `import { HelloWorld } from "@/registry/default/hello-world/hello-world"`

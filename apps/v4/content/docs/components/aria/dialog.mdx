@@ -1,6 +1,6 @@
 ---
 title: ダイアログ
-description: プライマリ ウィンドウまたは別のダイアログ ウィンドウにオーバーレイされ、
+description: プライマリ ウィンドウまたは別のダイアログ ウィンドウに重ねて表示されるウィンドウで、その下のコンテンツは不活性になります。
 featured: true
 base: aria
 component: true
@@ -87,7 +87,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Dialog`:
+次の構成を使用して `Dialog` を構築します。
 
 ```text
 DialogTrigger
@@ -101,25 +101,25 @@ DialogTrigger
 
 ## カスタム閉じるボタン
 
-デフォルトの閉じるコントロールを独自のボタンに置​​き換えます。
+デフォルトの閉じるコントロールを独自のボタンに置き換えます。
 
 <ComponentPreview styleName="aria-nova" name="dialog-close-button" />
 
 ## 閉じるボタンなし
 
-を使用します。 `showCloseButton={false}` を使用して、[閉じる] ボタンを非表示にします。
+`showCloseButton={false}` を使用すると、閉じるボタンを非表示にできます。
 
 <ComponentPreview styleName="aria-nova" name="dialog-no-close-button" />
 
 ## スティッキー フッター
 
-Keep actions visible while the content scrolls.
+コンテンツがスクロールしている間、アクションを表示したままにします。
 
 <ComponentPreview styleName="aria-nova" name="dialog-sticky-footer" />
 
 ## スクロール可能なコンテンツ
 
-Long content can scroll while the header stays in view.
+長いコンテンツはヘッダーを表示したままスクロールできます。
 
 <ComponentPreview styleName="aria-nova" name="dialog-scrollable-content" />
 
@@ -131,4 +131,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/Modal#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/Modal#api) のドキュメントを参照してください。

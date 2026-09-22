@@ -20,7 +20,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">状態を制御するための手動</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -68,8 +68,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 ## チェックされた状態
 
-制御されていないチェックボックスには `defaultChecked` を使用するか、`checked` および
-`onCheckedChange`。
+非制御のチェックボックスには `defaultChecked` を使用し、状態を制御するには `checked` と
+`onCheckedChange` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -83,12 +83,12 @@ export function Example() {
 
 ## 無効な状態
 
-チェックボックスの `aria-invalid` とフィールド ラッパーの `data-invalid` を
-は、無効なスタイルを示します。
+チェックボックスに `aria-invalid`、フィールド ラッパーに `data-invalid` を設定すると、
+無効なスタイルが表示されます。
 
 <ComponentPreview styleName="radix-nova" name="checkbox-invalid" />
 
-## に設定します。 基本
+## 基本
 
 適切なレイアウトとラベル付けを行うには、チェックボックスを `Field` および `FieldLabel` と組み合わせます。
 
@@ -100,9 +100,9 @@ export function Example() {
 
 <ComponentPreview styleName="radix-nova" name="checkbox-description" />
 
-## について 無効になっています
+## 無効
 
-を定義します。 `disabled` プロパティを使用して相互作用を防止し、無効なスタイルの `<Field>` コンポーネントに `data-disabled` 属性を追加します。
+`disabled` プロパティを使用して相互作用を防止し、無効なスタイルの `<Field>` コンポーネントに `data-disabled` 属性を追加します。
 
 <ComponentPreview styleName="radix-nova" name="checkbox-disabled" />
 

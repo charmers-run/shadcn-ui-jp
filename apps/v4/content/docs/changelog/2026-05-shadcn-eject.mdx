@@ -1,22 +1,22 @@
 ---
-title: 2026 年 5 月 - shadcn イジェクト
+title: 2026 年 5 月 - shadcn eject
 description: shadcn/tailwind.css をインライン化し、shadcn の依存関係を削除します。
 date: 2026-05-31
 ---
 
-Radix と Base UI の両方のサポートを追加したとき、両方のライブラリが依存する共有 Tailwind ユーティリティのための場所が必要になりました。 `data-open:` や `data-closed:` などのカスタム バリアント、および `no-scrollbar` などのユーティリティ。
+Radix と Base UI の両方のサポートを追加した際、両方のライブラリが依存する共有 Tailwind ユーティリティ ── `data-open:` や `data-closed:` などのカスタム バリアント、`no-scrollbar` などのユーティリティ ── のための置き場所が必要になりました。
 
 また、RTL サポートの作業中にいくつかのバグに遭遇しましたが、すべてのコンポーネント間で重複して修正するよりも、1 つの共有場所で修正する方が簡単でした。
 
 そこで、`shadcn/tailwind.css` を作成しました。 `init` を実行すると、グローバル CSS ファイルに `@import "shadcn/tailwind.css"` が追加されます。これは、`tw-animate-css` などの他の CSS インポートと同じように機能します。これは、運用環境でツリーシェイクされ、ビルド時に解決される小さな依存関係です。
 
-その CSS の `shadcn` パッケージに依存したくない場合は、`shadcn eject` コマンドを追加しました。 `shadcn/tailwind.css` をグローバル CSS ファイルにインライン化し、プロジェクトから `shadcn` 依存関係を削除します。
+その CSS のために `shadcn` パッケージに依存したくない場合のために、`shadcn eject` コマンドを追加しました。これは `shadcn/tailwind.css` をグローバル CSS ファイルにインライン化し、プロジェクトから `shadcn` 依存関係を削除します。
 
 ```bash
 npx shadcn@latest eject
 ```
 
-**前に**
+**変更前**
 
 ```css
 @import "tailwindcss";
@@ -24,7 +24,7 @@ npx shadcn@latest eject
 @import "shadcn/tailwind.css";
 ```
 
-**後**
+**変更後**
 
 ```css
 @import "tailwindcss";
@@ -52,7 +52,7 @@ npx shadcn@latest eject
 }
 ```
 
-モノリポジトリで、`components.json` とグローバル CSS ファイルを含むワークスペースからコマンドを実行します。
+モノレポの場合は、`components.json` とグローバル CSS ファイルを含むワークスペースからコマンドを実行します。
 
 ```bash
 npx shadcn@latest eject -c packages/ui

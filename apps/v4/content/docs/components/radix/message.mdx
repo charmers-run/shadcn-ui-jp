@@ -11,9 +11,9 @@ component: true
   previewClassName="h-auto theme-blue"
 />
 
-The `Message` component lays out a single message in a conversation. It handles the avatar, alignment, header, and footer around the message surface.
+`Message` コンポーネントは、会話内の 1 つのメッセージをレイアウトします。メッセージ表示部分の周囲にあるアバター、配置、ヘッダー、フッターを扱います。
 
-For AI apps, you can render reasoning steps, tool calls and assistant messages using the `Message` component.
+AI アプリケーションでは、`Message` コンポーネントを使って推論ステップ、ツール呼び出し、アシスタントメッセージをレンダリングできます。
 
 ## インストール
 
@@ -21,7 +21,7 @@ For AI apps, you can render reasoning steps, tool calls and assistant messages u
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -75,14 +75,14 @@ import { Message, MessageAvatar, MessageContent } from "@/components/ui/message"
 </Message>
 ```
 
-**Note:** `Message` owns the row layout—avatar, alignment, header, and footer.
-Render the visible message surface inside it with
-[`Bubble`](/docs/components/bubble)。周囲のスクロールコンテナの場合
-conversation, use [`MessageScroller`](/docs/components/message-scroller).
+**注意:** `Message` は行のレイアウト（アバター、配置、ヘッダー、フッター）を管理します。
+実際に表示されるメッセージ本体は、内部に配置した
+[`Bubble`](/docs/components/bubble) でレンダリングしてください。会話全体を囲むスクロールコンテナには
+[`MessageScroller`](/docs/components/message-scroller) を使用します。
 
 ## 構成
 
-Use the following composition to build a message:
+メッセージを作成するには、次の構成を使用します。
 
 ```text
 Message
@@ -103,12 +103,12 @@ MessageGroup
 
 ## 機能
 
-- Start and end alignment for sender and receiver rows via the `align` prop
-- Avatar slot that anchors to the bottom of the message and stays clear of the footer
-- Header and footer slots for sender names, status, and message actions
-- Footer follows the message side; actions stay aligned on `align="end"` rows
-- 同じ送信者からの連続メッセージをスタックするためのグループ ラッパー
-- すべてのパーツの `className` プロップによるカスタマイズ可能なスタイル
+- `align` プロップによる、送信者側・受信者側の行の先頭/末尾揃え
+- メッセージの下端に固定され、フッターと重ならないアバタースロット
+- 送信者名やステータス、メッセージアクション用のヘッダー・フッタースロット
+- フッターはメッセージ側に追従し、`align="end"` の行でもアクションの位置が揃います
+- 同じ送信者からの連続メッセージをまとめて表示するグループラッパー
+- すべてのパーツに用意された `className` プロップによるカスタマイズ可能なスタイル
 
 ## アバター
 
@@ -122,12 +122,12 @@ MessageGroup
 
 | align   | Description                                         |
 | ------- | --------------------------------------------------- |
-| `start` | Align the message to the start of the conversation. |
-| `end`   | Align the message to the end of the conversation.   |
+| `start` | メッセージを会話の先頭に揃えます。 |
+| `end`   | メッセージを会話の末尾に揃えます。 |
 
 ## グループ
 
-Use `MessageGroup` to stack consecutive messages from the same sender. Render an empty `MessageAvatar` on the earlier messages to keep them aligned with the avatar on the last one.
+`MessageGroup` を使用して、同じ送信者からの連続したメッセージをスタックします。前のメッセージに空の `MessageAvatar` をレンダリングして、最後のメッセージのアバターと位置を合わせます。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -147,7 +147,7 @@ Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a
 
 ## アクション
 
-Place message-level actions in `MessageFooter`, such as copy, retry, or feedback buttons.
+コピー、再試行、フィードバックボタンなど、メッセージレベルのアクションは `MessageFooter` に配置します。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -165,11 +165,11 @@ Place message-level actions in `MessageFooter`, such as copy, retry, or feedback
 
 ## アクセシビリティ
 
-`Message` is a presentational layout wrapper. Accessibility comes from the content you place inside it.
+`Message` はレイアウトのための装飾的なラッパーです。アクセシビリティは、その内部に配置するコンテンツによって決まります。
 
-### Label icon-only actions
+### アイコンのみのアクションにラベルを付ける
 
-Action buttons in `MessageFooter` are usually icon-only, so give each one an `aria-label`.
+`MessageFooter` 内のアクションボタンは通常アイコンのみなので、それぞれに `aria-label` を付けてください。
 
 ```tsx showLineNumbers
 <MessageFooter>
@@ -179,9 +179,9 @@ Action buttons in `MessageFooter` are usually icon-only, so give each one an `ar
 </MessageFooter>
 ```
 
-### Status updates
+### ステータス更新
 
-For in-progress messages, use a [`Marker`](/docs/components/marker) with `role="status"` so assistive tech announces the update as it appears.
+処理中のメッセージには、`role="status"` を指定した [`Marker`](/docs/components/marker) を使用し、更新が表示された際に支援技術が読み上げるようにします。
 
 ```tsx showLineNumbers
 <Message>
@@ -198,12 +198,12 @@ For in-progress messages, use a [`Marker`](/docs/components/marker) with `role="
 
 ### メッセージ
 
-The message row wrapper.
+メッセージ行ラッパー。
 
 | Prop        | Type               | Default   | Description                                       |
 | ----------- | ------------------ | --------- | ------------------------------------------------- |
 | `align`     | `"start" \| "end"` | `"start"` | The alignment of the message in the conversation. |
-| `className` | `string` | - |行に適用する追加のクラス。           |
+| `className` | `string`           | -         | Additional classes to apply to the row.           |
 
 ### MessageGroup
 
@@ -215,7 +215,7 @@ Groups consecutive messages from the same sender.
 
 ### MessageAvatar
 
-アバター スロット。メッセージの下部に配置されます。メッセージに `MessageFooter` が含まれている場合、アバターは上に移動して、フッターではなくメッセージの表面に合わせて配置されます。
+アバタースロット。メッセージの下部に配置されます。メッセージに `MessageFooter` が含まれている場合、アバターは上に移動して、フッターではなくメッセージの表面に合わせて配置されます。
 
 | Prop        | Type     | Default | Description                                     |
 | ----------- | -------- | ------- | ----------------------------------------------- |
@@ -225,17 +225,17 @@ Groups consecutive messages from the same sender.
 
 Wraps the header, message surface, and footer.
 
-|小道具 |タイプ |デフォルト |説明 |
+| Prop        | Type     | Default | Description                                      |
 | ----------- | -------- | ------- | ------------------------------------------------ |
 | `className` | `string` | -       | Additional classes to apply to the content slot. |
 
 ### MessageHeader
 
-メッセージの上に送信者名などのコンテンツを表示します。 `align` に関係なく、先頭に揃えられます。
+メッセージの上に送信者名などのコンテンツを表示します。`align` に関係なく、先頭に揃えられます。
 
 | Prop        | Type     | Default | Description                                |
 | ----------- | -------- | ------- | ------------------------------------------ |
-| を削除します。 `className` | `string` | - |ヘッダーに適用する追加のクラス。 |
+| `className` | `string` | -       | Additional classes to apply to the header. |
 
 ### MessageFooter
 
@@ -243,4 +243,4 @@ Displays content below the message, such as status or actions. Aligns to the mes
 
 | Prop        | Type     | Default | Description                                |
 | ----------- | -------- | ------- | ------------------------------------------ |
-| `className` | `string` | - |フッターに適用する追加のクラス。 |
+| `className` | `string` | -       | Additional classes to apply to the footer. |

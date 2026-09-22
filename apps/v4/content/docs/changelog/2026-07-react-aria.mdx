@@ -6,9 +6,7 @@ date: 2026-07-17
 
 **React Aria** は、shadcn/ui のファーストクラスのコンポーネント ベースになりました。
 
-React Aria コンポーネントと Base UI および Radix を組み合わせて構築します。選んでください
-shadcn/`--base aria` を使用してプロジェクトを作成または初期化します。 CLI は、
-依存関係、レジストリ解決、スタイル、コンポーネントのインストール。
+React Aria のコンポーネントを Base UI や Radix と組み合わせて構築できます。プロジェクトの作成または初期化時に `--base aria` を指定するだけで選択でき、依存関係、レジストリの解決、スタイル、コンポーネントのインストールは CLI が処理します。
 
 <div className="mt-6 flex w-full items-center justify-center rounded-2xl bg-muted/50 py-32 text-foreground ring ring-border dark:bg-muted">
   <svg viewBox="200 206 800 790" fill="none" className="size-16">
@@ -21,15 +19,10 @@ shadcn/`--base aria` を使用してプロジェクトを作成または初期�
 
 ## 新着情報
 
-- **一流の React Aria ベース** - どこでも React Aria を選択できます
-CLI、プリセット、shadcn/create を含むベース UI または Radix。
-- **完全なコンポーネント ドキュメント** - React Aria コンポーネントには専用のドキュメントがあります
-インストール、使用法、構成、例、および API リファレンスのセクション。
-- **全 8 つのスタイル** - React Aria を Vega、Nova、Maia、Lyra、Mira、Luma、
-レアとかセラとか。
-- **ベース固有の出力** - React Aria の状態セレクターと依存関係は次のとおりです。
-Aria レジストリにスコープされます。既存の Base UI および Radix コンポーネントは、
-変わらない。
+- **ファーストクラスの React Aria ベース** - CLI、プリセット、shadcn/create を含め、Base UI や Radix を選べる場所ならどこでも React Aria を選択できます。
+- **完全なコンポーネント ドキュメント** - React Aria コンポーネントには、インストール、使用法、構成、例、API リファレンスの各セクションを備えた専用のドキュメントがあります。
+- **全 8 スタイルに対応** - React Aria は Vega、Nova、Maia、Lyra、Mira、Luma、Rhea、Sera のすべてで利用できます。
+- **ベース固有の出力** - React Aria の状態セレクターと依存関係は、Aria レジストリ内にスコープされています。既存の Base UI や Radix のコンポーネントに変更はありません。
 
 ## React Aria から始めましょう
 
@@ -39,12 +32,9 @@ Aria レジストリにスコープされます。既存の Base UI および Ra
 npx shadcn@latest init --base aria
 ```
 
-または、[shadcn/create](/create?base=aria) で **React Aria** を選択します。プロジェクトが完了したら
-が初期化されると、`shadcn add` はそれぞれの React Aria 実装をインストールします。
-成分。
+または、[shadcn/create](/create?base=aria) で **React Aria** を選択してください。プロジェクトの初期化後は、`shadcn add` を実行するとそれぞれのコンポーネントの React Aria 実装がインストールされます。
 
-Base UI はデフォルトのままで、Radix は引き続き完全にサポートされます。既存
-プロジェクトは現在のベースに留まります。
+Base UI はデフォルトのままで、Radix は引き続き完全にサポートされます。既存のプロジェクトは現在のベースのままです。
 
 <div className="flex flex-wrap gap-2">
   <Button asChild size="sm">

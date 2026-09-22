@@ -1,6 +1,6 @@
 ---
 title: キーボード入力
-description: キーボードからのテキスト入力を表示します。
+description: キーボードからのテキスト ユーザー入力を表示するために使用されます。
 base: aria
 component: true
 ---
@@ -41,7 +41,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -49,7 +49,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## 使い方
+## 使用法
 
 ```tsx
 import { Kbd } from "@/components/ui/kbd"
@@ -61,7 +61,7 @@ import { Kbd } from "@/components/ui/kbd"
 
 ## 構成
 
-Use the following composition to build `Kbd` and `KbdGroup`:
+次の構成を使用して `Kbd` および `KbdGroup` を構築します。
 
 ```text
 Kbd
@@ -72,41 +72,41 @@ KbdGroup
 
 ## グループ
 
-Use the `KbdGroup` component to group keyboard keys together.
+`KbdGroup` コンポーネントを使用して、キーボード キーをグループ化します。
 
 <ComponentPreview styleName="aria-nova" name="kbd-group" />
 
-## Button
+## ボタン
 
-Use the `Kbd` component inside a `Button` component to display a keyboard key inside a button.
+`Button` コンポーネント内で `Kbd` コンポーネントを使用して、ボタン内にキーボード キーを表示します。
 
 <ComponentPreview styleName="aria-nova" name="kbd-button" />
 
 ## ツールチップ
 
-You can use the `Kbd` component inside a `Tooltip` component to display a tooltip with a keyboard key.
+`Tooltip` コンポーネント内で `Kbd` コンポーネントを使用すると、キーボード キーでツールチップを表示できます。
 
 <ComponentPreview styleName="aria-nova" name="kbd-tooltip" />
 
 ## 入力グループ
 
-You can use the `Kbd` component inside a `InputGroupAddon` component to display a keyboard key inside an input group.
+`InputGroupAddon` コンポーネント内で `Kbd` コンポーネントを使用すると、入力グループ内にキーボード キーを表示できます。
 
 <ComponentPreview styleName="aria-nova" name="kbd-input-group" />
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="kbd-rtl" direction="rtl" />
 
-## APIリファレンス
+## API リファレンス
 
 ### Kbd
 
-Use the `Kbd` component to display a keyboard key.
+`Kbd` コンポーネントを使用して、キーボードのキーを表示します。
 
-| Prop        | Type     | Default |
+|プロパティ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | ``      |
 
@@ -116,9 +116,9 @@ Use the `Kbd` component to display a keyboard key.
 
 ### KbdGroup
 
-Use the `KbdGroup` component to group `Kbd` components together.
+`KbdGroup` コンポーネントを使用して、`Kbd` コンポーネントをグループ化します。
 
-| Prop        | Type     | Default |
+|プロパティ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | ``      |
 

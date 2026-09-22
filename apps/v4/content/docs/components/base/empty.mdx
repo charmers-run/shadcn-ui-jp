@@ -1,6 +1,6 @@
 ---
-title: 空の
-description: Use the Empty component to display an empty state.
+title: 空の状態
+description: 空の状態を表示するには、Empty コンポーネントを使用します。
 base: base
 component: true
 ---
@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -39,7 +39,7 @@ npx shadcn@latest add empty
   styleName="base-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add empty
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx
 import {
@@ -88,9 +88,9 @@ Empty
 └── EmptyContent
 ```
 
-## 概要
+## アウトライン
 
-Use the `border` utility class to create an outline empty state.
+`border` ユーティリティ クラスを使用して、アウトラインの空の状態を作成します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -140,15 +140,15 @@ Use the `border` utility class to create an outline empty state.
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="base-nova" name="empty-rtl" direction="rtl" />
 
 ## API リファレンス
 
-### 空の
+### Empty
 
-The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent` components.
+空の状態の主要コンポーネント。`EmptyHeader` コンポーネントと `EmptyContent` コンポーネントをラップします。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -181,7 +181,7 @@ The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent
 
 アイコンや画像などの空の状態のメディアを表示するには、`EmptyMedia` コンポーネントを使用します。これを使用して、アバターなどの他のコンポーネントを表示することもできます。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type                  | Default   |
 | ----------- | --------------------- | --------- |
 | `variant`   | `"default" \| "icon"` | `default` |
 | `className` | `string` |           |
@@ -215,7 +215,7 @@ The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent
 
 ### EmptyDescription
 
-Use the `EmptyDescription` component to display the description of the empty state.
+`EmptyDescription` コンポーネントを使用して、空の状態の説明を表示します。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

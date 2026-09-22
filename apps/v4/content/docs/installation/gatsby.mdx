@@ -4,15 +4,15 @@ description: Gatsby 用に shadcn/ui をインストールして構成します�
 ---
 
 <Callout className="mb-6 border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950 [&_code]:bg-blue-100 dark:[&_code]:bg-blue-900">
-  **Note:** This guide is for Gatsby with Tailwind CSS v3. For new projects, we
-  recommend using one of the other frameworks that support Tailwind CSS v4.
+  **注:** このガイドは Tailwind CSS v3 を使用する Gatsby 用です。新しいプロジェクトでは、Tailwind
+  CSS v4 をサポートする他のフレームワークの使用をお勧めします。
 </Callout>
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
-Start by creating a new Gatsby project using `create-gatsby`:
+まず、`create-gatsby` を使用して新しい Gatsby プロジェクトを作成します。
 
 ```bash
 npm init gatsby
@@ -20,7 +20,7 @@ npm init gatsby
 
 ### TypeScript と Tailwind CSS を使用するように Gatsby プロジェクトを構成する
 
-You will be asked a few questions to configure your project:
+プロジェクトを構成するため、いくつかの質問が表示されます:
 
 ```txt showLineNumbers
 ✔ What would you like to call your site?
@@ -38,9 +38,9 @@ You will be asked a few questions to configure your project:
 ✔ Shall we do this? (Y/n) · Yes
 ```
 
-### Edit tsconfig.json file
+### tsconfig.json ファイルを編集する
 
-Add the following code to the `tsconfig.json` file to resolve paths:
+パスを解決するため、次のコードを `tsconfig.json` ファイルに追加します。
 
 ```ts {4-9} showLineNumbers
 {
@@ -59,7 +59,7 @@ Add the following code to the `tsconfig.json` file to resolve paths:
 
 ### gatsby-node.ts ファイルの作成
 
-Create a `gatsby-node.ts` file at the root of your project if it doesn’t already exist, and add the code below to the `gatsby-node` file so your app can resolve paths:
+プロジェクトのルートに `gatsby-node.ts` ファイルがまだ存在しない場合は作成し、アプリがパスを解決できるように、以下のコードを `gatsby-node` ファイルに追加します。
 
 ```ts
 import * as path from "path"
@@ -76,9 +76,9 @@ export const onCreateWebpackConfig = ({ actions }) => {
 }
 ```
 
-### Run the CLI
+### CLI を実行します
 
-Run the `shadcn` init command to set up your project:
+`shadcn` init コマンドを実行して、プロジェクトをセットアップします。
 
 ```bash
 npx shadcn@latest init
@@ -92,7 +92,7 @@ npx shadcn@latest init
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+上記のコマンドは、`Button` コンポーネントをプロジェクトに追加します。次に、次のようにインポートできます。
 
 ```tsx {1,6} showLineNumbers
 import { Button } from "@/components/ui/button"

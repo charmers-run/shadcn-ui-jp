@@ -43,7 +43,7 @@ npm install react-day-picker date-fns
 
 `Calendar` コンポーネントは `Button` コンポーネントを使用します。プロジェクトにインストールされていることを確認してください。
 
-<Step>の場合 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="calendar"
@@ -82,13 +82,13 @@ return (
 
 ## 概要
 
-`Calendar`コンポーネントは[React DayPicker](https://react-day-picker.js.org)の上に構築されています。
+`Calendar` コンポーネントは、[React DayPicker](https://react-day-picker.js.org) の上に構築されています。
 
 ## 日付ピッカー
 
 `<Calendar>` コンポーネントを使用して日付ピッカーを構築できます。詳細については、[日付ピッカー](/docs/components/radix/date-picker) ページを参照してください。
 
-## Persian / Hijri / Jalali Calendar
+## ペルシア語/ヒジュラ語/ジャラリ語カレンダー
 
 ペルシャ暦を使用するには、`components/ui/calendar.tsx` を編集し、`react-day-picker` を `react-day-picker/persian` に置き換えます。
 
@@ -101,7 +101,7 @@ return (
   styleName="radix-nova"
   name="calendar-hijri"
   title="Persian / Hijri / Jalali Calendar"
-  description="ペルシャ暦。"
+  description="ペルシャ暦です。"
   previewClassName="h-[400px]"
 />
 
@@ -171,7 +171,7 @@ export function CalendarWithTimezone() {
   previewClassName="h-[650px]"
 />
 
-## 日付と時刻ピッカー
+## 日付と時刻のピッカー
 
 <ComponentPreview
   styleName="radix-nova"
@@ -179,7 +179,7 @@ export function CalendarWithTimezone() {
   previewClassName="h-[600px]"
 />
 
-## 予約日
+## 予約済みの日付
 
 <ComponentPreview
   styleName="radix-nova"
@@ -187,17 +187,17 @@ export function CalendarWithTimezone() {
   previewClassName="h-96"
 />
 
-## カスタム セル サイズ
+## カスタムセルサイズ
 
 <ComponentPreview
   styleName="radix-nova"
   name="calendar-custom-days"
-  title="カスタム セル サイズ"
-  description="応答性に優れたカスタム セル サイズのカレンダー。"
+  title="カスタムセルサイズ"
+  description="応答性に優れたカスタムセルサイズのカレンダー。"
   className="**:[.preview]:h-[560px]"
 />
 
-CSS 変数 `--cell-size` を使用して、カレンダー セルのサイズをカスタマイズできます。ブレークポイント固有の値を使用して応答性を高めることもできます。
+CSS 変数 `--cell-size` を使用して、カレンダーのセルのサイズをカスタマイズできます。ブレークポイント固有の値を使用して応答性を高めることもできます。
 
 ```tsx showLineNumbers
 <Calendar
@@ -208,7 +208,7 @@ CSS 変数 `--cell-size` を使用して、カレンダー セルのサイズを
 />
 ```
 
-Or use fixed values:
+または、固定値を使用します。
 
 ```tsx showLineNumbers
 <Calendar
@@ -233,7 +233,7 @@ Or use fixed values:
 
 shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
-ペルシア語 / ヒジュラ暦 / ジャラーリー暦を有効にするには、[ヒジュラ暦ガイド](#persian--hijri--jalali-calendar)も参照してください。
+ペルシア語/ヒジュラ語/ジャラリ語カレンダーを有効にする方法については、[ヒジュラ語ガイド](#persian--hijri--jalali-calendar)も参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -260,15 +260,15 @@ import { arSA } from "react-day-picker/locale"
 
 `Calendar` コンポーネントの詳細については、[React DayPicker](https://react-day-picker.js.org) ドキュメントを参照してください。
 
-## 変更ログ
+## 変更履歴
 
-### RTL Support
+### RTL サポート
 
-If you're upgrading from a previous version of the `Calendar` component, you'll need to apply the following updates to add locale support:
+`Calendar` コンポーネントの以前のバージョンからアップグレードする場合は、ロケールサポートを追加するために次の更新を適用する必要があります。
 
 <Steps>
 
-<Step>Import the `Locale` type.</Step>
+<Step>`Locale` 型をインポートします。</Step>
 
 `react-day-picker` からのインポートに `Locale` を追加します。
 
@@ -281,7 +281,7 @@ If you're upgrading from a previous version of the `Calendar` component, you'll 
   } from "react-day-picker"
 ```
 
-<Step>Add `locale` prop to the Calendar component.</Step>
+<Step>`locale` プロパティを Calendar コンポーネントに追加します。</Step>
 
 `locale` プロパティをコンポーネントのプロパティに追加します。
 
@@ -321,7 +321,7 @@ If you're upgrading from a previous version of the `Calendar` component, you'll 
 
 <Step>ロケールを受け入れるように CalendarDayButton を更新します。</Step>
 
-サイズ
+`CalendarDayButton` コンポーネントのシグネチャを更新し、`locale` を渡します。
 
 ```diff
   function CalendarDayButton({
@@ -334,7 +334,7 @@ If you're upgrading from a previous version of the `Calendar` component, you'll 
 + }: React.ComponentProps<typeof DayButton> & { locale?: Partial<Locale> }) {
 ```
 
-<Step>ボタン グループ</Step>
+<Step>CalendarDayButton の日付書式を更新します。</Step>
 
 日付書式設定で `locale?.code` を使用します。
 
@@ -393,7 +393,7 @@ RTL サポートを向上させるために、方向性クラスを論理プロ�
 
 </Steps>
 
-After applying these changes, you can use the `locale` prop to provide locale-specific formatting:
+これらの変更を適用すると、`locale` プロパティを使用してロケール固有の書式を指定できるようになります。
 
 ```tsx
 import { enUS } from "react-day-picker/locale"

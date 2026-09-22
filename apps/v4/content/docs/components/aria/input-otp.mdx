@@ -9,7 +9,7 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="input-otp-demo" />
 
-## に使用します
+## 概要
 
 入力 OTP は、[@guilherme_rodz](https://twitter.com/guilherme_rodz) によって [input-otp](https://github.com/guilhermerodz/input-otp) の上に構築されます。
 
@@ -19,7 +19,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -84,7 +84,7 @@ import {
 
 ## 構成
 
-次の構成を使用して、`InputOTP` を構築します。
+次の構成を使用して `InputOTP` を構築します。
 
 ```text
 InputOTP
@@ -105,7 +105,7 @@ InputOTP
 
 ## パターン
 
-`pattern` プロップを使用して、OTP 入力のカスタム パターンを定義します。
+`pattern` プロパティを使用して、OTP 入力のカスタム パターンを定義します。
 
 ```tsx showLineNumbers {1,5}
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
@@ -149,7 +149,7 @@ PIN コードの一般的なパターン。これは `pattern={REGEXP_ONLY_DIGIT
 
 ## 英数字
 
-文字と数字の両方を受け入れるには `REGEXP_ONLY_DIGITS_AND_CHARS` を使用します。
+文字と数字の両方を受け入れるには、`REGEXP_ONLY_DIGITS_AND_CHARS` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-alphanumeric" />
 

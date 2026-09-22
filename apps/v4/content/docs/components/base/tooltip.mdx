@@ -1,6 +1,6 @@
 ---
 title: ツールチップ
-description: 要素にキーボード フォーカスが置かれたとき、または要素の上にマウスが置かれたときに、要素に関連する情報を表示するポップアップ。
+description: 要素がキーボード フォーカスを受け取るか、マウスでホバーされたときに、関連情報を表示するポップアップ。
 base: base
 component: true
 links:
@@ -16,7 +16,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -143,4 +143,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-[基本 UI ツールチップ](https://base-ui.com/react/components/tooltip#api-reference) ドキュメントを参照してください。
+[Base UI Tooltip](https://base-ui.com/react/components/tooltip#api-reference) ドキュメントを参照してください。

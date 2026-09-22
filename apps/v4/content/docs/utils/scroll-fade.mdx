@@ -33,19 +33,19 @@ npm install shadcn
 | `scroll-fade`                     | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-block));` <br /> `animation-timeline: scroll(self y);`       |
 | `scroll-fade-y`                   | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-block));` <br /> `animation-timeline: scroll(self y);`       |
 | `scroll-fade-x`                   | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-inline));` <br /> `animation-timeline: scroll(self inline);` |
-| `scroll-fade-t`                   | 上端のフェード マスク。<br /> `animation-timeline: scroll(self y);`                                                 |
+| `scroll-fade-t`                   | 上端のフェードマスク。<br /> `animation-timeline: scroll(self y);`                                                 |
 | `scroll-fade-b`                   | 下端にフェードマスク。 <br /> `animation-timeline: scroll(self y);`                                                 |
 | `scroll-fade-l`                   | 左端にフェードマスク。 <br /> `animation-timeline: scroll(self x);`                                                 |
 | `scroll-fade-r`                   | 右端にフェードマスク。 <br /> `animation-timeline: scroll(self x);`                                                 |
 | `scroll-fade-s`                   | 開始エッジのフェードマスク、RTL のミラーリング。 <br /> `animation-timeline: scroll(self inline);`                  |
-| `scroll-fade-e`                   | 終端エッジのフェード マスク。RTL では反転します。<br /> `animation-timeline: scroll(self inline);`                  |
+| `scroll-fade-e`                   | 終端エッジのフェードマスク。RTL では反転します。<br /> `animation-timeline: scroll(self inline);`                  |
 | `scroll-fade-<number>`            | `--scroll-fade-size: calc(var(--spacing) * <number>);`                                                              |
 | `scroll-fade-[<value>]`           | `--scroll-fade-size: <value>;`                                                                                      |
 | `scroll-fade-{t,b,s,e}-<number>`  | `--scroll-fade-{t,b,s,e}-size: calc(var(--spacing) * <number>);`                                                    |
 | `scroll-fade-{t,b,s,e}-[<value>]` | `--scroll-fade-{t,b,s,e}-size: <value>;`                                                                            |
 | `scroll-fade-none`                | `--scroll-fade-mask: none;`                                                                                         |
 
-`scroll-fade` または `scroll-fade-y` をスクロール コンテナー、つまり `overflow-y-auto` を持つ要素に追加します。
+`scroll-fade` または `scroll-fade-y` をスクロールコンテナー、つまり `overflow-y-auto` を持つ要素に追加します。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto">{/* ... */}</div>
@@ -73,7 +73,7 @@ npm install shadcn
 
 ## 水平スクロール
 
-水平方向にスクロールするコンテナ、つまり `overflow-x-auto` を持つ要素で `scroll-fade-x` を使用します。
+水平方向にスクロールするコンテナー、つまり `overflow-x-auto` を持つ要素で `scroll-fade-x` を使用します。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -105,7 +105,7 @@ npm install shadcn
 
 ## フェード サイズ
 
-フェード深度のデフォルトはコンテナーの `12%` で、上限は `40px` なので、トール スクローラーは微妙なままです。代わりに、`scroll-fade-<number>` を使用して、`scroll-mt-<number>` の動作と同じように、間隔スケールに固定サイズを設定します。
+フェード深度のデフォルトはコンテナーの `12%` で、上限は `40px` なので、縦長のスクローラーでも控えめな見た目のままです。代わりに、`scroll-fade-<number>` を使用して、`scroll-mt-<number>` の動作と同じように、間隔スケールに固定サイズを設定します。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -161,7 +161,7 @@ npm install shadcn
 
 スクロール認識動作は、JavaScript やスクロール リスナーを使わず、[CSS スクロール駆動アニメーション](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations)で実装されています。スクロール駆動アニメーションに対応していないブラウザーでは、`scroll-fade` は両端の静的フェードにフォールバックし、エッジ ユーティリティは選択したエッジの静的フェードにフォールバックします。
 
-マスクはスクロール コンテナ自体に適用されるため、表示されるスクロールバーは端のコンテンツとともにフェードアウトします。スクロールバーを完全に非表示にしたい場合は、同じパッケージに同梱されている `scroll-fade` を `no-scrollbar` と組み合わせます。
+マスクはスクロールコンテナー自体に適用されるため、表示されるスクロールバーは端のコンテンツとともにフェードアウトします。スクロールバーを完全に非表示にしたい場合は、同じパッケージに同梱されている `scroll-fade` を `no-scrollbar` と組み合わせます。
 
 ## RTL
 

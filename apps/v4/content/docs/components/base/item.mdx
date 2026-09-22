@@ -1,6 +1,6 @@
 ---
-title: 項目
-description: メディア、タイトル、説明、およびアクションを含むコンテンツを表示するための多用途コンポーネント。
+title: アイテム
+description: メディア、タイトル、説明、アクションを含むコンテンツを表示するための多用途コンポーネント。
 base: base
 component: true
 ---
@@ -15,7 +15,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -75,7 +75,7 @@ import {
 
 ## 構成
 
-次の構成を使用して `Item` を構築します:
+次の構成を使用して `Item` を構築します。
 
 ```text
 ItemGroup
@@ -93,11 +93,11 @@ ItemGroup
 
 チェックボックス、入力、ラジオ、または選択などのフォーム入力を表示する必要がある場合は、`Field` を使用します。
 
-If you only need to display content such as a title, description, and actions, use `Item`.
+タイトル、説明、アクションなどのコンテンツのみを表示する場合は、`Item` を使用します。
 
-## バリアント
+## バリエーション
 
-項目の視覚スタイルを変更するには、`variant` プロパティを使用します。
+項目の視覚スタイルを変更するには、`variant` プロップを使用します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -155,7 +155,7 @@ If you only need to display content such as a title, description, and actions, u
 
 ## リンク
 
-`render` プロパティを使用して項目をリンクとしてレンダリングします。ホバー状態とフォーカス状態はアンカー要素に適用されます。
+`render` プロップを使用して項目をリンクとしてレンダリングします。ホバー状態とフォーカス状態はアンカー要素に適用されます。
 
 <ComponentPreview styleName="base-nova" name="item-link" />
 
@@ -183,11 +183,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### 項目
+### アイテム
 
 メディア、タイトル、説明、およびアクションを含むコンテンツを表示するための主要コンポーネント。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | --------- | ----------------------------------- | ----------- |
 | `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
 | `size` | `"default" \| "sm" \| "xs"` | `"default"` |
@@ -220,7 +220,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `ItemMedia` を使用して、アイコン、画像、アバターなどのメディア コンテンツを表示します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | --------- | -------------------------------- | ----------- |
 | `variant` | `"default" \| "icon" \| "image"` | `"default"` |
 
@@ -257,13 +257,13 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### 項目説明
 
-項目の説明が表示されます。
+項目の説明を表示します。
 
 ```tsx
 <ItemDescription>Item description</ItemDescription>
 ```
 
-### ItemsActions
+### ItemActions
 
 アクション ボタンまたはその他のインタラクティブ要素のコンテナー。
 
@@ -273,9 +273,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </ItemActions>
 ```
 
-### ItemsHeader
+### ItemHeader
 
-項目コンテンツの上にヘッダーを表示します。 DOM 内の
+項目コンテンツの上にヘッダーを表示します。
 
 ```tsx
 <Item>

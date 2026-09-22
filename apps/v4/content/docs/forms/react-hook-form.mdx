@@ -14,8 +14,8 @@ import { InfoIcon } from "lucide-react"
 次のフォームを構築します。単純なテキスト入力とテキストエリアがあります。送信時にフォーム データを検証し、エラーがあれば表示します。
 
 <Callout icon={<InfoIcon />}>
-  **注:** このデモのために、ブラウザ 検証を有効にして、React Hook Form
-  でスキーマ検証とフォーム エラーがどのように機能するかを示します。
+  **注:** このデモでは、React Hook Form でスキーマ検証とフォーム
+  エラーがどのように機能するかを示すため、ブラウザー検証を意図的に無効にしています。
   本番コードでは、基本的なブラウザー検証も追加することをおすすめします。
 </Callout>
 
@@ -62,7 +62,7 @@ React Hook Form の `<Controller />` コンポーネントと `<Field />` コン
 />
 ```
 
-## フォーム
+## 使い方
 
 ### フォーム スキーマを作成する
 
@@ -143,7 +143,7 @@ export function BugReportForm() {
 
 ### 完了
 
-以上です。これで、クライアント側の検証を備えた完全にアクセス可能なフォームが完成しました。
+以上です。これで、クライアント側の検証を備えた完全にアクセシブルなフォームが完成しました。
 
 フォームを送信すると、検証されたフォーム データを使用して `onSubmit` 関数が呼び出されます。フォームデータが無効な場合、React Hook Form は各フィールドの横にエラーを表示します。
 
@@ -223,7 +223,7 @@ const form = useForm<z.infer<typeof formSchema>>({
 
 ### 入力
 
-- を意図的に無効にしています。入力フィールドの場合は、`field` オブジェクトを `<Input />` コンポーネントに展開します。
+- 入力フィールドの場合は、`field` オブジェクトを `<Input />` コンポーネントに展開します。
 - エラーを表示するには、`aria-invalid` プロパティを `<Input />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
@@ -249,7 +249,7 @@ const form = useForm<z.infer<typeof formSchema>>({
 />
 ```
 
-### Textarea
+### テキストエリア
 
 - テキストエリア フィールドの場合は、`field` オブジェクトを `<Textarea />` コンポーネントに展開します。
 - エラーを表示するには、`aria-invalid` プロパティを `<Textarea />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
@@ -395,7 +395,7 @@ const form = useForm<z.infer<typeof formSchema>>({
 
 ### ラジオ グループ
 
-- 無線グループの場合は、`<RadioGroup />` コンポーネントで `field.value` および `field.onChange` を使用します。
+- ラジオ グループの場合は、`<RadioGroup />` コンポーネントで `field.value` および `field.onChange` を使用します。
 - エラーを表示するには、`aria-invalid` プロパティを `<RadioGroupItem />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview

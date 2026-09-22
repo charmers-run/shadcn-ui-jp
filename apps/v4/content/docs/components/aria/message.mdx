@@ -11,9 +11,9 @@ component: true
   previewClassName="h-auto theme-blue"
 />
 
-The `Message` component lays out a single message in a conversation. It handles the avatar, alignment, header, and footer around the message surface.
+`Message` コンポーネントは、会話内の 1 つのメッセージをレイアウトします。メッセージ表示部分の周囲にあるアバター、配置、ヘッダー、フッターを扱います。
 
-For AI apps, you can render reasoning steps, tool calls and assistant messages using the `Message` component.
+AI アプリケーションでは、`Message` コンポーネントを使って推論ステップ、ツール呼び出し、アシスタントメッセージをレンダリングできます。
 
 ## インストール
 
@@ -75,14 +75,14 @@ import { Message, MessageAvatar, MessageContent } from "@/components/ui/message"
 </Message>
 ```
 
-**Note:** `Message` owns the row layout—avatar, alignment, header, and footer.
-Render the visible message surface inside it with
-[`Bubble`](/docs/components/aria/bubble). For the scroll container around a
-conversation, use [`MessageScroller`](/docs/components/aria/message-scroller).
+**注意:** `Message` は行のレイアウト（アバター、配置、ヘッダー、フッター）を管理します。
+実際に表示されるメッセージ本体は、内部に配置した
+[`Bubble`](/docs/components/aria/bubble) でレンダリングしてください。会話全体を囲むスクロールコンテナには
+[`MessageScroller`](/docs/components/aria/message-scroller) を使用します。
 
 ## 構成
 
-Use the following composition to build a message:
+メッセージを作成するには、次の構成を使用します。
 
 ```text
 Message
@@ -93,7 +93,7 @@ Message
     └── MessageFooter
 ```
 
-Use `MessageGroup` to stack consecutive messages from the same sender:
+同じ送信者からの連続メッセージをスタックするには、`MessageGroup` を使用します。
 
 ```text
 MessageGroup
@@ -103,12 +103,12 @@ MessageGroup
 
 ## 機能
 
-- Start and end alignment for sender and receiver rows via the `align` prop
-- Avatar slot that anchors to the bottom of the message and stays clear of the footer
-- Header and footer slots for sender names, status, and message actions
-- Footer follows the message side; actions stay aligned on `align="end"` rows
-- Group wrapper for stacking consecutive messages from the same sender
-- Customizable styling through the `className` prop on every part
+- `align` プロップによる、送信者側・受信者側の行の先頭/末尾揃え
+- メッセージの下端に固定され、フッターと重ならないアバタースロット
+- 送信者名やステータス、メッセージアクション用のヘッダー・フッタースロット
+- フッターはメッセージ側に追従し、`align="end"` の行でもアクションの位置が揃います
+- 同じ送信者からの連続メッセージをまとめて表示するグループラッパー
+- すべてのパーツに用意された `className` プロップによるカスタマイズ可能なスタイル
 
 ## Avatar
 
@@ -122,12 +122,12 @@ Use `MessageAvatar` to render an avatar next to the message. Set `align="end"` o
 
 | align   | Description                                         |
 | ------- | --------------------------------------------------- |
-| `start` | Align the message to the start of the conversation. |
-| `end`   | Align the message to the end of the conversation.   |
+| `start` | メッセージを会話の先頭に揃えます。 |
+| `end`   | メッセージを会話の末尾に揃えます。 |
 
 ## グループ
 
-Use `MessageGroup` to stack consecutive messages from the same sender. Render an empty `MessageAvatar` on the earlier messages to keep them aligned with the avatar on the last one.
+`MessageGroup` を使用して、同じ送信者からの連続したメッセージをスタックします。前のメッセージに空の `MessageAvatar` をレンダリングして、最後のメッセージのアバターと位置を合わせます。
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -147,7 +147,7 @@ Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a
 
 ## アクション
 
-Place message-level actions in `MessageFooter`, such as copy, retry, or feedback buttons.
+コピー、再試行、フィードバックボタンなど、メッセージレベルのアクションは `MessageFooter` に配置します。
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -165,11 +165,11 @@ Place message-level actions in `MessageFooter`, such as copy, retry, or feedback
 
 ## アクセシビリティ
 
-`Message` is a presentational layout wrapper. Accessibility comes from the content you place inside it.
+`Message` はレイアウトのための装飾的なラッパーです。アクセシビリティは、その内部に配置するコンテンツによって決まります。
 
-### Label icon-only actions
+### アイコンのみのアクションにラベルを付ける
 
-Action buttons in `MessageFooter` are usually icon-only, so give each one an `aria-label`.
+`MessageFooter` 内のアクションボタンは通常アイコンのみなので、それぞれに `aria-label` を付けてください。
 
 ```tsx showLineNumbers
 <MessageFooter>
@@ -179,9 +179,9 @@ Action buttons in `MessageFooter` are usually icon-only, so give each one an `ar
 </MessageFooter>
 ```
 
-### Status updates
+### ステータス更新
 
-For in-progress messages, use a [`Marker`](/docs/components/aria/marker) with `role="status"` so assistive tech announces the update as it appears.
+処理中のメッセージには、`role="status"` を指定した [`Marker`](/docs/components/aria/marker) を使用し、更新が表示された際に支援技術が読み上げるようにします。
 
 ```tsx showLineNumbers
 <Message>
@@ -194,11 +194,11 @@ For in-progress messages, use a [`Marker`](/docs/components/aria/marker) with `r
 </Message>
 ```
 
-## APIリファレンス
+## API リファレンス
 
 ### Message
 
-The message row wrapper.
+メッセージ行ラッパー。
 
 | Prop        | Type               | Default   | Description                                       |
 | ----------- | ------------------ | --------- | ------------------------------------------------- |
@@ -207,7 +207,7 @@ The message row wrapper.
 
 ### MessageGroup
 
-Groups consecutive messages from the same sender.
+同じ送信者からの連続したメッセージをグループ化します。
 
 | Prop        | Type     | Default | Description                                    |
 | ----------- | -------- | ------- | ---------------------------------------------- |
@@ -215,7 +215,7 @@ Groups consecutive messages from the same sender.
 
 ### MessageAvatar
 
-The avatar slot, aligned to the bottom of the message. When the message has a `MessageFooter`, the avatar shifts up to stay aligned with the message surface instead of the footer.
+アバタースロット。メッセージの下部に配置されます。メッセージに `MessageFooter` が含まれている場合、アバターは上に移動して、フッターではなくメッセージの表面に合わせて配置されます。
 
 | Prop        | Type     | Default | Description                                     |
 | ----------- | -------- | ------- | ----------------------------------------------- |
@@ -231,7 +231,7 @@ Wraps the header, message surface, and footer.
 
 ### MessageHeader
 
-Displays content above the message, such as a sender name. Stays aligned to the start regardless of `align`.
+メッセージの上に送信者名などのコンテンツを表示します。`align` に関係なく、先頭に揃えられます。
 
 | Prop        | Type     | Default | Description                                |
 | ----------- | -------- | ------- | ------------------------------------------ |

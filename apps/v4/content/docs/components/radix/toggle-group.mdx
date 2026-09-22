@@ -1,6 +1,6 @@
 ---
 title: トグルグループ
-description: オンとオフを切り替えられる2状態ボタンのセット。
+description: オンまたはオフを切り替えられる 2 状態ボタンのセット。
 base: radix
 component: true
 links:
@@ -68,7 +68,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 ## 構成
 
-Use the following composition to build a `ToggleGroup`:
+`ToggleGroup` を構築するには、次の構成を使用します。
 
 ```text
 ToggleGroup
@@ -78,25 +78,25 @@ ToggleGroup
 
 ## アウトライン
 
-Use `variant="outline"` for an outline style.
+アウトライン スタイルには `variant="outline"` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-outline" />
 
 ## サイズ
 
-Use the `size` prop to change the size of the toggle group.
+トグル グループのサイズを変更するには、`size` プロパティを使用します。
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-sizes" />
 
-## Spacing
+## 間隔
 
-Use `spacing` to add spacing between toggle group items.
+`spacing` を使用して、トグル グループ項目間にスペースを追加します。
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-spacing" />
 
 ## 垂直
 
-Use `orientation="vertical"` for vertical toggle groups.
+垂直トグル グループには `orientation="vertical"` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-vertical" />
 
@@ -104,9 +104,9 @@ Use `orientation="vertical"` for vertical toggle groups.
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-disabled" />
 
-## Custom
+## カスタム
 
-A custom toggle group example.
+カスタム トグル グループの例。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -124,12 +124,12 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
   direction="rtl"
 />
 
-## APIリファレンス
+## API リファレンス
 
-See the [Radix Toggle Group](https://www.radix-ui.com/docs/primitives/components/toggle-group#api-reference) documentation.
+[Radix Toggle Group](https://www.radix-ui.com/docs/primitives/components/toggle-group#api-reference) ドキュメントを参照してください。
 
-## 変更履歴
+## 変更ログ
 
-### 2026-05-17 Default Spacing
+### 2026-05-17 デフォルトの間隔
 
-Changed the default `spacing` from `0` to `2` so toggle groups render with space between items by default. Use `spacing={0}` for connected items.
+デフォルトの `spacing` を `0` から `2` に変更し、デフォルトで項目間にスペースを入れてトグル グループが表示されるようにしました。接続された項目には `spacing={0}` を使用します。

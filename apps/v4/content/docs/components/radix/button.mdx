@@ -1,6 +1,6 @@
 ---
 title: ボタン
-description: ボタン、またはボタンのように見えるコンポーネントを表示します。
+description: ボタンまたはボタンに似たコンポーネントを表示します。
 featured: true
 base: radix
 component: true
@@ -62,11 +62,11 @@ import { Button } from "@/components/ui/button"
 
 ## カーソル
 
-Tailwind v4 [switched](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor) from `cursor: pointer` to `cursor: default` for the button component.
+Tailwind v4 では、ボタン コンポーネントの `cursor: pointer` が `cursor: default` に[切り替わりました](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor)。
 
-If you want to keep the `cursor: pointer` behavior, add the following code to your CSS file:
+`cursor: pointer` の動作を維持したい場合は、CSS ファイルに次のコードを追加します。
 
-You can also enable this during project setup with `npx shadcn@latest init --pointer`.
+プロジェクトのセットアップ中に `npx shadcn@latest init --pointer` を使用してこれを有効にすることもできます。
 
 ```css showLineNumbers title="globals.css"
 @layer base {
@@ -79,7 +79,7 @@ You can also enable this during project setup with `npx shadcn@latest init --poi
 
 ## サイズ
 
-Use the `size` prop to change the size of the button.
+ボタンのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview styleName="radix-nova" name="button-size" />
 
@@ -113,45 +113,45 @@ Use the `size` prop to change the size of the button.
 
 ## アイコン付き
 
-Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the icon for the correct spacing.
+正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をアイコンに追加してください。
 
 <ComponentPreview styleName="radix-nova" name="button-with-icon" />
 
-## 丸め
+## 丸み
 
-Use the `rounded-full` class to make the button rounded.
+`rounded-full` クラスを使用してボタンを丸くします。
 
 <ComponentPreview styleName="radix-nova" name="button-rounded" />
 
 ## スピナー
 
-Render a `<Spinner />` component inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.
+ボタン内に `<Spinner />` コンポーネントをレンダリングして、読み込み状態を表示します。正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をスピナーに追加してください。
 
 <ComponentPreview styleName="radix-nova" name="button-spinner" />
 
 ## ボタングループ
 
-To create a button group, use the `ButtonGroup` component. See the [Button Group](/docs/components/radix/button-group) documentation for more details.
+ボタン グループを作成するには、`ButtonGroup` コンポーネントを使用します。詳細については、[ボタン グループ](/docs/components/radix/button-group) のドキュメントを参照してください。
 
 <ComponentPreview styleName="radix-nova" name="button-group-demo" />
 
-## As Child
+## 子要素として
 
-You can use the `asChild` prop on `<Button />` to make another component look like a button. Here's an example of a link that looks like a button.
+`<Button />` の `asChild` プロップを使用すると、別のコンポーネントをボタンのように見せることができます。以下は、ボタンのように見えるリンクの例です。
 
 <ComponentPreview styleName="radix-nova" name="button-aschild" />
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="button-rtl" direction="rtl" />
 
-## APIリファレンス
+## API リファレンス
 
 ### ボタン
 
-The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
+`Button` コンポーネントは、さまざまなスタイルと機能を追加する `button` 要素のラッパーです。
 
 |小道具 |タイプ |デフォルト |
 | --------- | ------------------------------------------------------------------------------------ | ----------- |

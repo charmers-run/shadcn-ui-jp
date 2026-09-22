@@ -15,17 +15,15 @@ import { ExternalLinkIcon } from "lucide-react"
     className="w-full"
   />
   <figcaption className="text-center text-sm text-gray-500">
-    A sidebar that collapses to icons.
+    アイコン表示に折りたたまれるサイドバー。
   </figcaption>
 </figure>
 
-Sidebars are one of the most complex components to build. They are central
-to any application and often contain a lot of moving parts.
+サイドバーは、構築が最も複雑なコンポーネントの一つです。あらゆるアプリケーションの中核を担い、多くの可動部分を含むことがよくあります。
 
-We now have a solid foundation to build on top of. Composable. Themeable.
-Customizable.
+今では、それを支える確かな基盤が整いました。組み合わせ可能で、テーマ設定にも対応し、自由にカスタマイズできます。
 
-[Browse the Blocks Library](/blocks).
+[ブロックライブラリを見る](/blocks)。
 
 ## インストール
 
@@ -99,7 +97,7 @@ export function AppSidebar() {
 
 ## 構成
 
-Use the following composition to build a `Sidebar` layout:
+以下の構成で `Sidebar` レイアウトを作成します。
 
 ```text
 SidebarProvider
@@ -130,18 +128,18 @@ SidebarProvider
 └── SidebarTrigger
 ```
 
-## Structure
+## 構造
 
-- **SidebarProvider** — Handles collapsible state and provides sidebar context to child components.
-- **Sidebar** — The main collapsible sidebar panel.
-- **SidebarHeader** — Sticky at the top; use for branding, titles, or workspace switchers.
-- **SidebarFooter** — Sticky at the bottom; use for user menus, settings, or actions.
-- **SidebarContent** — Scrollable region between the header and footer.
-- **SidebarGroup** — Groups related navigation with optional label, action, and content areas.
-- **SidebarMenu** / **SidebarMenuItem** — Menu structure for links, badges, actions, and nested submenus.
-- **SidebarRail** — Resize handle for adjusting sidebar width when applicable.
-- **SidebarInset** — Wraps main content when using the `inset` variant.
-- **SidebarTrigger** — Control that toggles the sidebar open or collapsed.
+- **SidebarProvider** — 開閉状態を管理し、子コンポーネントにサイドバーのコンテキストを提供します。
+- **Sidebar** — 折りたたみ可能なメインのサイドバーパネルです。
+- **SidebarHeader** — 上部に固定表示され、ブランディングやタイトル、ワークスペース切り替えなどに使用します。
+- **SidebarFooter** — 下部に固定表示され、ユーザーメニューや設定、アクションなどに使用します。
+- **SidebarContent** — ヘッダーとフッターの間にあるスクロール可能な領域です。
+- **SidebarGroup** — ラベル、アクション、コンテンツ領域を任意で持つ、関連するナビゲーションをグループ化します。
+- **SidebarMenu** / **SidebarMenuItem** — リンク、バッジ、アクション、ネストされたサブメニューのためのメニュー構造です。
+- **SidebarRail** — 該当する場合にサイドバーの幅を調整するためのリサイズハンドルです。
+- **SidebarInset** — `inset` バリアントを使用する場合にメインコンテンツをラップします。
+- **SidebarTrigger** — サイドバーの開閉を切り替えるコントロールです。
 
 <Image
   src="/images/sidebar-structure.png"
@@ -160,26 +158,26 @@ SidebarProvider
 
 ## SidebarProvider
 
-The `SidebarProvider` component is used to provide the sidebar context to the `Sidebar` component. You should always wrap your application in a `SidebarProvider` component.
+`SidebarProvider` コンポーネントは、`Sidebar` コンポーネントにサイドバーのコンテキストを提供するために使用します。アプリケーション全体を必ず `SidebarProvider` コンポーネントでラップしてください。
 
 ### プロパティ
 
 | Name           | Type                      | Description                                  |
 | -------------- | ------------------------- | -------------------------------------------- |
-| `defaultOpen`  | `boolean`                 | Default open state of the sidebar.           |
-| `open`         | `boolean`                 | Open state of the sidebar (controlled).      |
-| `onOpenChange` | `(open: boolean) => void` | Sets open state of the sidebar (controlled). |
+| `defaultOpen`  | `boolean`                 | サイドバーのデフォルトの開閉状態です。           |
+| `open`         | `boolean`                 | サイドバーの開閉状態です（制御時）。      |
+| `onOpenChange` | `(open: boolean) => void` | サイドバーの開閉状態を設定します（制御時）。 |
 
-### Width
+### 幅
 
-If you have a single sidebar in your application, you can use the `SIDEBAR_WIDTH` and `SIDEBAR_WIDTH_MOBILE` variables in `sidebar.tsx` to set the width of the sidebar.
+アプリケーション内にサイドバーが 1 つしかない場合は、`sidebar.tsx` の `SIDEBAR_WIDTH` と `SIDEBAR_WIDTH_MOBILE` 変数を使用してサイドバーの幅を設定できます。
 
 ```tsx showLineNumbers title="components/ui/sidebar.tsx"
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 ```
 
-For multiple sidebars in your application, you can use the `--sidebar-width` and `--sidebar-width-mobile` CSS variables in the `style` prop.
+アプリケーション内に複数のサイドバーがある場合は、`style` プロップで `--sidebar-width` と `--sidebar-width-mobile` の CSS 変数を使用できます。
 
 ```tsx showLineNumbers
 <SidebarProvider
@@ -194,9 +192,9 @@ For multiple sidebars in your application, you can use the `--sidebar-width` and
 </SidebarProvider>
 ```
 
-### Keyboard Shortcut
+### キーボードショートカット
 
-To trigger the sidebar, you use the `cmd+b` keyboard shortcut on Mac and `ctrl+b` on Windows.
+サイドバーを開閉するには、Mac では `cmd+b`、Windows では `ctrl+b` のキーボードショートカットを使用します。
 
 ```tsx showLineNumbers title="components/ui/sidebar.tsx"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
@@ -204,25 +202,25 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 ## Sidebar
 
-The main `Sidebar` component used to render a collapsible sidebar.
+`Sidebar` は、折りたたみ可能なサイドバーをレンダリングするためのメインコンポーネントです。
 
 ### プロパティ
 
 | Property      | Type                              | Description                       |
 | ------------- | --------------------------------- | --------------------------------- |
-| `side`        | `left` or `right`                 | The side of the sidebar.          |
-| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.       |
-| `collapsible` | `offcanvas`, `icon`, or `none`    | Collapsible state of the sidebar. |
+| `side`        | `left` or `right`                 | サイドバーの表示位置です。          |
+| `variant`     | `sidebar`, `floating`, or `inset` | サイドバーのバリアントです。       |
+| `collapsible` | `offcanvas`, `icon`, or `none`    | サイドバーの折りたたみ状態です。 |
 
 | Prop        | Description                                                  |
 | ----------- | ------------------------------------------------------------ |
-| `offcanvas` | A collapsible sidebar that slides in from the left or right. |
-| `icon`      | A sidebar that collapses to icons.                           |
-| `none`      | A non-collapsible sidebar.                                   |
+| `offcanvas` | 左右からスライドして表示される、折りたたみ可能なサイドバーです。 |
+| `icon`      | アイコン表示に折りたたまれるサイドバーです。                           |
+| `none`      | 折りたたみができないサイドバーです。                                   |
 
 <Callout>
-  **Note:** If you use the `inset` variant, remember to wrap your main content
-  in a `SidebarInset` component.
+  **注:** `inset` バリアントを使用する場合は、メインコンテンツを必ず
+  `SidebarInset` コンポーネントでラップしてください。
 </Callout>
 
 ```tsx showLineNumbers
@@ -236,7 +234,7 @@ The main `Sidebar` component used to render a collapsible sidebar.
 
 ## useSidebar
 
-The `useSidebar` hook is used to control the sidebar.
+`useSidebar` フックは、サイドバーを制御するために使用します。
 
 ```tsx showLineNumbers
 import { useSidebar } from "@/components/ui/sidebar"
@@ -256,17 +254,17 @@ export function AppSidebar() {
 
 | Property        | Type                      | Description                                   |
 | --------------- | ------------------------- | --------------------------------------------- |
-| `state`         | `expanded` or `collapsed` | The current state of the sidebar.             |
-| `open`          | `boolean`                 | Whether the sidebar is open.                  |
-| `setOpen`       | `(open: boolean) => void` | Sets the open state of the sidebar.           |
-| `openMobile`    | `boolean`                 | Whether the sidebar is open on mobile.        |
-| `setOpenMobile` | `(open: boolean) => void` | Sets the open state of the sidebar on mobile. |
-| `isMobile`      | `boolean`                 | Whether the sidebar is on mobile.             |
-| `toggleSidebar` | `() => void`              | Toggles the sidebar. Desktop and mobile.      |
+| `state`         | `expanded` or `collapsed` | サイドバーの現在の状態です。             |
+| `open`          | `boolean`                 | サイドバーが開いているかどうかです。                  |
+| `setOpen`       | `(open: boolean) => void` | サイドバーの開閉状態を設定します。           |
+| `openMobile`    | `boolean`                 | モバイルでサイドバーが開いているかどうかです。        |
+| `setOpenMobile` | `(open: boolean) => void` | モバイルでのサイドバーの開閉状態を設定します。 |
+| `isMobile`      | `boolean`                 | サイドバーがモバイル表示かどうかです。             |
+| `toggleSidebar` | `() => void`              | サイドバーの開閉を切り替えます。デスクトップ・モバイル両対応です。      |
 
 ## SidebarHeader
 
-Use the `SidebarHeader` component to add a sticky header to the sidebar.
+`SidebarHeader` コンポーネントを使用して、サイドバーに固定ヘッダーを追加します。
 
 ```tsx showLineNumbers title="components/app-sidebar.tsx"
 <Sidebar>
@@ -294,7 +292,7 @@ Use the `SidebarHeader` component to add a sticky header to the sidebar.
 
 ## SidebarFooter
 
-Use the `SidebarFooter` component to add a sticky footer to the sidebar.
+`SidebarFooter` コンポーネントを使用して、サイドバーに固定フッターを追加します。
 
 ```tsx showLineNumbers
 <Sidebar>
@@ -312,7 +310,7 @@ Use the `SidebarFooter` component to add a sticky footer to the sidebar.
 
 ## SidebarContent
 
-The `SidebarContent` component is used to wrap the content of the sidebar. This is where you add your `SidebarGroup` components. It is scrollable.
+`SidebarContent` コンポーネントは、サイドバーのコンテンツをラップするために使用します。ここに `SidebarGroup` コンポーネントを追加します。スクロール可能です。
 
 ```tsx showLineNumbers
 <Sidebar>
@@ -325,9 +323,9 @@ The `SidebarContent` component is used to wrap the content of the sidebar. This 
 
 ## SidebarGroup
 
-Use the `SidebarGroup` component to create a section within the sidebar.
+`SidebarGroup` コンポーネントを使用して、サイドバー内にセクションを作成します。
 
-A `SidebarGroup` has a `SidebarGroupLabel`, a `SidebarGroupContent` and an optional `SidebarGroupAction`.
+`SidebarGroup` は、`SidebarGroupLabel`、`SidebarGroupContent`、そして任意で `SidebarGroupAction` を持ちます。
 
 ```tsx showLineNumbers
 <SidebarGroup>
@@ -339,7 +337,7 @@ A `SidebarGroup` has a `SidebarGroupLabel`, a `SidebarGroupContent` and an optio
 </SidebarGroup>
 ```
 
-To make a `SidebarGroup` collapsible, wrap it in a `Collapsible`.
+`SidebarGroup` を折りたたみ可能にするには、`Collapsible` でラップします。
 
 ```tsx showLineNumbers
 <Collapsible defaultOpen className="group/collapsible">
@@ -359,7 +357,7 @@ To make a `SidebarGroup` collapsible, wrap it in a `Collapsible`.
 
 ## SidebarMenu
 
-The `SidebarMenu` component is used for building a menu within a `SidebarGroup`.
+`SidebarMenu` コンポーネントは、`SidebarGroup` 内にメニューを構築するために使用します。
 
 <Image
   src="/images/sidebar-menu.png"
@@ -393,11 +391,11 @@ The `SidebarMenu` component is used for building a menu within a `SidebarGroup`.
 
 ## SidebarMenuButton
 
-The `SidebarMenuButton` component is used to render a menu button within a `SidebarMenuItem`.
+`SidebarMenuButton` コンポーネントは、`SidebarMenuItem` 内にメニューボタンをレンダリングするために使用します。
 
-By default, the `SidebarMenuButton` renders a button but you can use the `asChild` prop to render a different component such as a `Link` or an `a` tag.
+デフォルトでは、`SidebarMenuButton` はボタンをレンダリングしますが、`asChild` プロップを使用すると `Link` や `a` タグなど別のコンポーネントをレンダリングできます。
 
-Use the `isActive` prop to mark a menu item as active.
+`isActive` プロップを使用して、メニュー項目をアクティブとしてマークします。
 
 ```tsx showLineNumbers
 <SidebarMenuButton asChild isActive>
@@ -407,7 +405,7 @@ Use the `isActive` prop to mark a menu item as active.
 
 ## SidebarMenuAction
 
-The `SidebarMenuAction` component is used to render a menu action within a `SidebarMenuItem`.
+`SidebarMenuAction` コンポーネントは、`SidebarMenuItem` 内にメニューアクションをレンダリングするために使用します。
 
 ```tsx showLineNumbers
 <SidebarMenuItem>
@@ -425,7 +423,7 @@ The `SidebarMenuAction` component is used to render a menu action within a `Side
 
 ## SidebarMenuSub
 
-The `SidebarMenuSub` component is used to render a submenu within a `SidebarMenu`.
+`SidebarMenuSub` コンポーネントは、`SidebarMenu` 内にサブメニューをレンダリングするために使用します。
 
 ```tsx showLineNumbers
 <SidebarMenuItem>
@@ -440,7 +438,7 @@ The `SidebarMenuSub` component is used to render a submenu within a `SidebarMenu
 
 ## SidebarMenuBadge
 
-The `SidebarMenuBadge` component is used to render a badge within a `SidebarMenuItem`.
+`SidebarMenuBadge` コンポーネントは、`SidebarMenuItem` 内にバッジをレンダリングするために使用します。
 
 ```tsx showLineNumbers
 <SidebarMenuItem>
@@ -451,7 +449,7 @@ The `SidebarMenuBadge` component is used to render a badge within a `SidebarMenu
 
 ## SidebarMenuSkeleton
 
-The `SidebarMenuSkeleton` component is used to render a skeleton for a `SidebarMenu`.
+`SidebarMenuSkeleton` コンポーネントは、`SidebarMenu` 用のスケルトンをレンダリングするために使用します。
 
 ```tsx showLineNumbers
 <SidebarMenu>
@@ -465,7 +463,7 @@ The `SidebarMenuSkeleton` component is used to render a skeleton for a `SidebarM
 
 ## SidebarTrigger
 
-Use the `SidebarTrigger` component to render a button that toggles the sidebar.
+`SidebarTrigger` コンポーネントを使用して、サイドバーの開閉を切り替えるボタンをレンダリングします。
 
 ```tsx showLineNumbers
 import { useSidebar } from "@/components/ui/sidebar"
@@ -479,7 +477,7 @@ export function CustomTrigger() {
 
 ## SidebarRail
 
-The `SidebarRail` component is used to render a rail within a `Sidebar`. This rail can be used to toggle the sidebar.
+`SidebarRail` コンポーネントは、`Sidebar` 内にレールをレンダリングするために使用します。このレールはサイドバーの開閉に使用できます。
 
 ```tsx showLineNumbers
 <Sidebar>
@@ -492,9 +490,9 @@ The `SidebarRail` component is used to render a rail within a `Sidebar`. This ra
 </Sidebar>
 ```
 
-## Controlled Sidebar
+## 制御されたサイドバー
 
-Use the `open` and `onOpenChange` props to control the sidebar.
+`open` と `onOpenChange` プロップを使用して、サイドバーを制御します。
 
 ```tsx showLineNumbers
 export function AppSidebar() {
@@ -508,9 +506,9 @@ export function AppSidebar() {
 }
 ```
 
-## Theming
+## テーマ
 
-We use the following CSS variables to theme the sidebar.
+サイドバーのテーマ設定には、以下の CSS 変数を使用します。
 
 ```css
 @layer base {
@@ -540,7 +538,7 @@ We use the following CSS variables to theme the sidebar.
 
 ## スタイリング
 
-Here are some tips for styling the sidebar based on different states.
+状態に応じてサイドバーをスタイリングするためのヒントをいくつか紹介します。
 
 ```tsx
 <Sidebar collapsible="icon">
@@ -568,15 +566,15 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## 変更履歴
 
-### RTL Support
+### RTL サポート
 
-If you're upgrading from a previous version of the `Sidebar` component, you'll need to apply the following updates to add RTL support:
+以前のバージョンの `Sidebar` コンポーネントからアップグレードする場合は、RTL サポートを追加するために以下の変更を適用する必要があります。
 
 <Steps>
 
-<Step>Add `dir` prop to Sidebar component.</Step>
+<Step>`Sidebar` コンポーネントに `dir` プロップを追加します。</Step>
 
-Add `dir` to the destructured props and pass it to `SheetContent` for mobile:
+分割代入したプロップに `dir` を追加し、モバイル用の `SheetContent` に渡します。
 
 ```diff
   function Sidebar({
@@ -594,7 +592,7 @@ Add `dir` to the destructured props and pass it to `SheetContent` for mobile:
   }) {
 ```
 
-Then pass it to `SheetContent` in the mobile view:
+続いて、モバイルビューの `SheetContent` に渡します。
 
 ```diff
   <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
@@ -605,9 +603,9 @@ Then pass it to `SheetContent` in the mobile view:
       data-mobile="true"
 ```
 
-<Step>Add `data-side` attribute to sidebar container.</Step>
+<Step>サイドバーコンテナに `data-side` 属性を追加します。</Step>
 
-Add `data-side={side}` to the sidebar container element:
+サイドバーコンテナ要素に `data-side={side}` を追加します。
 
 ```diff
   <div
@@ -616,9 +614,9 @@ Add `data-side={side}` to the sidebar container element:
     className={cn(
 ```
 
-<Step>Update sidebar container positioning classes.</Step>
+<Step>サイドバーコンテナの配置用クラスを更新します。</Step>
 
-Replace JavaScript ternary conditional classes with CSS data attribute selectors:
+JavaScript の三項演算子による条件付きクラスを、CSS のデータ属性セレクターに置き換えます。
 
 ```diff
   className={cn(
@@ -629,9 +627,9 @@ Replace JavaScript ternary conditional classes with CSS data attribute selectors
 +   "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex data-[side=left]:left-0 data-[side=right]:right-0 data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
 ```
 
-<Step>Update SidebarRail positioning classes.</Step>
+<Step>`SidebarRail` の配置用クラスを更新します。</Step>
 
-Update the `SidebarRail` component to use physical positioning for the rail:
+レールに物理的な配置を使用するよう、`SidebarRail` コンポーネントを更新します。
 
 ```diff
   className={cn(
@@ -639,9 +637,9 @@ Update the `SidebarRail` component to use physical positioning for the rail:
 +   "hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 ltr:-translate-x-1/2 rtl:-translate-x-1/2 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:start-1/2 after:w-[2px] sm:flex",
 ```
 
-<Step>Add RTL flip to SidebarTrigger icon.</Step>
+<Step>`SidebarTrigger` のアイコンに RTL 反転を追加します。</Step>
 
-Add `className="rtl:rotate-180"` to the icon in `SidebarTrigger` to flip it in RTL mode:
+`SidebarTrigger` 内のアイコンに `className="rtl:rotate-180"` を追加し、RTL モードで反転させます。
 
 ```diff
   <Button ...>
@@ -653,7 +651,7 @@ Add `className="rtl:rotate-180"` to the icon in `SidebarTrigger` to flip it in R
 
 </Steps>
 
-After applying these changes, you can use the `dir` prop to set the direction:
+これらの変更を適用すると、`dir` プロップを使用して方向を設定できるようになります。
 
 ```tsx
 <Sidebar dir="rtl" side="right">
@@ -661,4 +659,4 @@ After applying these changes, you can use the `dir` prop to set the direction:
 </Sidebar>
 ```
 
-The sidebar will correctly position itself and handle interactions in both LTR and RTL layouts.
+これにより、サイドバーは LTR と RTL の両方のレイアウトで正しく配置され、操作にも適切に対応します。

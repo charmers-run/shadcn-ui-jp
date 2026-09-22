@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -39,7 +39,7 @@ npx shadcn@latest add input
   styleName="base-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add input
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx
 import { Input } from "@/components/ui/input"
@@ -67,8 +67,7 @@ import { Input } from "@/components/ui/input"
 
 ## フィールド
 
-`Field`、`FieldLabel`、`FieldDescription` を使用して
-ラベルと説明。
+`Field`、`FieldLabel`、および `FieldDescription` を使用して、ラベルと説明を追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -88,7 +87,7 @@ import { Input } from "@/components/ui/input"
 
 ## 無効
 
-`disabled` プロパティを使用して入力を無効にします。無効な状態のスタイルを設定するには、`data-disabled` 属性を `Field` コンポーネントに追加します。
+入力を無効にするには、`disabled` プロパティを使用します。無効な状態のスタイルを設定するには、`data-disabled` 属性を `Field` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -96,7 +95,7 @@ import { Input } from "@/components/ui/input"
   previewClassName="*:max-w-xs"
 />
 
-## 無効
+## 無効な入力
 
 `aria-invalid` プロパティを使用して、入力を無効としてマークします。無効な状態のスタイルを設定するには、`data-invalid` 属性を `Field` コンポーネントに追加します。
 
@@ -108,7 +107,7 @@ import { Input } from "@/components/ui/input"
 
 ## ファイル
 
-`type="file"` プロパティを使用してファイル入力を作成します。
+`type="file"` プロパティを使用して、ファイル入力を作成します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -169,7 +168,7 @@ import { Input } from "@/components/ui/input"
 
 ## ボタン グループ
 
-入力にボタンを追加するには、`ButtonGroup` コンポーネントを使用します。その他の例については、[ボタングループ](/docs/components/button-group) コンポーネントを参照してください。
+入力にボタンを追加するには、`ButtonGroup` コンポーネントを使用します。その他の例については、[ボタン グループ](/docs/components/button-group) コンポーネントを参照してください。
 
 <ComponentPreview
   styleName="base-nova"

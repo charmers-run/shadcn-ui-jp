@@ -20,7 +20,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -66,10 +66,10 @@ import { Checkbox } from "@/components/ui/checkbox"
 <Checkbox />
 ```
 
-## Checked State
+## チェックされた状態
 
-制御されていないチェックボックスには `defaultChecked` を使用するか、`checked` および
-`onCheckedChange` 状態を制御します。
+非制御のチェックボックスには `defaultChecked` を使用し、状態を制御するには `checked` と
+`onCheckedChange` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -83,26 +83,26 @@ export function Example() {
 
 ## 無効な状態
 
-Set `aria-invalid` on the checkbox and `data-invalid` on the field wrapper to
-は、無効なスタイルを表示します。
+チェックボックスに `aria-invalid`、フィールド ラッパーに `data-invalid` を設定すると、
+無効なスタイルが表示されます。
 
 <ComponentPreview styleName="base-nova" name="checkbox-invalid" />
 
 ## 基本
 
-Pair the checkbox with `Field` and `FieldLabel` for proper layout and labeling.
+適切なレイアウトとラベル付けを行うには、チェックボックスを `Field` および `FieldLabel` と組み合わせます。
 
 <ComponentPreview styleName="base-nova" name="checkbox-basic" />
 
-## Description
+## 説明
 
-Use `FieldContent` and `FieldDescription` for helper text.
+ヘルパー テキストには `FieldContent` と `FieldDescription` を使用します。
 
 <ComponentPreview styleName="base-nova" name="checkbox-description" />
 
 ## 無効
 
-を定義します。 `disabled` プロパティを使用して相互作用を防止し、無効なスタイルの `<Field>` コンポーネントに `data-disabled` 属性を追加します。
+`disabled` プロパティを使用して相互作用を防止し、無効なスタイルの `<Field>` コンポーネントに `data-disabled` 属性を追加します。
 
 <ComponentPreview styleName="base-nova" name="checkbox-disabled" />
 

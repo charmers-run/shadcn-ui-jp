@@ -11,7 +11,7 @@ component: true
   previewClassName="h-auto theme-blue"
 />
 
-The `Marker` component displays inline conversation markers such as status updates, system notes, bordered rows, and labeled separators. Compose it with [`Message`](/docs/components/message) in a conversation thread.
+`Marker` コンポーネントは、ステータス更新、システムメモ、境界線付きの行、ラベル付き区切りなどのインライン会話マーカーを表示します。会話スレッド内で [`Message`](/docs/components/message) と組み合わせて使用します。
 
 ## インストール
 
@@ -66,7 +66,7 @@ import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
 
 ## 構成
 
-Use the following composition to build a marker:
+マーカーを作成するには、次の構成を使用します。
 
 ```text
 Marker
@@ -76,11 +76,11 @@ Marker
 
 ## 機能
 
-- Inline marker, bordered row, and labeled separator variants
-- Decorative icon slot that is hidden from assistive tech
-- Polymorphic root via `asChild` for link and button markers
-- Pairs with the [`shimmer`](/docs/utils/shimmer) utility for streaming status text
-- Customizable styling through the `className` prop on every part
+- インラインマーカー、境界線付きの行、ラベル付き区切りのバリエーション
+- 支援技術からは隠される装飾用のアイコンスロット
+- リンクやボタンのマーカー用に、`asChild` によるポリモーフィックなルート要素
+- ストリーミング中のステータステキストに使える [`shimmer`](/docs/utils/shimmer) ユーティリティとの組み合わせ
+- すべてのパーツに用意された `className` プロップによるカスタマイズ可能なスタイリング
 
 ## バリエーション
 
@@ -100,7 +100,7 @@ Use `variant` to switch between an inline marker, bordered row, and labeled sepa
 
 ## ステータス
 
-Set `role="status"` and include a [`Spinner`](/docs/components/spinner) for streaming or in-progress markers so updates are announced.
+ストリーミング中または進行中のマーカーには `role="status"` を設定し、[`Spinner`](/docs/components/spinner) を含めることで更新が読み上げられるようにします。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -110,7 +110,7 @@ Set `role="status"` and include a [`Spinner`](/docs/components/spinner) for stre
 
 ## シマー
 
-Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an animated streaming-text effect. The utility ships with the `shadcn` package — see the shimmer docs for installation.
+アニメーションするストリーミングテキスト効果を得るには、[`shimmer`](/docs/utils/shimmer) ユーティリティクラスを `MarkerContent` に追加します。このユーティリティは `shadcn` パッケージに含まれています。インストール方法については shimmer のドキュメントを参照してください。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -120,7 +120,7 @@ Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an
 
 ## 区切り
 
-Use the `separator` variant for labeled dividers, such as dates or section breaks, in a conversation.
+日付やセクションの区切りなど、ラベル付きの区切りには会話内で `separator` バリアントを使用します。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -130,7 +130,7 @@ Use the `separator` variant for labeled dividers, such as dates or section break
 
 ## 境界線
 
-Use the `border` variant for status rows that should keep the default marker alignment while separating the next row.
+デフォルトマーカーの配置を保ちながら次の行と区切りたいステータス行には、`border` バリアントを使用します。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -140,7 +140,7 @@ Use the `border` variant for status rows that should keep the default marker ali
 
 ## アイコン付き
 
-Use `MarkerIcon` to render an icon alongside the content. Use `flex-col` to stack the icon above the content.
+コンテンツと一緒にアイコンを表示するには `MarkerIcon` を使用します。アイコンをコンテンツの上に積み重ねるには `flex-col` を使用します。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -150,7 +150,7 @@ Use `MarkerIcon` to render an icon alongside the content. Use `flex-col` to stac
 
 ## リンクとボタン
 
-Turn a marker into a link or button with the `asChild` prop on `Marker`.
+`Marker` の `asChild` プロップを使うと、マーカーをリンクやボタンにできます。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -174,11 +174,11 @@ export function MarkerLinkDemo() {
 
 ## アクセシビリティ
 
-`Marker` is presentational by default. The correct semantics depend on how you use it, so choose the role based on intent rather than relying on a single default.
+`Marker` は既定では装飾的な要素です。適切なセマンティクスは使い方によって異なるため、単一の既定値に頼らず、用途に応じて role を選択してください。
 
 ### ステータスと進捗
 
-For streaming or progress markers such as "Thinking..." or a running tool, set `role="status"` so assistive tech announces the update as it appears. `Marker` forwards `role` to the underlying element.
+「Thinking...」や実行中のツールのようなストリーミング中・進行中のマーカーには `role="status"` を設定し、更新が表示された際に支援技術が読み上げるようにします。`Marker` は `role` を内部の要素にそのまま渡します。
 
 ```tsx showLineNumbers
 <Marker role="status">
@@ -191,7 +191,7 @@ For streaming or progress markers such as "Thinking..." or a running tool, set `
 
 ### ラベル付き区切り
 
-A separator that carries text, such as a date or a section label, needs no role. The divider lines are decorative CSS pseudo-elements, and the text is announced as ordinary content.
+日付やセクションラベルなど、テキストを伴う区切りには role は不要です。区切り線は装飾用の CSS 疑似要素であり、テキストは通常のコンテンツとして読み上げられます。
 
 ```tsx showLineNumbers
 <Marker variant="separator">
@@ -200,15 +200,15 @@ A separator that carries text, such as a date or a section label, needs no role.
 ```
 
 <Callout>
-  **Note:** Do not add `role="separator"` to a labeled divider. A separator
-  takes its accessible name from `aria-label`, not from its text, and its
-  contents are treated as presentational, so the visible label would not be
-  announced. Reserve `role="separator"` for a divider with no meaningful text.
+  **注意:** ラベル付きの区切りに `role="separator"` を追加しないでください。
+  separator はテキストではなく `aria-label` からアクセシブルネームを取得し、
+  その内容は装飾として扱われるため、表示されているラベルは読み上げられません。
+  `role="separator"` は、意味のあるテキストを持たない区切りのために取っておいてください。
 </Callout>
 
 ### 境界線付きマーカー
 
-A bordered marker keeps the same semantics as the default marker. The bottom border is decorative, so choose `role="status"`, `asChild`, or no role based on the marker's purpose.
+境界線付きマーカーは、デフォルトマーカーと同じセマンティクスを保ちます。下部の境界線は装飾のためのものなので、マーカーの用途に応じて `role="status"`、`asChild`、または role なしのいずれかを選択してください。
 
 ```tsx showLineNumbers
 <Marker variant="border">
@@ -221,7 +221,7 @@ A bordered marker keeps the same semantics as the default marker. The bottom bor
 
 ### 装飾アイコン
 
-`MarkerIcon` is decorative and hidden from assistive tech with `aria-hidden`, so the adjacent `MarkerContent` carries the meaning. For an icon-only marker, provide an `aria-label` or visible text so it is not announced as empty.
+`MarkerIcon` は装飾用であり、`aria-hidden` によって支援技術から隠されるため、意味は隣接する `MarkerContent` が担います。アイコンのみのマーカーには、空として読み上げられないように `aria-label` か目に見えるテキストを指定してください。
 
 ```tsx showLineNumbers
 <Marker aria-label="Synced">
@@ -233,7 +233,7 @@ A bordered marker keeps the same semantics as the default marker. The bottom bor
 
 ### インタラクティブなマーカー
 
-When a marker links or triggers an action, render it as a real `<button>` or `<a>` with the `asChild` prop so it is focusable and exposes the correct role. The accessible name comes from the marker text.
+マーカーがリンクやアクションのトリガーになる場合は、`asChild` プロップを使って実際の `<button>` や `<a>` としてレンダリングし、フォーカス可能にして正しい role を公開してください。アクセシブルネームはマーカーのテキストから取得されます。
 
 ```tsx showLineNumbers
 <Marker asChild>

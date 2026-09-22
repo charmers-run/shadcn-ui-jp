@@ -1,5 +1,5 @@
 ---
-title: コンポーネント.json
+title: components.json
 description: プロジェクトの構成。
 ---
 
@@ -8,8 +8,8 @@ description: プロジェクトの構成。
 これは、プロジェクトがどのように設定されているか、およびプロジェクト用にカスタマイズされたコンポーネントを生成する方法を理解するために使用されます。
 
 <Callout className="mt-6" title="Note: The `components.json` file is optional">
-**CLI を使用してコンポーネントを追加する場合にのみ必要です**。
-プロジェクト。コピーアンドペーストの方法を使用している場合、このファイルは必要ありません。
+**CLI を使用してプロジェクトにコンポーネントを追加する場合にのみ必要です。**
+コピーアンドペーストの方法を使用している場合、このファイルは必要ありません。
 </Callout>
 
 次のコマンドを実行して、プロジェクト内に `components.json` ファイルを作成できます。
@@ -18,7 +18,7 @@ description: プロジェクトの構成。
 npx shadcn@latest init
 ```
 
-詳細については、「<Link href="/docs/cli">CLI」セクション「</Link>」を参照してください。
+詳細については、<Link href="/docs/cli">CLI セクション</Link>を参照してください。
 
 ## $schema
 
@@ -42,11 +42,11 @@ npx shadcn@latest init
 
 `default` スタイルは非推奨になりました。代わりに、`new-york` スタイルを使用してください。
 
-## 追い風
+## tailwind
 
 CLI がプロジェクト内で Tailwind CSS がどのように設定されているかを理解するのに役立つ構成。
 
-Tailwind CSS のセットアップ方法については、<Link href="/docs/installation"> インストール セクション </Link> を参照してください。
+Tailwind CSS のセットアップ方法については、<Link href="/docs/installation">インストール セクション</Link>を参照してください。
 
 ### tailwind.config
 
@@ -114,7 +114,7 @@ Tailwind CSS ユーティリティ クラスに使用するプレフィックス
 }
 ```
 
-## RSC
+## rsc
 
 React サーバー コンポーネントのサポートを有効にするかどうか。
 
@@ -126,7 +126,7 @@ React サーバー コンポーネントのサポートを有効にするかど�
 }
 ```
 
-## tsx の依存関係を更新することで修正を受け取ることができます。
+## tsx
 
 TypeScript コンポーネントと JavaScript コンポーネントのどちらかを選択します。
 
@@ -138,7 +138,7 @@ TypeScript コンポーネントと JavaScript コンポーネントのどちら
 }
 ```
 
-## エイリアス
+## aliases
 
 CLI はこれらの値を使用して、生成されたコンポーネントを正しい場所に配置し、インポートを再書き込みします。
 
@@ -150,10 +150,9 @@ CLI はこれらの値を使用して、生成されたコンポーネントを�
 CLI を使用する場合は、`components.json` のエイリアスが引き続き必要です。これらは、どのインポート ルートが `components`、`ui`、`lib`、`hooks`、および `utils` にマップされるかを CLI に指示します。
 
 <Callout className="mt-6">
-**重要:** パッケージのインポートを使用している場合は、有効にしてください。
-`resolvePackageJsonImports` と `moduleResolution: "bundler"` を使用してください。
-`tsconfig.json`。 `paths` を使用している場合は、エイリアスに次のものが含まれていることを確認してください。
-該当する場合、`src` ディレクトリ。
+**重要:** パッケージインポートを使用している場合は、`tsconfig.json` で
+`resolvePackageJsonImports` を有効にし、`moduleResolution: "bundler"` を設定してください。
+`paths` を使用している場合は、必要に応じてエイリアスに `src` ディレクトリを含めてください。
 </Callout>
 
 ### `tsconfig` または `jsconfig` パスの使用
@@ -204,28 +203,18 @@ CLI を使用する場合は、`components.json` のエイリアスが引き続�
 }
 ```
 
-`components.json` のエイリアスは、CLI にどこに配置するかを指示します。
-`components`、`ui`、`lib`、`hooks`、および `utils`。 `package.json#imports`
-は、これらの `#...` 指定子のランタイムと TypeScript 解決を提供します。
+`components.json` のエイリアスは、CLI に `components`、`ui`、`lib`、`hooks`、`utils` をどこに配置するかを指示します。`package.json#imports` は、これらの `#...` 指定子に対するランタイムおよび TypeScript の解決を提供します。
 
-一致する `imports` ターゲットは、生成された `#...` インポートを保持するかどうかも制御します
-ファイル拡張子:
+一致する `imports` ターゲットは、生成される `#...` インポートがファイル拡張子を保持するかどうかも制御します:
 
-- `"#components/*": "./src/components/*"` はソース拡張子を保持し、
-次のようなインポートを生成します
-`#components/button.tsx`
-- `"#components/*": "./src/components/*.tsx"` はソース拡張子を削除し、
-次のようなインポートを生成します
-`#components/button`
+- `"#components/*": "./src/components/*"` はソース拡張子を保持し、`#components/button.tsx` のようなインポートを生成します
+- `"#components/*": "./src/components/*.tsx"` はソース拡張子を削除し、`#components/button` のようなインポートを生成します
 
-モノリポジトリについては、<Link href="/docs/monorepo">モノリポジトリのドキュメント</Link>を参照してください。地元
-ワークスペースのエイリアスは `package.json#imports` を使用できますが、ワークスペースは共有されています
-`@workspace/ui/components` などのインポートはターゲットから解決されます
-パッケージの `exports`。
+モノリポジトリについては、<Link href="/docs/monorepo">モノリポジトリのドキュメント</Link>を参照してください。ローカルワークスペースのエイリアスには `package.json#imports` を使用できますが、`@workspace/ui/components` のような共有ワークスペースのインポートは、対象パッケージの `exports` から解決されます。
 
 フレームワーク固有の設定については、[パッケージ インポート ガイド](/docs/package-imports) を参照してください。
 
-### エイリアス.utils
+### aliases.utils
 
 ユーティリティ関数のエイリアスをインポートします。
 
@@ -237,7 +226,7 @@ CLI を使用する場合は、`components.json` のエイリアスが引き続�
 }
 ```
 
-### エイリアス.components
+### aliases.components
 
 コンポーネントのエイリアスをインポートします。
 
@@ -249,7 +238,7 @@ CLI を使用する場合は、`components.json` のエイリアスが引き続�
 }
 ```
 
-### エイリアス.ui
+### aliases.ui
 
 `ui` コンポーネントのエイリアスをインポートします。
 
@@ -263,7 +252,7 @@ CLI は、`aliases.ui` 値を使用して、`ui` コンポーネントを配置�
 }
 ```
 
-### エイリアス.lib
+### aliases.lib
 
 `format-date` や `generate-id` などの `lib` 関数のエイリアスをインポートします。
 
@@ -275,7 +264,7 @@ CLI は、`aliases.ui` 値を使用して、`ui` コンポーネントを配置�
 }
 ```
 
-### エイリアス.フック
+### aliases.hooks
 
 `use-media-query` や `use-toast` など、`hooks` のエイリアスをインポートします。
 
@@ -287,7 +276,7 @@ CLI は、`aliases.ui` 値を使用して、`ui` コンポーネントを配置�
 }
 ```
 
-## レジストリ
+## registries
 
 プロジェクト用に複数のリソース レジストリを構成します。これにより、プライベート レジストリを含むさまざまなソースからコンポーネント、ライブラリ、ユーティリティ、その他のリソースをインストールできるようになります。
 
@@ -373,7 +362,7 @@ npx shadcn@latest add @acme/header @internal/auth-utils
 この構成により、次のことが可能になります。
 
 - shadcn/ui からパブリック コンポーネントをインストールする
-- 認証を使用して民間企業の UI コンポーネントにアクセス
-- チーム固有のリソースをバージョン管理で使用する
+- 認証を使用して自社のプライベートな UI コンポーネントにアクセスする
+- バージョンを指定してチーム固有のリソースを使用する
 
 認証の詳細については、<Link href="/docs/registry/authentication">Authentication</Link> ドキュメントを参照してください。

@@ -1,5 +1,5 @@
 ---
-title: Alert
+title: アラート
 description: ユーザーの注意を促すコールアウトを表示します。
 base: base
 component: true
@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -73,7 +73,7 @@ import {
 
 ## 構成
 
-Use the following composition to build an `Alert`:
+次の構成を使用して、`Alert` を構築します。
 
 ```text
 Alert
@@ -93,9 +93,9 @@ Alert
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## 破壊的な
+## 破壊的
 
-Use `variant="destructive"` to create a destructive alert.
+`variant="destructive"` を使用して、破壊的なアラートを作成します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -115,7 +115,7 @@ Use `variant="destructive"` to create a destructive alert.
 
 ## カスタムカラー
 
-`bg-amber-50 dark:bg-amber-950` などのカスタム クラスを `Alert` コンポーネントに追加することで、アラートの色をカスタマイズできます。
+`bg-amber-50 dark:bg-amber-950` などのカスタムクラスを `Alert` コンポーネントに追加することで、アラートの色をカスタマイズできます。
 
 <ComponentPreview
   styleName="base-nova"
@@ -136,34 +136,34 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### Alert
+### アラート
 
-The `Alert` component displays a callout for user attention.
+`Alert` コンポーネントは、ユーザーの注意を促すコールアウトを表示します。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | --------- | ---------------------------- | ----------- |
 | `variant` | `"default" \| "destructive"` | `"default"` |
 
-### AlertTitle
+### アラートタイトル
 
 `AlertTitle` コンポーネントは、アラートのタイトルを表示します。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### AlertDescription
+### アラートの説明
 
-The `AlertDescription` component displays the description or content of the alert.
+`AlertDescription` コンポーネントは、アラートの説明または内容を表示します。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
-### AlertAction
+### アラートアクション
 
 `AlertAction` コンポーネントは、アラートの右上隅に絶対配置されたアクション要素 (ボタンなど) を表示します。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |

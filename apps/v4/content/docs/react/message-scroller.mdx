@@ -11,7 +11,7 @@ description: 独自のマークアップとスタイルで、@shadcn/react パ�
 マークアップとスタイルを完全に制御したい場合や、レジストリを使わない場合は、パッケージを直接使用してください。
 
 動作ガイドと実際に操作できる例については、
-[Message Scroller](/docs/components/base/message-scroller) component.
+[Message Scroller](/docs/components/base/message-scroller) コンポーネントをご覧ください。
 
 ## インストール
 
@@ -164,7 +164,7 @@ const scrollToEndScript = `(function () {
 
 このスクリプトを `"last-anchor"` と組み合わせないでください。メッセージをクライアントで読み込む場合は省略します。
 
-## APIリファレンス
+## API リファレンス
 
 ### MessageScroller.Provider
 
@@ -192,7 +192,7 @@ const scrollToEndScript = `(function () {
 
 | Data attribute        | Value                                             | Description                                                                                                                                                                                                                                        |
 | --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | ビューポートがスクロールできる方向です。[data-scrollable~="end"]` のように検索できます。存在しない場合は内容が収まっています。                                                                                                                     |
+| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | ビューポートがスクロールできる方向です。`[data-scrollable~="end"]` のように検索できます。存在しない場合は内容が収まっています。                                                                                                                     |
 | `data-autoscrolling`  | present                                           | ビューポートが最新メッセージへプログラムでスクロールしている間に存在します。                                                                                                                                                                       |
 | `data-pending-scroll` | present                                           | `defaultScrollPosition`（`"end"` または `"last-anchor"`）が適用されるまで存在します。空のトランスクリプトでは省略されます。設定中はビューポートを隠してください。[再読み込み時のちらつきを防ぐ](#再読み込み時のちらつきを防ぐ)を参照してください。 |
 
@@ -210,9 +210,9 @@ const scrollToEndScript = `(function () {
 
 | Data attribute        | Value                                             | Description                                                                                                                                                                                                          |
 | --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | Edges the viewport can scroll toward. Query one with `[data-scrollable~="end"]`; absent means it fits.                                                                                                               |
-| `data-autoscrolling`  | present                                           | Present while the viewport is programmatically scrolling to the latest message.                                                                                                                                      |
-| `data-pending-scroll` | present                                           | Present until `defaultScrollPosition` (`"end"` or `"last-anchor"`) is applied, or skipped for an empty transcript. Hide the viewport while it is set. See [Avoiding a Flash on Reload](#avoiding-a-flash-on-reload). |
+| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | ビューポートがスクロールできる方向です。`[data-scrollable~="end"]` のように検索できます。存在しない場合は内容が収まっています。                                                                                                                     |
+| `data-autoscrolling`  | present                                           | ビューポートが最新メッセージへプログラムでスクロールしている間に存在します。                                                                                                                                                                       |
+| `data-pending-scroll` | present                                           | `defaultScrollPosition`（`"end"` または `"last-anchor"`）が適用されるまで存在します。空のトランスクリプトでは省略されます。設定中はビューポートを隠してください。[再読み込み時のちらつきを防ぐ](#再読み込み時のちらつきを防ぐ)を参照してください。 |
 
 ### MessageScroller.Content
 
@@ -238,8 +238,8 @@ const scrollToEndScript = `(function () {
 
 | Data attribute       | Value                 | Description                        |
 | -------------------- | --------------------- | ---------------------------------- |
-| `data-message-id`    | `string`              | Mirrors `messageId` when provided. |
-| `data-scroll-anchor` | `"true"` \| `"false"` | Mirrors `scrollAnchor`.            |
+| `data-message-id`    | `string`              | 指定されている場合、`messageId` を反映します。 |
+| `data-scroll-anchor` | `"true"` \| `"false"` | `scrollAnchor` を反映します。            |
 
 ### MessageScroller.Button
 

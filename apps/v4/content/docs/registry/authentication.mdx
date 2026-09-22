@@ -17,7 +17,7 @@ description: プライベートでパーソナライズされたコンポーネ�
 
 ### トークンベースの認証
 
-最も一般的な方法は、BearerトークンやAPIキーを使用する方法です。
+最も一般的な方法は、Bearer トークンや API キーを使用する方法です。
 
 ```json title="components.json"
 {
@@ -38,9 +38,9 @@ description: プライベートでパーソナライズされたコンポーネ�
 REGISTRY_TOKEN=your_secret_token_here
 ```
 
-### APIキー認証
+### API キー認証
 
-レジストリによっては、ヘッダーでAPIキーを使用します。
+レジストリによっては、ヘッダーで API キーを使用します。
 
 ```json title="components.json"
 {
@@ -73,13 +73,13 @@ REGISTRY_TOKEN=your_secret_token_here
 }
 ```
 
-この設定では、次のURLが生成されます。`https://registry.company.com/button.json?token=your_token`
+この設定では、次の URL が生成されます。`https://registry.company.com/button.json?token=your_token`
 
 ## サーバー側の実装
 
 レジストリサーバーに認証を追加する方法は次のとおりです。
 
-### Next.js APIルートの例
+### Next.js API ルートの例
 
 ```typescript title="app/api/registry/[name]/route.ts"
 import { NextRequest, NextResponse } from "next/server"
@@ -123,7 +123,7 @@ function hasAccessToComponent(token: string, componentName: string) {
 }
 ```
 
-### Express.jsの例
+### Express.js の例
 
 ```javascript title="server.js"
 app.get("/registry/:name.json", (req, res) => {
@@ -254,9 +254,9 @@ API_KEY=your_api_key_here
 }
 ```
 
-### HTTPSを使用する
+### HTTPS を使用する
 
-転送中のトークンを保護するため、レジストリには必ずHTTPSのURLを使用します。
+転送中のトークンを保護するため、レジストリには必ず HTTPS の URL を使用します。
 
 ```json
 {
@@ -325,7 +325,7 @@ REGISTRY_TOKEN=your_token npx shadcn@latest add @private/button
 
 ## エラー処理
 
-shadcn CLIは認証エラーを適切に処理します。
+shadcn CLI は認証エラーを適切に処理します。
 
 - **401 Unauthorized**: トークンが無効か、不足しています
 - **403 Forbidden**: このリソースに対するトークンの権限が不足しています
@@ -333,7 +333,7 @@ shadcn CLIは認証エラーを適切に処理します。
 
 ### カスタムエラーメッセージ
 
-レジストリサーバーはレスポンスボディにカスタムエラーメッセージを返すことができ、CLIはそれをユーザーに表示します。
+レジストリサーバーはレスポンスボディにカスタムエラーメッセージを返すことができ、CLI はそれをユーザーに表示します。
 
 ```typescript
 // Registry server returns custom error

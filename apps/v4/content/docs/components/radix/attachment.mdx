@@ -1,6 +1,6 @@
 ---
 title: 添付ファイル
-description: ファイルまたは画像の添付ファイルとメディア、メタデータ、アップロード状態、およびアクションを表示します。
+description: メディア、メタデータ、アップロード状態、およびアクションを含むファイルまたは画像の添付ファイルを表示します。
 base: radix
 component: true
 ---
@@ -11,7 +11,7 @@ component: true
   previewClassName="h-auto theme-blue bg-surface dark:bg-background"
 />
 
-The `Attachment` component displays a file or image attachment, its media, name, and metadata, with optional actions and upload state. Use it for files and images in chat composers, message threads, and upload lists.
+`Attachment` コンポーネントは、ファイルまたは画像の添付ファイル、そのメディア、名前、メタデータを、オプションのアクションおよびアップロード状態とともに表示します。チャットコンポーザ、メッセージスレッド、アップロードリストのファイルや画像に使用します。
 
 ## インストール
 
@@ -33,7 +33,7 @@ npx shadcn@latest add attachment
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the required shadcn/ui dependencies:</Step>
+<Step>必要な shadcn/ui 依存関係をインストールします。</Step>
 
 ```bash
 npx shadcn@latest add button
@@ -47,7 +47,7 @@ npx shadcn@latest add button
   styleName="radix-rhea"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -101,7 +101,7 @@ Attachment
 └── AttachmentTrigger
 ```
 
-複数の添付ファイルをスクロール可能な行にレイアウトするには、`AttachmentGroup` を使用します。
+`AttachmentGroup` を使用して、複数の添付ファイルをスクロール可能な行にレイアウトします。
 
 ```text
 AttachmentGroup
@@ -109,18 +109,18 @@ AttachmentGroup
 └── Attachment
 ```
 
-## の特徴
+## 特徴
 
-- Icon and image media through `AttachmentMedia`
-- 状態のアップロード: `idle`、`uploading`、`processing`、`error`、`done` (組み込みのスタイルと進行中のきらめき付き)
-- Three sizes and horizontal or vertical orientation
-- A full-card `AttachmentTrigger` that opens a link or dialog while the actions stay independently clickable
-- スクロール可能、スナップ エッジ フェード付き `AttachmentGroup`
-- Customizable styling through the `className` prop on every part
+- `AttachmentMedia` を介したアイコンと画像メディア
+- アップロード状態: `idle`、`uploading`、`processing`、`error`、`done` (組み込みのスタイルと進行中のシマー付き)
+- 3 つのサイズと水平方向または垂直方向
+- アクションは独立してクリック可能なままで、リンクまたはダイアログを開くフルカード `AttachmentTrigger`
+- スクロール可能、エッジフェード付きスナップ `AttachmentGroup`
+- 各パーツの `className` プロップによるカスタマイズ可能なスタイル
 
 ## 画像
 
-Set `variant="image"` on `AttachmentMedia` and render an `<img>` inside it. Use `orientation="vertical"` to stack the media above the content.
+`AttachmentMedia` に `variant="image"` を設定し、その中に `<img>` をレンダリングします。`orientation="vertical"` を使用して、メディアをコンテンツの上に積み重ねます。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -128,9 +128,9 @@ Set `variant="image"` on `AttachmentMedia` and render an `<img>` inside it. Use 
   previewClassName="h-auto theme-blue bg-surface dark:bg-background"
 />
 
-## ステータス
+## 状態
 
-アップロードのライフサイクルを反映するように `state` を設定します。 `uploading` と `processing` はタイトルを点滅させ、`error` は破壊的な処理に切り替わります。
+アップロードのライフサイクルを反映するように `state` を設定します。`uploading` と `processing` はタイトルをきらめかせ、`error` は破壊的なスタイルに切り替わります。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -140,7 +140,7 @@ Set `variant="image"` on `AttachmentMedia` and render an `<img>` inside it. Use 
 
 ## サイズ
 
-`size` を使用して、`default`、`sm`、`xs` を切り替えます。
+`size` を使用して、`default`、`sm`、および `xs` を切り替えます。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -150,7 +150,7 @@ Set `variant="image"` on `AttachmentMedia` and render an `<img>` inside it. Use 
 
 ## グループ
 
-Wrap attachments in `AttachmentGroup` to lay them out in a horizontally scrollable, snapping row with an edge fade.
+添付ファイルを `AttachmentGroup` でラップすると、水平方向にスクロール可能で、エッジフェードを備えたスナップ行にレイアウトされます。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -160,7 +160,7 @@ Wrap attachments in `AttachmentGroup` to lay them out in a horizontally scrollab
 
 ## トリガー
 
-`AttachmentTrigger` を追加して、カード全体がリンクまたはダイアログを開くようにします。アクションの後ろのカードを埋めるので、アクションはクリック可能なままになります。
+`AttachmentTrigger` を追加して、カード全体にリンクまたはダイアログを開きます。アクションの後ろのカードを埋めるので、アクションはクリック可能なままになります。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -182,9 +182,9 @@ Wrap attachments in `AttachmentGroup` to lay them out in a horizontally scrollab
 
 ## アクセシビリティ
 
-`AttachmentAction` renders a `Button`, and `AttachmentTrigger` renders a real `<button>` (or your element via `asChild`). Follow the guidance below so both are operable and announced.
+`AttachmentAction` は `Button` をレンダリングし、`AttachmentTrigger` は実際の `<button>` (または `asChild` 経由の要素) をレンダリングします。両方が操作可能でアナウンスされるように、以下のガイダンスに従ってください。
 
-### Label icon-only actions
+### アイコンのみのアクションにラベルを付ける
 
 `AttachmentAction` は通常アイコンのみなので、それぞれにアクションとそのターゲットを説明する `aria-label` を与えます。
 
@@ -194,9 +194,9 @@ Wrap attachments in `AttachmentGroup` to lay them out in a horizontally scrollab
 </AttachmentAction>
 ```
 
-### Label the trigger
+### トリガーにラベルを付ける
 
-`AttachmentTrigger` covers the card with no text of its own, so give it an `aria-label` for what activating it does.
+`AttachmentTrigger` は、独自のテキストを持たないカードをカバーするため、アクティブ化すると何が行われるかについて `aria-label` を与えます。
 
 ```tsx showLineNumbers
 <AttachmentTrigger asChild>
@@ -209,92 +209,92 @@ Wrap attachments in `AttachmentGroup` to lay them out in a horizontally scrollab
 </AttachmentTrigger>
 ```
 
-The trigger sits behind the actions in the stacking order, so an `AttachmentAction` and the `AttachmentTrigger` never trap each other — both remain separately focusable and clickable.
+トリガーはスタック順でアクションの後ろにあるため、`AttachmentAction` と `AttachmentTrigger` が互いにトラップされることはありません。両方とも個別にフォーカス可能でクリック可能なままです。
 
 ### キーボードスクロール
 
-`AttachmentGroup` は水平にスクロールします。添付ファイルがインタラクティブである場合 (トリガーまたはアクション)、キーボード ユーザーはタブで画面外の項目にアクセスします。プレゼンテーション用添付ファイルの行の場合、`tabIndex={0}`、`role="group"`、および `aria-label` を追加して、グループ自体をフォーカス可能およびスクロール可能にします。
+`AttachmentGroup` は水平にスクロールします。添付ファイルがインタラクティブである場合 (トリガーまたはアクション)、キーボードユーザーはタブで画面外の項目にアクセスします。プレゼンテーション用添付ファイルの行の場合、`tabIndex={0}`、`role="group"`、および `aria-label` を追加して、グループ自体をフォーカス可能およびスクロール可能にします。
 
-### Meaning beyond color
+### 色を超えた意味
 
-`error` 状態では破壊的な色が使用されています。色だけで状態が伝わらないように、失敗の理由を `AttachmentDescription` に記録してください。
+`error` 状態では、破壊的な色が使用されています。状態が色だけで伝わらないように、失敗の理由を `AttachmentDescription` に保持します。
 
 ## API リファレンス
 
-### Attachment
+### 添付ファイル
 
-The root attachment container.
+ルート添付コンテナ。
 
-| Prop          | Type                                                         | Default        | Description                                       |
+| プロパティ    | タイプ                                                         | デフォルト        | 説明                                       |
 | ------------- | ------------------------------------------------------------ | -------------- | ------------------------------------------------- |
 | `state` | `"idle" \| "uploading" \| "processing" \| "error" \| "done"` | `"done"` |アップロードの状態。スタイリングと輝きを促進します。 |
-| `size`        | `"default" \| "sm" \| "xs"`                                  | `"default"`    | The attachment size.                              |
-| `orientation` | `"horizontal" \| "vertical"`                                 | `"horizontal"` | Lay the media beside or above the content.        |
+| `size`        | `"default" \| "sm" \| "xs"`                                  | `"default"`    | 添付ファイルのサイズ。                              |
+| `orientation` | `"horizontal" \| "vertical"`                                 | `"horizontal"` | メディアをコンテンツの横または上に置きます。        |
 | `className` | `string` | - |ルート要素に適用する追加のクラス。  |
 
-### AttachmentMedia
+### 添付ファイルのメディア
 
-The media slot for an icon or image preview.
+アイコンまたは画像プレビュー用のメディアスロット。
 
-|小道具 |タイプ |デフォルト |説明 |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ----------- | ------------------- | -------- | ---------------------------------------------- |
 | `variant` | `"icon" \| "image"` | `"icon"` |メディアにアイコンまたは `<img>` が含まれるかどうか。 |
-| `className` | `string`            | -        | Additional classes to apply to the media slot. |
+| `className` | `string`            | -        | メディアスロットに適用する追加のクラス。 |
 
-### AttachmentContent
+### 添付ファイルの内容
 
-Wraps the title and description.
+タイトルと説明を折り返します。
 
-| Prop        | Type     | Default | Description                                      |
+| プロパティ  | タイプ     | デフォルト | 説明                                      |
 | ----------- | -------- | ------- | ------------------------------------------------ |
-| `className` | `string` | - |コンテンツ スロットに適用する追加のクラス。 |
+| `className` | `string` | - |コンテンツスロットに適用する追加のクラス。 |
 
-### AttachmentTitle
+### 添付ファイルのタイトル
 
-アタッチメント名。アタッチメントが `uploading` または `processing` のときに点滅します。
+添付ファイルの名前。`uploading` または `processing` のときにきらめきます。
 
-| Prop        | Type     | Default | Description                               |
+| プロパティ  | タイプ     | デフォルト | 説明                               |
 | ----------- | -------- | ------- | ----------------------------------------- |
 | `className` | `string` | - |タイトルに適用する追加のクラス。 |
 
-### AttachmentDescription
+### 添付ファイルの説明
 
-ファイル タイプ、サイズ、アップロード ステータスなどの二次メタデータ。
+ファイルの種類、サイズ、アップロードステータスなどの二次メタデータ。
 
-|小道具 |タイプ |デフォルト |説明 |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ----------- | -------- | ------- | ----------------------------------------------- |
-| `className` | `string` | -       | Additional classes to apply to the description. |
+| `className` | `string` | -       | 説明に適用する追加のクラス。 |
 
-### AttachmentActions
+### 添付ファイルのアクション
 
-添付ファイルの最後に揃えられた、1 つ以上のアクションのコンテナー。
+添付ファイルの最後に揃えられた 1 つ以上のアクションのコンテナー。
 
-|小道具 |タイプ |デフォルト |説明 |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ----------- | -------- | ------- | ------------------------------------------- |
 | `className` | `string` | - |アクションに適用する追加のクラス。 |
 
-### AttachmentAction
+### 添付ファイルのアクションボタン
 
-アクションボタン。 [`Button`](/docs/components/button) をレンダリングし、そのプロパティをすべて受け入れます。
+アクションボタン。[`Button`](/docs/components/button) をレンダリングし、そのプロパティをすべて受け入れます。
 
-|小道具 |タイプ |デフォルト |説明 |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ---------- | ------------------------------------- | ----------- | ---------------------------------------- |
 | `size` | `Button["size"]` | `"icon-xs"` |ボタンのサイズ。                         |
-| `...props` | `React.ComponentProps<typeof Button>` | -           | Props spread to the underlying `Button`. |
+| `...props` | `React.ComponentProps<typeof Button>` | -           | プロパティは基礎となる `Button` に広がります。 |
 
-### AttachmentTrigger
+### 添付ファイルのトリガー
 
-A full-card overlay that activates the attachment. Renders a `<button>` by default.
+添付ファイルをアクティブにするフルカードオーバーレイ。デフォルトで `<button>` をレンダリングします。
 
-|小道具 |タイプ |デフォルト |説明 |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ---------- | -------------------------------- | ------- | -------------------------------------------- |
 | `asChild` | `boolean` | `false` |リンクなどの子要素としてレンダリングします。 |
-| `...props` | `React.ComponentProps<"button">` | -       | Props spread to the trigger element.         |
+| `...props` | `React.ComponentProps<"button">` | -       | プロパティはトリガー要素に広がります。         |
 
-### アタッチメントグループ
+### 添付ファイルのグループ
 
-Lays out attachments in a horizontally scrollable, snapping row.
+水平方向にスクロール可能なスナップ行に添付ファイルをレイアウトします。
 
-| Prop        | Type     | Default | Description                               |
+| プロパティ | タイプ | デフォルト | 説明 |
 | ----------- | -------- | ------- | ----------------------------------------- |
-| `className` | `string` | -       | Additional classes to apply to the group. |
+| `className` | `string` | -       | グループに適用する追加のクラス。 |

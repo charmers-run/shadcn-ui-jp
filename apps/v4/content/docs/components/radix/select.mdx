@@ -83,7 +83,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Select`:
+次の構成を使用して、`Select` を構築します。
 
 ```text
 Select
@@ -101,21 +101,21 @@ Select
         └── SelectItem
 ```
 
-## Align Item With Trigger
+## トリガーとの位置合わせ
 
-Use the `position` prop on `SelectContent` to control alignment. When `position="item-aligned"` (default), the popup positions so the selected item appears over the trigger. When `position="popper"`, the popup aligns to the trigger edge.
+`SelectContent` の `position` プロパティを使用して、位置合わせを制御します。`position="item-aligned"`(デフォルト)の場合、選択した項目がトリガーの上に表示されるようにポップアップが配置されます。`position="popper"` の場合、ポップアップはトリガーの端に揃えられます。
 
 <ComponentPreview styleName="radix-nova" name="select-align-item" />
 
 ## グループ
 
-Use `SelectGroup`, `SelectLabel`, and `SelectSeparator` to organize items.
+`SelectGroup`、`SelectLabel`、`SelectSeparator` を使用して項目をグループ化します。
 
 <ComponentPreview styleName="radix-nova" name="select-groups" />
 
 ## スクロール可能
 
-A select with many items that scrolls.
+多くの項目を含み、スクロール可能なセレクト。
 
 <ComponentPreview styleName="radix-nova" name="select-scrollable" />
 
@@ -125,7 +125,7 @@ A select with many items that scrolls.
 
 ## 無効な状態
 
-Add the `data-invalid` attribute to the `Field` component and the `aria-invalid` attribute to the `SelectTrigger` component to show an error state.
+エラー状態を表示するには、`Field` コンポーネントに `data-invalid` 属性を追加し、`SelectTrigger` コンポーネントに `aria-invalid` 属性を追加します。
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
 <Field data-invalid>
@@ -144,6 +144,6 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 <ComponentPreview styleName="radix-nova" name="select-rtl" direction="rtl" />
 
-## APIリファレンス
+## API リファレンス
 
-See the [Radix UI Select](https://www.radix-ui.com/docs/primitives/components/select#api-reference) documentation.
+詳細については、[Radix UI Select](https://www.radix-ui.com/docs/primitives/components/select#api-reference) のドキュメントを参照してください。

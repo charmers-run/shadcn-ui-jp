@@ -11,7 +11,7 @@ links:
 
 ## 概要
 
-について 入力 OTP は、[@guilherme_rodz](https://twitter.com/guilherme_rodz) によって [input-otp](https://github.com/guilhermerodz/input-otp) の上に構築されます。
+入力 OTP は、[@guilherme_rodz](https://twitter.com/guilherme_rodz) によって [input-otp](https://github.com/guilhermerodz/input-otp) の上に構築されます。
 
 ## インストール
 
@@ -19,7 +19,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -84,7 +84,7 @@ import {
 
 ## 構成
 
-次の構成を使用して `InputOTP` を構築します:
+次の構成を使用して `InputOTP` を構築します。
 
 ```text
 InputOTP
@@ -103,9 +103,9 @@ InputOTP
     └── InputOTPSlot
 ```
 
-## 入力後のパターン
+## パターン
 
-OTP 入力のカスタム パターンを定義するには、`pattern` プロパティを使用します。
+`pattern` プロパティを使用して、OTP 入力のカスタム パターンを定義します。
 
 ```tsx showLineNumbers {1,5}
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
@@ -135,7 +135,7 @@ import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
 
 <ComponentPreview styleName="base-nova" name="input-otp-controlled" />
 
-## 無効
+## 無効です
 
 エラー状態を表示するには、スロットで `aria-invalid` を使用します。
 

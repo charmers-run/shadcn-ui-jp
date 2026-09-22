@@ -78,7 +78,7 @@ RTL サポートを開始するには、フレームワークを選択してく�
 
 ## サポートされるスタイル
 
-CLI による自動 RTL 変換は、新しいスタイル (`base-nova`、`base-nova`、 `radix-nova` など)。
+CLI による自動 RTL 変換は、新しいスタイル (`base-nova`、`radix-nova` など) でのみサポートされています。
 
 その他のスタイルについては、[移行ガイド](#既存のコンポーネントの移行)を参照してください。
 
@@ -86,11 +86,11 @@ CLI による自動 RTL 変換は、新しいスタイル (`base-nova`、`base-n
 
 最適な RTL 体験のため、対象言語を適切にサポートするフォントの使用を推奨します。[Noto](https://fonts.google.com/noto) はこの用途に適したフォント ファミリーで、Inter や Geist ともよく合います。
 
-RTL フォントのインストールと構成の詳細については、[Get Started](#get-started) にあるフレームワークの RTL ガイドを参照してください。
+RTL フォントのインストールと構成の詳細については、[始める](#始める) にあるフレームワークの RTL ガイドを参照してください。
 
 ## アニメーション
 
-です。 CLI はアニメーション クラスも処理し、物理的な方向性アニメーションを論理的に同等のものに自動的に変換します。たとえば、`slide-in-from-right` は `slide-in-from-end` になります。
+CLI はアニメーション クラスも処理し、物理的な方向性アニメーションを論理的に同等のものに自動的に変換します。たとえば、`slide-in-from-right` は `slide-in-from-end` になります。
 
 これにより、ドロップダウン、ポップオーバー、ツールチップなどのアニメーションが、ドキュメントのテキストの方向に基づいて正しい方向にアニメーション化されます。
 
@@ -136,11 +136,11 @@ npx shadcn@latest migrate rtl [path]
 
 - [カレンダー](/docs/components/base/calendar#rtl-support)
 - [ページネーション](/docs/components/base/pagination#rtl-support)
-- [Sidebar](/docs/components/base/sidebar#rtl-support)
+- [サイドバー](/docs/components/base/sidebar#rtl-support)
 
 ### アイコンを移行する
 
-を基準にして読み取られます。`ArrowRightIcon` や `ChevronLeftIcon` などの一部のアイコンでは、`rtl:rotate-180` クラスを正しく反転する必要がある場合があります。アイコン コンポーネントを正しく反転するには、`rtl:rotate-180` クラスをアイコン コンポーネントに追加します。
+アイコンは向きを基準に表示されます。`ArrowRightIcon` や `ChevronLeftIcon` などの一部のアイコンは、正しく反転させるために `rtl:rotate-180` クラスが必要になる場合があります。アイコン コンポーネントに `rtl:rotate-180` クラスを追加して、正しく反転させてください。
 
 ```tsx showLineNumbers /rtl:rotate-180/
 <ArrowRightIcon className="rtl:rotate-180" />

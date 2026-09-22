@@ -1,6 +1,6 @@
 ---
 title: カルーセル
-description: Embra を使用して構築されたモーションとスワイプを備えたカルーセル。
+description: Embla を使用して構築されたモーションとスワイプを備えたカルーセル。
 base: base
 component: true
 links:
@@ -16,7 +16,7 @@ links:
 
 ## 概要
 
-The carousel component is built using the [Embla Carousel](https://www.embla-carousel.com/) library.
+カルーセル コンポーネントは、[Embla Carousel](https://www.embla-carousel.com/) ライブラリを使用して構築されています。
 
 ## インストール
 
@@ -24,7 +24,7 @@ The carousel component is built using the [Embla Carousel](https://www.embla-car
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -39,7 +39,7 @@ npx shadcn@latest add carousel
 
 <Steps className="mb-0 pt-2">
 
-<Step>次の依存関係をインストールします:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install embla-carousel-react
@@ -87,7 +87,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Carousel`:
+`Carousel` を構築するには、次の構成を使用します。
 
 ```text
 Carousel
@@ -100,7 +100,7 @@ Carousel
 
 ## サイズ
 
-To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
+項目のサイズを設定するには、`<CarouselItem />` の `basis` ユーティリティ クラスを使用できます。
 
 <ComponentPreview styleName="base-nova" name="carousel-size" />
 
@@ -154,7 +154,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 ## 方向
 
-`orientation` プロップを使用して、カルーセルの方向を設定します。
+`orientation` プロパティを使用して、カルーセルの方向を設定します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -174,7 +174,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 ## オプション
 
-`opts` プロパティを使用して、オプションをカルーセルに渡すことができます。詳細については、[Embla Carousel ドキュメント](https://www.embla-carousel.com/api/options/) を参照してください。
+`opts` プロパティを使用して、カルーセルにオプションを渡すことができます。詳細については、[Embla Carousel ドキュメント](https://www.embla-carousel.com/api/options/) を参照してください。
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -191,7 +191,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel>
 ```
 
-## API に色を追加します
+## API
 
 状態と `setApi` プロパティを使用して、カルーセル API のインスタンスを取得します。
 
@@ -268,9 +268,9 @@ export function Example() {
 
 イベントの使用方法の詳細については、[Embla Carousel docs](https://www.embla-carousel.com/api/events/) を参照してください。
 
-## Plugins
+## プラグイン
 
-You can use the `plugins` prop to add plugins to the carousel.
+`plugins` プロパティを使用して、カルーセルにプラグインを追加できます。
 
 ```ts showLineNumbers {1,6-10}
 import Autoplay from "embla-carousel-autoplay"
@@ -330,4 +330,4 @@ RTL 言語用にカルーセルをローカライズする場合、テキスト�
 
 ## API リファレンス
 
-プロップとプラグインの詳細については、[Embla Carousel docs](https://www.embla-carousel.com/api/) を参照してください。
+プロパティとプラグインの詳細については、[Embla Carousel docs](https://www.embla-carousel.com/api/) を参照してください。

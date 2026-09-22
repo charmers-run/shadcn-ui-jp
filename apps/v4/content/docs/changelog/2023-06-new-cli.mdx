@@ -7,10 +7,10 @@ date: 2023-06-22
 今日は皆さんにお伝えしたい最新情報がたくさんあります。
 
 - [**新しい CLI**](#new-cli) - CLI を最初から書き直しました。コンポーネント、依存関係を追加し、インポート パスを構成できるようになりました。
-- [**Theming**](#theming-with-css-variables-or-tailwind-colors) - テーマに CSS 変数を使用するか、Tailwind CSS ユーティリティ クラスを使用するかを選択します。
+- [**テーマ設定**](#theming-with-css-variables-or-tailwind-colors) - テーマに CSS 変数を使用するか、Tailwind CSS ユーティリティ クラスを使用するかを選択します。
 - [**ベースカラー**](#base-color) - プロジェクトのベースカラーを構成します。これは、コンポーネントのデフォルトのカラー パレットを生成するために使用されます。
-- [**React Server Components**](#react-server-components) - React サーバー コンポーネントの使用をオプトアウトします。 CLI は、`use client` ディレクティブを自動的に追加または削除します。
-- [**Styles**](#styles) - _Style_ と呼ばれる新しいコンセプトを導入します。スタイルには、コンポーネント、アニメーション、アイコンなどの独自のセットが付属しています。
+- [**React サーバー コンポーネント**](#react-server-components) - React サーバー コンポーネントの使用をオプトアウトします。 CLI は、`use client` ディレクティブを自動的に追加または削除します。
+- [**スタイル**](#styles) - _Style_ と呼ばれる新しいコンセプトを導入します。スタイルには、コンポーネント、アニメーション、アイコンなどの独自のセットが付属しています。
 - [**終了アニメーション**](#exit-animations) - すべてのコンポーネントに終了アニメーションを追加しました。
 - [**その他の更新**](#other-updates) - 新しい `icon` ボタン サイズ、更新された `sheet` コンポーネントなど。
 - [**プロジェクトの更新**](#updating-your-project) - プロジェクトを更新して最新の変更を取得する方法。
@@ -113,7 +113,7 @@ const alertVariants = cva(
 
 ---
 
-### CSS 変数または追い風カラーを使用したテーマ設定
+### CSS 変数または Tailwind カラーを使用したテーマ設定
 
 テーマに CSS 変数を使用するか、Tailwind CSS ユーティリティ クラスを使用するかを選択できます。
 
@@ -210,7 +210,7 @@ _スタイルは、図形、アイコン、アニメーション、タイポグ�
 
 `default` スタイルは、使い慣れたものです。このプロジェクトの当初から使用しているものです。アイコンには `lucide-react` を、アニメーションには `tailwindcss-animate` を使用します。
 
-`new-york`スタイルは新しいスタイルです。小さいボタン、影付きのカード、[Radix Icons](https://icons.radix-ui.com) の新しいアイコン セットが付属しています。
+`new-york` スタイルは新しいスタイルです。小さいボタン、影付きのカード、[Radix Icons](https://icons.radix-ui.com) の新しいアイコン セットが付属しています。
 
 `init` コマンドを実行すると、どのスタイルを使用するかを尋ねられます。これは `components.json` ファイルに保存されます。
 
@@ -256,7 +256,7 @@ _スタイルは、図形、アイコン、アニメーション、タイポグ�
 
 <ComponentPreview styleName="new-york-v4" name="button-icon" />
 
-###シート
+### シート
 
 - 他の要素と一致するように、名前を `position` から `side` に変更しました。
 
@@ -317,7 +317,7 @@ const buttonVariants = cva({
 })
 ```
 
-###シート
+### シート
 
 1. `sheet.tsx` の内容を次のものに置き換えます。
 

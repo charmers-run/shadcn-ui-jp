@@ -1,5 +1,5 @@
 ---
-title: Button
+title: ボタン
 description: ボタンまたはボタンに似たコンポーネントを表示します。
 featured: true
 base: base
@@ -50,7 +50,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx
 import { Button } from "@/components/ui/button"
@@ -62,11 +62,11 @@ import { Button } from "@/components/ui/button"
 
 ## カーソル
 
-Tailwind v4 [switched](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor) from `cursor: pointer` to `cursor: default` for the button component.
+Tailwind v4 では、ボタン コンポーネントの `cursor: pointer` が `cursor: default` に[切り替わりました](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor)。
 
-If you want to keep the `cursor: pointer` behavior, add the following code to your CSS file:
+`cursor: pointer` の動作を維持したい場合は、CSS ファイルに次のコードを追加します。
 
-You can also enable this during project setup with `npx shadcn@latest init --pointer`.
+プロジェクトのセットアップ中に `npx shadcn@latest init --pointer` を使用してこれを有効にすることもできます。
 
 ```css showLineNumbers title="globals.css"
 @layer base {
@@ -131,29 +131,29 @@ You can also enable this during project setup with `npx shadcn@latest init --poi
 
 ## ボタングループ
 
-To create a button group, use the `ButtonGroup` component. See the [Button Group](/docs/components/base/button-group) documentation for more details.
+ボタン グループを作成するには、`ButtonGroup` コンポーネントを使用します。詳細については、[ボタン グループ](/docs/components/base/button-group) のドキュメントを参照してください。
 
 <ComponentPreview styleName="base-nova" name="button-group-demo" />
 
 ## リンクとして
 
-You can use the `buttonVariants` helper to make a link look like a button.
+`buttonVariants` ヘルパーを使用すると、リンクをボタンのように見せることができます。
 
-**Do not use `<Button render={<a />} nativeButton={false} />` for links.** The Base UI `Button` component always applies `role="button"`, which overrides the semantic link role on `<a>` elements. Use `buttonVariants` with a plain `<a>` tag instead.
+**リンクには `<Button render={<a />} nativeButton={false} />` を使用しないでください。** Base UI の `Button` コンポーネントは常に `role="button"` を適用し、`<a>` 要素のセマンティック リンク ロールをオーバーライドします。代わりに、プレーンの `<a>` タグとともに `buttonVariants` を使用してください。
 
 <ComponentPreview styleName="base-nova" name="button-render" />
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="button-rtl" direction="rtl" />
 
 ## API リファレンス
 
-### Button
+### ボタン
 
-The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
+`Button` コンポーネントは、さまざまなスタイルと機能を追加する `button` 要素のラッパーです。
 
 |小道具 |タイプ |デフォルト |
 | --------- | ------------------------------------------------------------------------------------ | ----------- |

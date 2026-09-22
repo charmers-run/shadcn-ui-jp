@@ -1,6 +1,6 @@
 ---
 title: ネイティブセレクト
-description: A styled native HTML select element with consistent design system integration.
+description: 一貫したデザインシステム統合を備えた、スタイル付きのネイティブ HTML 選択要素です。
 base: base
 component: true
 ---
@@ -8,8 +8,8 @@ component: true
 import { InfoIcon } from "lucide-react"
 
 <Callout variant="info" icon={<InfoIcon className="translate-y-[3px]!" />}>
-  For a styled select component, see the [Select](/docs/components/select)
-  component.
+  スタイル付きのセレクトコンポーネントについては、[Select](/docs/components/select)
+  を参照してください。
 </Callout>
 
 <ComponentPreview styleName="base-nova" name="native-select-demo" />
@@ -34,7 +34,7 @@ npx shadcn@latest add native-select
 
 <Steps className="mb-0 pt-2">
 
-<Step>グループ ラッパーがレポートされます。 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="native-select"
@@ -72,7 +72,7 @@ import {
 
 ## 構成
 
-### Simple
+### シンプル
 
 `NativeSelect` の直下に配置されるオプション (`NativeSelectOptGroup` はありません)。
 
@@ -84,9 +84,9 @@ NativeSelect
 └── NativeSelectOption
 ```
 
-### With groups
+### グループ付き
 
-Use `NativeSelectOptGroup` to organize options into categories.
+`NativeSelectOptGroup` を使用して、オプションをカテゴリーに整理します。
 
 ```text
 NativeSelect
@@ -100,7 +100,7 @@ NativeSelect
 
 ## グループ
 
-Use `NativeSelectOptGroup` to organize options into categories.
+`NativeSelectOptGroup` を使用して、オプションをカテゴリーに整理します。
 
 <ComponentPreview styleName="base-nova" name="native-select-groups" />
 
@@ -112,18 +112,18 @@ Use `NativeSelectOptGroup` to organize options into categories.
 
 ## 無効な状態
 
-Use `aria-invalid` to show validation errors and the `data-invalid` attribute to the `Field` component for styling.
+検証エラーの表示には `aria-invalid` を、スタイリング用に `Field` コンポーネントへの `data-invalid` 属性を使用します。
 
 <ComponentPreview styleName="base-nova" name="native-select-invalid" />
 
-## Native Select vs Select
+## NativeSelect と Select の違い
 
-- Use `NativeSelect` for native browser behavior, better performance, or mobile-optimized dropdowns.
-- Use `Select` for custom styling, animations, or complex interactions.
+- ネイティブブラウザーの動作、優れたパフォーマンス、モバイルに最適化されたドロップダウンが必要な場合は `NativeSelect` を使用してください。
+- カスタムスタイル、アニメーション、複雑な操作が必要な場合は `Select` を使用してください。
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -135,7 +135,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### NativeSelect
 
-The main select component that wraps the native HTML select element.
+ネイティブ HTML の選択要素をラップするメインの選択コンポーネント。
 
 ```tsx
 <NativeSelect>
@@ -146,18 +146,18 @@ The main select component that wraps the native HTML select element.
 
 ### NativeSelectOption
 
-Represents an individual option within the select.
+選択内の個々のオプションを表します。
 
-|小道具 |タイプ |デフォルト |
+| Prop       | Type      | Default |
 | ---------- | --------- | ------- |
 | `value`    | `string`  |         |
 | `disabled` | `boolean` | `false` |
 
 ### NativeSelectOptGroup
 
-Groups related options together for better organization.
+関連するオプションをグループ化し、整理しやすくします。
 
-|小道具 |タイプ |デフォルト |
+| Prop       | Type      | Default |
 | ---------- | --------- | ------- |
 | `label`    | `string`  |         |
 | `disabled` | `boolean` | `false` |

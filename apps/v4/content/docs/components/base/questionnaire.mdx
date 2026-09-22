@@ -1,6 +1,6 @@
 ---
 title: アンケート
-description: 単一選択、複数選択、フリーフォーム、およびスキップ可能な質問を含む複数ステップのアンケート。
+description: 単一選択、複数選択、自由入力、スキップ可能な質問に対応した複数ステップのアンケート。
 base: base
 component: true
 ---
@@ -12,7 +12,7 @@ component: true
   previewClassName="min-h-[560px] p-4 sm:p-8"
 />
 
-## 名前付きプログレスバーとしてのインストール
+## インストール
 
 <CodeTabs>
 
@@ -46,7 +46,7 @@ npm install @shadcn/react
   styleName="base-nova"
 />
 
-<Step>を使用 プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -110,8 +110,7 @@ const items = [
 ] as const
 ```
 
-コレクションを一度定義します。サーバーでレンダリングされる
-進行状況、アクション、ショートカットをパーツにマッピングします。
+コレクションを一度定義し、`Questionnaire` に渡すことで、進行状況・アクション・ショートカットをサーバーでレンダリングし、それを各パーツにマッピングします。
 
 ```tsx
 <Questionnaire items={items} onSubmit={handleSubmit}>
@@ -164,7 +163,7 @@ function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 }
 ```
 
-## を使用するには 構成
+## 構成
 
 ```text
 Questionnaire
@@ -183,17 +182,13 @@ Questionnaire
     └── QuestionnaireSubmit
 ```
 
-アンケートは、注文されたアイテム、アクティブなアイテム、回答状態、検証、
-の進行状況とナビゲーションに焦点が当てられます。含まれているページ、カード、ダイアログ、またはドロワーは
-クローズおよびキャンセル動作、永続性、トランスポート、および分岐。
+Questionnaire は、順序付けられた項目、アクティブな項目、回答の状態、検証、進行状況、ナビゲーションを管理します。それを含むページ、カード、ダイアログ、ドロワーは、クローズやキャンセルの動作、永続化、トランスポート、分岐を管理します。
 
-## サーバー レンダリング
+## サーバーレンダリング
 
-を所有します。 `items` を渡して、アクティブなアイテム、進行状況、アクション、および回答をサーバーレンダリングします
-ショートカットを整列させます。
-[headless Questionnaire](/docs/react/questionnaire) を参照してください。
+`items` を渡すと、アクティブな項目、進行状況、アクション、回答のショートカットがサーバーでレンダリングされます。完全な動作については、[headless Questionnaire](/docs/react/questionnaire) を参照してください。
 
-## に関連付けられています。 複数選択
+## 複数選択
 
 複数の固定回答を受け入れる項目には `multiple` を使用します。
 
@@ -204,7 +199,7 @@ Questionnaire
   previewClassName="min-h-[420px] p-4 sm:p-8"
 />
 
-## 自由形式の回答
+## 自由入力
 
 ユーザーが別の回答を提供できる場合は、固定の選択肢を使用して `QuestionnaireInput` を作成します。
 
@@ -217,7 +212,7 @@ Questionnaire
 
 ## 明示的なスキップ
 
-を参照してください。 オプションの項目が意図的に未回答のままになる場合は、`QuestionnaireSkip` を追加します。
+オプションの項目が意図的に未回答のままになっている可能性がある場合は、`QuestionnaireSkip` を追加します。
 
 <ComponentPreview
   align="end"
@@ -270,9 +265,9 @@ Questionnaire
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## 条件付きアイテム
+## 条件付き項目
 
-Disable 項目も受け入れます。
+ユーザーの以前の回答に該当しない項目を無効にします。
 
 <ComponentPreview
   align="end"
@@ -283,7 +278,7 @@ Disable 項目も受け入れます。
 
 ## ナビゲーション状態
 
-アイテムのステータスを読み取り、無効なナビゲーションとカスタム アクション スタイルをオプトインします。完全な動作については、
+アイテムのステータスを読み取り、無効なナビゲーションとカスタムアクションスタイルをオプトインします。
 
 <ComponentPreview
   align="end"
@@ -292,7 +287,7 @@ Disable 項目も受け入れます。
   previewClassName="min-h-[480px] p-4 sm:p-8"
 />
 
-## カスタムの進行状況
+## カスタム進行状況
 
 進行状況レンダリング状態を使用して、カスタム進行状況インジケーターを作成します。
 
@@ -303,7 +298,7 @@ Disable 項目も受け入れます。
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## アニメーション アイテム
+## アニメーション付き項目
 
 進行状況とナビゲーションを静止させたまま、アクティブなアイテムをアニメーション化します。
 
@@ -316,7 +311,7 @@ Disable 項目も受け入れます。
 
 ## カード
 
-質問のタイトルと説明のセマンティックを維持しながら、カード スロットを使用してアンケートを作成します。
+質問のタイトルと説明のセマンティックを維持しながら、カードスロットを使用してアンケートを作成します。
 
 <ComponentPreview
   align="end"
@@ -327,7 +322,7 @@ Disable 項目も受け入れます。
 
 ## ダイアログ
 
-キャンセルと解雇をホスト所有のままにして、ダイアログ内でアンケートを作成します。
+キャンセルと閉じる操作をホスト側で管理しながら、ダイアログ内にアンケートを構成します。
 
 <ComponentPreview
   align="end"
@@ -338,30 +333,16 @@ Disable 項目も受け入れます。
 
 ## アクセシビリティ
 
-`QuestionnaireItem` は `fieldset` をレンダリングし、`QuestionnaireTitle` はその
-`legend`。説明とアクティブなエラーは、現在の項目
-および無効な項目と回答コントロールは `aria-invalid` を公開します。
+`QuestionnaireItem` は `fieldset` を、`QuestionnaireTitle` はその `legend` をレンダリングします。説明とアクティブなエラーは現在の項目に関連付けられ、無効な項目や回答コントロールには `aria-invalid` が付与されます。
 
-修正された選択肢は、ネイティブのラジオとチェックボックスの動作を保持します。進行状況が公開されます
-、ナビゲーションは実際のボタンを使用し、非アクティブなアイテムと
-アクションは非表示であり、不活性です。ナビゲーションが成功すると、新しくアクティブになった
-アイテム;検証に失敗すると、利用可能な回答コントロールに焦点が当てられます。
+固定の選択肢はネイティブのラジオボタンおよびチェックボックスの動作を保持します。進行状況は名前付きのプログレスバーとして公開され、ナビゲーションには実際のボタンが使用されます。非アクティブな項目とアクションは非表示かつ操作不可になります。ナビゲーションに成功すると新しくアクティブになった項目にフォーカスが移り、検証に失敗すると利用可能な回答コントロールにフォーカスが移ります。
 
-`QuestionnaireInput` には常に、表示ラベルが付いたアクセシビリティ対応の名前を付けます。
-`aria-label`、または `aria-labelledby`。プレースホルダーはラベルではありません。
-[アンケート アクセシビリティ ガイド](/docs/react/questionnaire#accessibility)
-for labeling custom compositions and the complete keyboard behavior.
+`QuestionnaireInput` には、表示ラベル、`aria-label`、`aria-labelledby` のいずれかを使って必ずアクセシブルな名前を付けてください。プレースホルダーはラベルの代わりにはなりません。カスタムな構成のラベル付けと完全なキーボード操作については、[アンケートアクセシビリティガイド](/docs/react/questionnaire#accessibility) を参照してください。
 
 ## スタイルなし
 
-に記載されています。`Questionnaire` の動作は `@shadcn/react` パッケージに由来します。
-は独自のマークアップとスタイルを使用して直接指定します。
-[アンケート](/docs/react/questionnaire) @shadcn/react の下にあります。
+`Questionnaire` の動作は `@shadcn/react` パッケージに由来します。独自のマークアップとスタイルでそのまま使用する方法については、@shadcn/react の [Questionnaire](/docs/react/questionnaire) を参照してください。
 
 ## API リファレンス
 
-を参照してください。各パーツの小道具、データ属性、レンダリング状態は
-[@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) ページを参照してください。
-スタイル付きコンポーネントは、対応するスタイルなしプロパティを継承します。ナビゲーション
-コンポーネントは、Button `size` および `variant` プロパティ、およびユーザーの以前の回答に当てはまらない
-`QuestionnaireActions` は、スタイル付きのみのレイアウト ヘルパーです。
+各パーツのプロパティ、データ属性、レンダリング状態は [@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) ページに記載されています。スタイル付きコンポーネントは、対応する非スタイルコンポーネントのプロパティを継承します。ナビゲーションコンポーネントは Button の `size` および `variant` プロパティも受け付けます。また、`QuestionnaireActions` はスタイル専用のレイアウトヘルパーです。

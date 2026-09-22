@@ -105,7 +105,7 @@ toast.add({
 })
 ```
 
-## 非同期タスクの状態
+## 種類
 
 ステータス アイコンを表示するには、`type` オプションを設定します。組み込みレンダラーは `success`、`info`、`warning`、`error`、`loading` を認識します。
 
@@ -113,7 +113,7 @@ toast.add({
 
 ## アクション
 
-`actionProps` を持つボタンの小道具を渡して、アクションをレンダリングします。
+`actionProps` にボタンのプロップを渡すと、アクションがレンダリングされます。
 
 ```tsx
 const id = toast.add({
@@ -127,15 +127,12 @@ const id = toast.add({
 })
 ```
 
-## 約束
+## プロミス
 
-テキスト
-の読み込み、成功、およびエラーの状態。
+`toast.promise` を使用すると、非同期タスクが読み込み中、成功、エラーの各状態へと移行するのに合わせて、1 つのトーストを更新できます。
 
 <ComponentPreview styleName="base-nova" name="toast-promise" />
 
 ## API リファレンス
 
-[Base UI Toast ドキュメント](https://base-ui.com/react/components/toast) を参照してください
-for details about manager options, stacking, swipe dismissal, and the primitive
-API。
+マネージャー オプション、スタッキング、スワイプによる閉じ方、プリミティブ API の詳細については、[Base UI Toast ドキュメント](https://base-ui.com/react/components/toast) を参照してください。

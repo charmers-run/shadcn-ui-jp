@@ -13,7 +13,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -61,15 +61,15 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 </AspectRatio>
 ```
 
-## スクエア
+## 正方形
 
-`ratio={1 / 1}` プロップを使用する正方形のアスペクト比コンポーネント。画像を正方形で表示する場合に便利です。
+`ratio={1 / 1}` プロップを使用した正方形のアスペクト比コンポーネント。画像を正方形で表示する場合に便利です。
 
 <ComponentPreview name="aspect-ratio-square" styleName="base-nova" />
 
-## Portrait
+## 縦長
 
-`ratio={9 / 16}` プロップを使用するポートレート アスペクト比コンポーネント。これは、画像を縦長形式で表示する場合に便利です。
+`ratio={9 / 16}` プロップを使用した縦長のアスペクト比コンポーネント。これは、画像を縦長形式で表示する場合に便利です。
 
 <ComponentPreview
   styleName="base-nova"
@@ -90,13 +90,13 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### AspectRatio
+### アスペクト比
 
-The `AspectRatio` component displays content within a desired ratio.
+`AspectRatio` コンポーネントは、希望の比率でコンテンツを表示します。
 
-|小道具 |タイプ |デフォルト |必須 |
+| プロップ | タイプ | デフォルト | 必須 |
 | ----------- | -------- | ------- | -------- |
-| `ratio` | `number` | - | Yes |
-| `className` | `string` | -       | No       |
+| `ratio` | `number` | - | はい |
+| `className` | `string` | -       | いいえ    |
 
-For more information, see the [Base UI documentation](https://base-ui.com/react/components/aspect-ratio#api-reference).
+[Base UI](https://base-ui.com/react/components/aspect-ratio#api-reference) のドキュメントで詳細を確認できます。

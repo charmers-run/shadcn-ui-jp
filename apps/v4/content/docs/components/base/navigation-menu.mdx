@@ -1,6 +1,6 @@
 ---
 title: ナビゲーションメニュー
-description: A collection of links for navigating websites.
+description: Web サイト内を移動するためのリンクのコレクション。
 base: base
 component: true
 links:
@@ -40,7 +40,7 @@ npx shadcn@latest add navigation-menu
 npm install @base-ui/react
 ```
 
-<Step>グループ ラッパーがレポートされます。 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="navigation-menu"
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使い方
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -84,7 +84,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `NavigationMenu`:
+`NavigationMenu` を構築するには、次の構成を使用します。
 
 ```text
 NavigationMenu
@@ -99,9 +99,9 @@ NavigationMenu
 └── NavigationMenuIndicator
 ```
 
-## Link Component
+## リンクコンポーネント
 
-Use the `render` prop to compose a custom link component such as Next.js `Link`.
+`render` プロップを使用して、Next.js の `Link` などのカスタムリンクコンポーネントを作成します。
 
 ```tsx showLineNumbers
 import Link from "next/link"
@@ -128,7 +128,7 @@ export function NavigationMenuDemo() {
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -139,4 +139,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-See the [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu#api-reference) documentation for more information.
+詳細については、[Base UI ナビゲーションメニュー](https://base-ui.com/react/components/navigation-menu#api-reference) ドキュメントを参照してください。

@@ -73,7 +73,7 @@ import {
 
 ## 構成
 
-次の構成を使用して、`InputGroup` を構築します。
+次の構成を使用して `InputGroup` を構築します。
 
 ```text
 InputGroup
@@ -88,12 +88,12 @@ InputGroup
 `InputGroupAddon` の `align` プロパティを使用して、入力を基準にしてアドオンを配置します。
 
 <Callout>
-  For proper focus management, `InputGroupAddon` should always be placed after
-  `InputGroupInput` または `InputGroupTextarea`。 `align` プロパティを
-  アドオンを視覚的に配置します。
+  適切なフォーカス管理のため、`InputGroupAddon` は常に `InputGroupInput` または
+  `InputGroupTextarea` の後に配置してください。アドオンの視覚的な配置には `align`
+  プロパティを使用します。
 </Callout>
 
-### inline-start
+### インラインスタート
 
 `align="inline-start"` を使用して、アドオンを入力の先頭に配置します。これがデフォルトです。
 
@@ -103,7 +103,7 @@ InputGroup
   previewClassName="h-48"
 />
 
-### 入力後のインラインエンド
+### インラインエンド
 
 `align="inline-end"` を使用してアドオンを入力の最後に配置します。
 
@@ -115,7 +115,7 @@ InputGroup
 
 ### ブロックスタート
 
-の位置合わせ `align="block-start"` を使用してアドオンを入力の上に配置します。
+`align="block-start"` を使用してアドオンを入力の上に配置します。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -218,7 +218,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 入力とアドオンをラップするメインコンポーネント。
 
-|小道具 |タイプ |デフォルト |
+|プロパティ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -234,11 +234,12 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 アイコン、テキスト、ボタン、またはその他のコンテンツを入力と一緒に表示します。
 
 <Callout icon={<IconInfoCircle />} title="フォーカス ナビゲーション">
-  For proper focus navigation, the `InputGroupAddon` component should be placed
-  。 `align` プロパティを設定してアドオンを配置します。
+  適切なフォーカスナビゲーションのため、`InputGroupAddon` コンポーネントは
+  `InputGroupInput` または `InputGroupTextarea` コンポーネントの後に配置してください。
+  アドオンの配置には `align` プロパティを設定します。
 </Callout>
 
-|小道具 |タイプ |デフォルト |
+|プロパティ |タイプ |デフォルト |
 | ----------- | ---------------------------------------------------------------- | ---------------- |
 | `align` | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` |
 | `className` | `string` |                  |
@@ -264,10 +265,10 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 入力グループ内のボタンを表示します。
 
-|小道具 |タイプ |デフォルト |
+|プロパティ |タイプ |デフォルト |
 | ----------- | ----------------------------------------------------------------------------- | --------- |
 | `size` | `"xs" \| "icon-xs" \| "sm" \| "icon-sm"` | `"xs"` |
-| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` | DOM 内の
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` |
 | `className` | `string` |           |
 
 ```tsx
@@ -279,9 +280,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### InputGroupInput
 
-を `<Input />` に置き換えます。このコンポーネントには入力グループ スタイルが事前に適用されており、フォーカス状態の処理に統合 `data-slot="input-group-control"` を使用します。
+入力グループを構築するときの `<Input />` の置き換え。このコンポーネントには入力グループ スタイルが事前に適用されており、フォーカス状態の処理に統合された `data-slot="input-group-control"` を使用します。
 
-|小道具 |タイプ |デフォルト |
+|プロパティ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -300,7 +301,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 入力グループを構築するときの `<Textarea />` の置き換え。このコンポーネントにはテキストエリア グループ スタイルが事前に適用されており、フォーカス状態の処理に統一された `data-slot="input-group-control"` を使用します。
 
-|小道具 |タイプ |デフォルト |
+|プロパティ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 

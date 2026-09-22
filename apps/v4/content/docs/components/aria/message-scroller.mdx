@@ -1,6 +1,6 @@
 ---
 title: メッセージスクローラー
-description: ターンを固定し、保存済みのトランスクリプトを開き、ストリーミング応答に追従し、ジャンプせずに履歴を読み込み、任意のメッセージへ移動できるチャットスクロール コンテナです。
+description: ターンを固定し、保存済みのトランスクリプトを開き、ストリーミング応答に追従し、ジャンプせずに履歴を読み込み、任意のメッセージへ移動できるチャットスクロールコンテナです。
 base: aria
 component: true
 ---
@@ -135,8 +135,7 @@ import {
 </MessageScrollerProvider>
 ```
 
-`MessageScroller` fills its parent, so place it inside a height-constrained
-container.
+`MessageScroller` は親要素いっぱいに広がるため、高さを制限したコンテナ内に配置してください。
 
 ```tsx
 <div className="flex h-screen flex-col">

@@ -1,5 +1,5 @@
 ---
-title: Button Group
+title: ボタングループ
 description: 関連するボタンを一貫したスタイルでグループ化するコンテナー。
 base: base
 component: true
@@ -68,7 +68,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `ButtonGroup`:
+`ButtonGroup` を構築するには、次の構成を使用します。
 
 ```text
 ButtonGroup
@@ -81,7 +81,7 @@ ButtonGroup
 
 - `ButtonGroup` コンポーネントの `role` 属性は `group` に設定されています。
 - <Kbd>Tab</Kbd> を使用して、グループ内のボタン間を移動します。
-- Use `aria-label` or `aria-labelledby` to label the button group.
+- ボタングループにラベルを付けるには、`aria-label` または `aria-labelledby` を使用します。
 
 ```tsx showLineNumbers
 <ButtonGroup aria-label="Button group">
@@ -90,14 +90,14 @@ ButtonGroup
 </ButtonGroup>
 ```
 
-## ButtonGroup と ToggleGroup
+## ButtonGroup と ToggleGroup の比較
 
-- Use the `ButtonGroup` component when you want to group buttons that perform an action.
+- アクションを実行するボタンをグループ化する場合は、`ButtonGroup` コンポーネントを使用します。
 - 状態を切り替えるボタンをグループ化する場合は、`ToggleGroup` コンポーネントを使用します。
 
 ## 方向
 
-Set the `orientation` prop to change the button group layout.
+ボタン グループのレイアウトを変更するには、`orientation` プロップを設定します。
 
 <ComponentPreview styleName="base-nova" name="button-group-orientation" />
 
@@ -107,7 +107,7 @@ Set the `orientation` prop to change the button group layout.
 
 <ComponentPreview styleName="base-nova" name="button-group-size" />
 
-## 入れ子
+## ネスト
 
 `<ButtonGroup>` コンポーネントをネストして、間隔をあけてボタン グループを作成します。
 
@@ -123,7 +123,7 @@ Set the `orientation` prop to change the button group layout.
 
 ## 分割
 
-Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
+`ButtonGroupSeparator` で区切られた 2 つのボタンを追加して、分割ボタン グループを作成します。
 
 <ComponentPreview styleName="base-nova" name="button-group-split" />
 
@@ -141,19 +141,19 @@ Create a split button group by adding two buttons separated by a `ButtonGroupSep
 
 ## ドロップダウン メニュー
 
-Create a split button group with a `DropdownMenu` component.
+`DropdownMenu` コンポーネントを使用して分割ボタン グループを作成します。
 
 <ComponentPreview styleName="base-nova" name="button-group-dropdown" />
 
-## Select
+## 選択
 
-Pair with a `Select` component.
+`Select` コンポーネントとペアリングします。
 
 <ComponentPreview styleName="base-nova" name="button-group-select" />
 
 ## ポップオーバー
 
-`Popover` コンポーネントで使用します。
+`Popover` コンポーネントと一緒に使用します。
 
 <ComponentPreview styleName="base-nova" name="button-group-popover" />
 
@@ -171,9 +171,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### ButtonGroup
 
-`ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナです。
+`ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナーです。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | -------------- |
 | `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
 
@@ -184,7 +184,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </ButtonGroup>
 ```
 
-Nest multiple button groups to create complex layouts with spacing. See the [nested](#nested) example for more details.
+複数のボタン グループをネストして、間隔のある複雑なレイアウトを作成します。詳細については、[nested](#nested) の例を参照してください。
 
 ```tsx
 <ButtonGroup>
@@ -197,7 +197,7 @@ Nest multiple button groups to create complex layouts with spacing. See the [nes
 
 `ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | ------------ |
 | `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
 
@@ -213,7 +213,7 @@ Nest multiple button groups to create complex layouts with spacing. See the [nes
 
 このコンポーネントを使用して、ボタン グループ内のテキストを表示します。
 
-| Prop     | Type                 | Default |
+| プロップ | タイプ               | デフォルト |
 | -------- | -------------------- | ------- |
 | `render` | `React.ReactElement` |         |
 

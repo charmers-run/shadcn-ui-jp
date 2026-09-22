@@ -1,5 +1,5 @@
 ---
-title: 空の
+title: 空の状態
 description: 空の状態を表示するには、Empty コンポーネントを使用します。
 base: radix
 component: true
@@ -39,7 +39,7 @@ npx shadcn@latest add empty
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add empty
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx
 import {
@@ -77,7 +77,7 @@ import {
 
 ## 構成
 
-Use the following composition to build an `Empty` state:
+`Empty` 状態を構築するには、次の構成を使用します。
 
 ```text
 Empty
@@ -88,7 +88,7 @@ Empty
 └── EmptyContent
 ```
 
-## 概要
+## アウトライン
 
 `border` ユーティリティ クラスを使用して、アウトラインの空の状態を作成します。
 
@@ -100,7 +100,7 @@ Empty
 
 ## 背景
 
-Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty state.
+`bg-*` および `bg-gradient-*` ユーティリティを使用して、空の状態に背景を追加します。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -118,7 +118,7 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
   previewClassName="h-96 p-0"
 />
 
-## アバターグループ
+## アバター グループ
 
 `EmptyMedia` コンポーネントを使用して、アバター グループを空の状態で表示します。
 
@@ -128,7 +128,7 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
   previewClassName="h-96 p-0"
 />
 
-## 入力グループ
+## InputGroup
 
 `InputGroup` コンポーネントを `EmptyContent` コンポーネントに追加できます。
 
@@ -146,11 +146,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### 空の
+### Empty
 
-空の状態の主要コンポーネント。 `EmptyHeader` コンポーネントと `EmptyContent` コンポーネントをラップします。
+空の状態の主要コンポーネント。`EmptyHeader` コンポーネントと `EmptyContent` コンポーネントをラップします。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -163,9 +163,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### EmptyHeader
 
-`EmptyHeader` コンポーネントは、空のメディア、タイトル、説明をラップします。
+`EmptyHeader` コンポーネントは、空のメディア、タイトル、および説明をラップします。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -181,9 +181,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 アイコンや画像などの空の状態のメディアを表示するには、`EmptyMedia` コンポーネントを使用します。これを使用して、アバターなどの他のコンポーネントを表示することもできます。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type                  | Default   |
 | ----------- | --------------------- | --------- |
-| `variant` | `"default" \| "icon"` | `default` |
+| `variant`   | `"default" \| "icon"` | `default` |
 | `className` | `string` |           |
 
 ```tsx
@@ -205,7 +205,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `EmptyTitle` コンポーネントを使用して、空の状態のタイトルを表示します。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -215,9 +215,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### EmptyDescription
 
-Use the `EmptyDescription` component to display the description of the empty state.
+`EmptyDescription` コンポーネントを使用して、空の状態の説明を表示します。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -229,7 +229,7 @@ Use the `EmptyDescription` component to display the description of the empty sta
 
 `EmptyContent` コンポーネントを使用して、ボタン、入力、リンクなどの空の状態のコンテンツを表示します。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 

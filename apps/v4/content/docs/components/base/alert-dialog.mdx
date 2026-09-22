@@ -1,6 +1,6 @@
 ---
-title: アラート ダイアログ
-description: 重要なコンテンツでユーザーを中断し、応答を期待するモーダル ダイアログ。
+title: アラートダイアログ
+description: 重要なコンテンツでユーザーを中断し、応答を期待するモーダルダイアログ。
 featured: true
 base: base
 component: true
@@ -21,7 +21,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -57,7 +57,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使い方
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -96,7 +96,7 @@ import {
 
 ## 構成
 
-Use the following composition to build an `AlertDialog`:
+次の構成を使用して、`AlertDialog` を構築します。
 
 ```text
 AlertDialog
@@ -113,7 +113,7 @@ AlertDialog
 
 ## 基本
 
-タイトル、説明、キャンセル ボタンと続行ボタンを備えた基本的なアラート ダイアログ。
+タイトル、説明、キャンセルボタンと続行ボタンを備えた基本的なアラートダイアログ。
 
 <ComponentPreview
   styleName="base-nova"
@@ -123,7 +123,7 @@ AlertDialog
 
 ## 小さい
 
-Use the `size="sm"` prop to make the alert dialog smaller.
+`size="sm"` プロパティを使用して、アラートダイアログを小さくします。
 
 <ComponentPreview
   styleName="base-nova"
@@ -133,7 +133,7 @@ Use the `size="sm"` prop to make the alert dialog smaller.
 
 ## メディア
 
-Use the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`AlertDialogMedia` コンポーネントを使用して、アイコンや画像などのメディア要素をアラートダイアログに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -141,9 +141,9 @@ Use the `AlertDialogMedia` component to add a media element such as an icon or i
   previewClassName="h-56"
 />
 
-## Small with Media
+## メディア付きの小さいダイアログ
 
-Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`size="sm"` プロパティを使用してアラートダイアログを小さくし、`AlertDialogMedia` コンポーネントを使用してアイコンや画像などのメディア要素をアラートダイアログに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -153,7 +153,7 @@ Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMe
 
 ## 破壊的
 
-`AlertDialogAction` コンポーネントを使用して、破壊的なアクション ボタンをアラート ダイアログに追加します。
+`AlertDialogAction` コンポーネントを使用して、破壊的なアクションボタンをアラートダイアログに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -172,14 +172,14 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
   previewClassName="h-56"
 />
 
-## APIリファレンス
+## API リファレンス
 
 ### サイズ
 
-Use the `size` prop on the `AlertDialogContent` component to control the size of the alert dialog. It accepts the following values:
+`AlertDialogContent` コンポーネントの `size` プロパティを使用して、アラートダイアログのサイズを制御します。次の値を受け入れます。
 
-|小道具 |タイプ |デフォルト |
+| プロパティ | タイプ | デフォルト |
 | ------ | ------------------- | ----------- |
 | `size` | `"default" \| "sm"` | `"default"` |
 
-For more information about the other components and their props, see the [Base UI documentation](https://base-ui.com/react/components/alert-dialog#api-reference).
+他のコンポーネントとそのプロパティの詳細については、[Base UI ドキュメント](https://base-ui.com/react/components/alert-dialog#api-reference) を参照してください。

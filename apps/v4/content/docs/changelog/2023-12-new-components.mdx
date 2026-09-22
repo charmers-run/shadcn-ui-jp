@@ -9,11 +9,11 @@ date: 2023-12-22
 新機能の概要を以下に示します。
 
 - [**Carousel**](#carousel) - モーション、スワイプジェスチャ、キーボードサポートを備えたカルーセルコンポーネント。
-- [**Drawer**](#drawer) - モバイルで見る栄えの良いドロワー コンポーネント。
+- [**Drawer**](#drawer) - モバイルで見栄えの良いドロワー コンポーネント。
 - [**Pagination**](#pagination) - ページ ナビゲーション、前および次のボタンを備えたページネーション コンポーネント。
 - [**Resizable**](#resizable) - サイズ変更可能なパネル グループとレイアウトを構築するためのサイズ変更可能なコンポーネント。
 - [**Sonner**](#sonner) - 必要となる最後のトーストコンポーネント。
-- [**CLI アップデート**](#cli-updates) - カスタム **Tailwind プレフィックス** および `tailwind.config.ts` のサポート。
+- [**CLI の更新**](#cli-updates) - カスタム **Tailwind プレフィックス** および `tailwind.config.ts` のサポート。
 
 ### カルーセル
 
@@ -23,9 +23,9 @@ date: 2023-12-22
 
 <ComponentPreview styleName="new-york-v4" name="carousel-demo" />
 
-### 引き出し
+### ドロワー
 
-ああ、引き出しコンポーネントです。 [emilkowalski](https://twitter.com/emilkowalski) によって [Vaul](https://github.com/emilkowalski/vaul) の上に構築されました。
+ああ、ドロワー コンポーネントです。 [emilkowalski](https://twitter.com/emilkowalski) によって [Vaul](https://github.com/emilkowalski/vaul) の上に構築されました。
 
 モバイルで次のドロワーを開いてみてください。すごいですね！
 
@@ -45,7 +45,7 @@ date: 2023-12-22
 
 `<Resizable />` は、[bvaughn](https://github.com/bvaughn) による [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) を使用して構築されています。マウス、タッチ、キーボードをサポートしています。
 
-### ゾナー
+### Sonner
 
 [emilkowalski](https://twitter.com/emilkowalski) によるもう 1 枚。最後に必要となるトーストコンポーネントです。 Sonner が shadcn/ui で利用できるようになりました。
 
@@ -53,9 +53,9 @@ date: 2023-12-22
 
 ### CLI の更新
 
-これは最も要望の多かった機能の 1 つです。 カスタム Tailwind プレフィックスを構成できるようになり、コンポーネントを追加するときに cli がユーティリティ クラスに自動的にプレフィックスを付けます。
+これは最も要望の多かった機能の 1 つです。 カスタム Tailwind プレフィックスを構成できるようになり、コンポーネントを追加するときに CLI がユーティリティ クラスに自動的にプレフィックスを付けます。
 
-これは、Docusaurus、Nextra などのみんなのプロジェクトに shadcn/ui コンポーネントを簡単に追加できることを意味します。
+これは、Docusaurus、Nextra などの他のプロジェクトに shadcn/ui コンポーネントを簡単に追加できることを意味します。
 
 ```tsx /tw-/
 <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
@@ -63,6 +63,6 @@ date: 2023-12-22
 
 `cn`、`cva`、および CSS 変数で動作します。
 
-cli は `tailwind.config.ts` を検出し、TypeScript バージョンの構成を追加できるようになりました。
+CLI は `tailwind.config.ts` を検出し、TypeScript バージョンの構成を追加できるようになりました。
 
 それでおしまい。楽しい休日をお過ごしください。

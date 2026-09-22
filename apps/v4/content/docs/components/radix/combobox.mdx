@@ -1,6 +1,6 @@
 ---
 title: コンボボックス
-description: 候補リストを含むオートコンプリート入力。
+description: 候補のリストを含むオートコンプリート入力。
 base: radix
 component: true
 links:
@@ -94,7 +94,7 @@ export function ExampleCombobox() {
 
 ### シンプル
 
-単一行入力とフラット リスト ([Basic](#basic) を参照)。
+単一行入力とフラット リスト ([基本](#basic) を参照)。
 
 ```text
 Combobox
@@ -106,9 +106,9 @@ Combobox
         └── ComboboxItem
 ```
 
-### チップあり
+### チップ付き
 
-`multiple`、チップ、およびチップ入力による複数選択 ([Multiple](#multiple) を参照)。
+`multiple`、チップ、およびチップ入力による複数選択 ([複数](#multiple) を参照)。
 
 ```text
 Combobox
@@ -123,7 +123,7 @@ Combobox
         └── ComboboxItem
 ```
 
-### グループおよびコレクションあり
+### グループとコレクションを使用する
 
 各 `ComboboxGroup` 内で `ComboboxCollection` を使用し、グループ間に区切り文字を使用してグループごとに項目をネストします ([グループ](#groups) を参照)。
 
@@ -280,9 +280,9 @@ export function ExampleComboboxMultiple() {
 
 <ComponentPreview styleName="base-nova" name="combobox-custom" />
 
-## 無効な
+## 無効な状態
 
-コンボボックスを無効にするには、`aria-invalid` プロパティを使用します。
+コンボボックスを無効な状態にするには、`aria-invalid` プロパティを使用します。
 
 <ComponentPreview styleName="base-nova" name="combobox-invalid" />
 
@@ -294,13 +294,13 @@ export function ExampleComboboxMultiple() {
 
 ## 自動ハイライト
 
-について `autoHighlight` プロップを使用して、フィルターの最初の項目を自動的に強調表示します。
+`autoHighlight` プロップを使用して、フィルターの最初の項目を自動的に強調表示します。
 
 <ComponentPreview styleName="base-nova" name="combobox-auto-highlight" />
 
 ## ポップアップ
 
-`render` プロップを使用すると、ボタンまたはその他のコンポーネントからコンボボックスをトリガーできます。 `ComboboxInput` を `ComboboxContent` 内に移動します。
+`render` プロップを使用すると、ボタンまたはその他のコンポーネントからコンボボックスをトリガーできます。`ComboboxInput` を `ComboboxContent` 内に移動します。
 
 <ComponentPreview styleName="base-nova" name="combobox-popup" />
 

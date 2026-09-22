@@ -1,6 +1,6 @@
 ---
 title: メニューバー
-description: 一貫したコマンド セットへの素早いアクセスを提供する、デスクトップ アプリケーションで一般的な視覚的に永続的なメニュー。
+description: デスクトップアプリケーションでよく見られる、常に表示されるメニューで、一貫したコマンドセットに素早くアクセスできます。
 base: radix
 component: true
 links:
@@ -16,7 +16,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -90,7 +90,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Menubar`:
+`Menubar` を作成するには、次の構成を使用します。
 
 ```text
 Menubar
@@ -128,7 +128,7 @@ Menubar
             └── MenubarItem
 ```
 
-## Checkbox
+## チェックボックス
 
 切り替え可能なオプションには `MenubarCheckboxItem` を使用します。
 
@@ -136,17 +136,17 @@ Menubar
 
 ## ラジオ
 
-Use `MenubarRadioGroup` and `MenubarRadioItem` for single-select options.
+単一選択オプションには `MenubarRadioGroup` および `MenubarRadioItem` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="menubar-radio" />
 
 ## サブメニュー
 
-Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
+ネストされたメニューには `MenubarSub`、`MenubarSubTrigger`、および `MenubarSubContent` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="menubar-submenu" />
 
-## With Icons
+## アイコン付き
 
 <ComponentPreview styleName="radix-nova" name="menubar-icons" />
 
@@ -158,4 +158,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-See the [Radix UI Menubar](https://www.radix-ui.com/docs/primitives/components/menubar#api-reference) documentation.
+[Radix UI メニューバー](https://www.radix-ui.com/docs/primitives/components/menubar#api-reference) ドキュメントを参照してください。

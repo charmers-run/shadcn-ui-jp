@@ -4,12 +4,9 @@ description: 固定、自由形式、複数、スキップ可能な回答を含�
 date: 2026-08-05
 ---
 
-本日、[**Questionnaire**](/docs/components/base/questionnaire) をリリースしました。
-マルチステップの質問フロー用の新しいコンポーネント。エージェントの説明に使用します
-プロンプト、オンボーディング、アンケート、受付フォーム、構成。
+本日、マルチステップの質問フロー用の新しいコンポーネント [**Questionnaire**](/docs/components/base/questionnaire) をリリースしました。エージェントの確認プロンプトやオンボーディング、アンケート、受付フォーム、設定などに使用できます。
 
-アンケートは、Base UI、React Aria、および Radix の 8 つすべてで利用可能です
-スタイル。
+アンケートは、Base UI、React Aria、Radix の全 8 スタイルで利用できます。
 
 <ComponentPreview
   align="end"
@@ -20,11 +17,11 @@ date: 2026-08-05
 
 ## 特徴
 
-- ネイティブ無線とチェックボックスによる単一および複数の選択。
+- ネイティブなラジオボタンとチェックボックスによる単一選択および複数選択。
 - 固定の選択肢と自由形式の回答。
-- オプションの質問を明示的にスキップします。
+- 任意の質問を明示的にスキップする機能。
 - 前へ、次へ、送信、およびカスタム進行状況コントロール。
-- 必須のカスタム検証。
+- 必須項目とカスタム検証。
 - 制御されたナビゲーション、保存されたデフォルト、および条件付きの質問。
 - オプションの文字または数字のショートカットを使用したキーボード ナビゲーション。
 - ネイティブ フォームのシリアル化とサーバーでレンダリングされたコレクション状態。
@@ -36,7 +33,7 @@ date: 2026-08-05
 npx shadcn@latest add questionnaire
 ```
 
-## @shadcn/反応
+## @shadcn/react
 
 `<Questionnaire />` コンポーネントは、`@shadcn/react` のスタイルなしのヘッドレス プリミティブとしても使用できます。詳細については、[ドキュメントをお読みください](/docs/react/questionnaire)。
 
@@ -46,7 +43,7 @@ npx shadcn@latest add questionnaire
       href="/docs/components/base/questionnaire"
       className="mt-6 no-underline!"
     >
-      View Questionnaire
+      Questionnaire を表示
     </Link>
   </Button>
 </div>

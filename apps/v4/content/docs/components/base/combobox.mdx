@@ -1,6 +1,6 @@
 ---
-title: Combobox
-description: 候補リスト付きのオートコンプリート入力。
+title: コンボボックス
+description: 候補のリストを含むオートコンプリート入力。
 base: base
 component: true
 links:
@@ -11,7 +11,7 @@ links:
 <ComponentPreview
   styleName="base-nova"
   name="combobox-demo"
-  description="A combobox with a list of frameworks."
+  description="フレームワークのリストが含まれるコンボボックス。"
 />
 
 ## インストール
@@ -94,7 +94,7 @@ export function ExampleCombobox() {
 
 ### シンプル
 
-単一行入力とフラット リスト ([Basic](#basic) を参照)。
+単一行入力とフラット リスト ([基本](#basic) を参照)。
 
 ```text
 Combobox
@@ -106,9 +106,9 @@ Combobox
         └── ComboboxItem
 ```
 
-### With chips
+### チップ付き
 
-Multi-select with `multiple`, chips, and a chips input (see [Multiple](#multiple)).
+`multiple`、チップ、およびチップ入力による複数選択 ([複数](#multiple) を参照)。
 
 ```text
 Combobox
@@ -123,9 +123,9 @@ Combobox
         └── ComboboxItem
 ```
 
-### With groups and collection
+### グループとコレクションを使用する
 
-Nested items per group using `ComboboxCollection` inside each `ComboboxGroup`, with a separator between groups (see [Groups](#groups)).
+各 `ComboboxGroup` 内で `ComboboxCollection` を使用し、グループ間に区切り文字を使用してグループごとに項目をネストします ([グループ](#groups) を参照)。
 
 ```text
 Combobox
@@ -146,9 +146,9 @@ Combobox
                 └── ComboboxItem
 ```
 
-## Custom Items
+## カスタム項目
 
-Use `itemToStringValue` when your items are objects.
+アイテムがオブジェクトの場合は `itemToStringValue` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -197,7 +197,7 @@ export function ExampleComboboxCustomItems() {
 
 ## 複数選択
 
-Use `multiple` with chips for multi-select behavior.
+複数選択動作のチップでは `multiple` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -252,55 +252,55 @@ export function ExampleComboboxMultiple() {
 
 ## 基本
 
-A simple combobox with a list of frameworks.
+フレームワークのリストを含む単純なコンボボックス。
 
 <ComponentPreview styleName="base-nova" name="combobox-basic" />
 
-## 複数の
+## 複数
 
-A combobox with multiple selection using `multiple` and `ComboboxChips`.
+`multiple` と `ComboboxChips` を使用した複数選択のコンボボックス。
 
 <ComponentPreview styleName="base-nova" name="combobox-multiple" />
 
 ## クリア ボタン
 
-Use the `showClear` prop to show a clear button.
+`showClear` プロップを使用してクリア ボタンを表示します。
 
 <ComponentPreview styleName="base-nova" name="combobox-clear" />
 
 ## グループ
 
-Use `ComboboxGroup` and `ComboboxSeparator` to group items.
+`ComboboxGroup` および `ComboboxSeparator` を使用して項目をグループ化します。
 
 <ComponentPreview styleName="base-nova" name="combobox-groups" />
 
-## Custom Items
+## カスタム項目
 
-You can render a custom component inside `ComboboxItem`.
+`ComboboxItem` 内でカスタム コンポーネントをレンダリングできます。
 
 <ComponentPreview styleName="base-nova" name="combobox-custom" />
 
-## 無効な
+## 無効な状態
 
-Use the `aria-invalid` prop to make the combobox invalid.
+コンボボックスを無効な状態にするには、`aria-invalid` プロパティを使用します。
 
 <ComponentPreview styleName="base-nova" name="combobox-invalid" />
 
-## 無効化
+## 無効
 
-Use the `disabled` prop to disable the combobox.
+`disabled` プロパティを使用してコンボボックスを無効にします。
 
 <ComponentPreview styleName="base-nova" name="combobox-disabled" />
 
-## Auto Highlight
+## 自動ハイライト
 
-Use the `autoHighlight` prop to automatically highlight the first item on filter.
+`autoHighlight` プロップを使用して、フィルターの最初の項目を自動的に強調表示します。
 
 <ComponentPreview styleName="base-nova" name="combobox-auto-highlight" />
 
-## Popup
+## ポップアップ
 
-You can trigger the combobox from a button or any other component by using the `render` prop. Move the `ComboboxInput` inside the `ComboboxContent`.
+`render` プロップを使用すると、ボタンまたはその他のコンポーネントからコンボボックスをトリガーできます。`ComboboxInput` を `ComboboxContent` 内に移動します。
 
 <ComponentPreview styleName="base-nova" name="combobox-popup" />
 
@@ -312,7 +312,7 @@ You can trigger the combobox from a button or any other component by using the `
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -323,4 +323,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-を使用します。詳細については、[Base UI](https://base-ui.com/react/components/combobox#api-reference) ドキュメントを参照してください。
+詳細については、[ベース UI](https://base-ui.com/react/components/combobox#api-reference) ドキュメントを参照してください。

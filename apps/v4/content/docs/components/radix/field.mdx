@@ -39,7 +39,7 @@ npx shadcn@latest add field
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add field
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -89,7 +89,7 @@ import {
 
 ## 構成
 
-### フィールド
+### Field
 
 ラベル、ヘルパー テキスト、および検証を含む単一のコントロール。
 
@@ -101,7 +101,7 @@ Field
 └── FieldError
 ```
 
-### フィールド グループ
+### FieldGroup
 
 1 つのグループ内の関連フィールド。必要に応じて、セクション間で `FieldSeparator` を使用します。
 
@@ -150,13 +150,13 @@ FieldSet
 </Field>
 ```
 
-- `Field` is the core wrapper for a single field.
+- `Field` は、単一フィールドのコア ラッパーです。
 - `FieldContent` は、ラベルと説明をグループ化するフレックス列です。記載がない場合は不要です。
 - 関連フィールドを `FieldGroup` でラップし、セマンティック グループ化に `FieldSet` を `FieldLegend` とともに使用します。
 
 ## フォーム
 
-を選択します `Field` コンポーネントを使用してフォームを構築する方法については、[Form](/docs/forms) ドキュメントと [React Hook Form](/docs/forms/react-hook-form)、[Tanstack Form](/docs/forms/tanstack-form)、または [Formisch](/docs/forms/formisch) を参照してください。
+`Field` コンポーネントと [React Hook Form](/docs/forms/react-hook-form)、[Tanstack Form](/docs/forms/tanstack-form)、または [Formisch](/docs/forms/formisch) を使用したフォームの構築については、[Form](/docs/forms) のドキュメントを参照してください。
 
 ## 入力
 
@@ -202,7 +202,7 @@ FieldSet
 
 ## フィールド グループ
 
-Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
+`FieldGroup` を使用して `Field` コンポーネントをスタックします。区切るには `FieldSeparator` を追加します。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -221,11 +221,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
   previewClassName="h-auto p-6"
 />
 
-## レスポンシブ レイアウトについて
+## レスポンシブ レイアウト
 
-- **Vertical fields:** Default orientation stacks label, control, and helper text—ideal for mobile-first layouts.
+- **垂直フィールド:** デフォルトの向きでは、ラベル、コントロール、ヘルパー テキストが縦に並びます。モバイルファーストのレイアウトに最適です。
 - **水平フィールド:** ラベルとコントロールを並べて配置するには、`Field` に `orientation="horizontal"` を設定します。 `FieldContent` と組み合わせて説明を統一します。
-- **レスポンシブ フィールド:** コンテナ対応の親内の自動列レイアウトには `orientation="responsive"` を設定します。 `FieldGroup` に `@container/field-group` クラスを適用して、特定のブレークポイントで方向を切り替えます。
+- **レスポンシブ フィールド:** コンテナ対応の親内の自動列レイアウト用に `orientation="responsive"` を設定します。 `FieldGroup` に `@container/field-group` クラスを適用して、特定のブレークポイントで方向を切り替えます。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -236,7 +236,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 ## 検証とエラー
 
 - `data-invalid` を `Field` に追加して、ブロック全体をエラー状態に切り替えます。
-- Add `aria-invalid` on the input itself for assistive technologies.
+- 支援技術のために、入力自体に `aria-invalid` を追加します。
 - コントロールの直後または `FieldContent` 内に `FieldError` をレンダリングして、エラー メッセージをフィールドに合わせて配置します。
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
@@ -249,7 +249,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## アクセシビリティ
 
-- `FieldSet` and `FieldLegend` keep related controls grouped for keyboard and assistive tech users.
+- `FieldSet` および `FieldLegend` は、キーボードおよび支援技術ユーザー向けに関連するコントロールをグループ化します。
 - `Field` は `role="group"` を出力するため、ネストされたコントロールは結合時に `FieldLabel` および `FieldLegend` からラベル付けを継承します。
 - `FieldSeparator` は慎重に適用して、スクリーン リーダーが明確なセクション境界に遭遇するようにします。
 
@@ -259,7 +259,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 間隔プリセットを使用してセマンティック `fieldset` をレンダリングするコンテナー。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -274,10 +274,10 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `FieldSet` の凡例要素。ラベルのサイズに合わせて `label` バリアントに切り替えます。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type                  | Default    |
 | ----------- | --------------------- | ---------- |
-| `variant` | `"legend" \| "label"` | `"legend"` |
-| `className` | `string` |            |
+| `variant`   | `"legend" \| "label"` | `"legend"` |
+| `className` | `string`              |            |
 
 ```tsx
 <FieldLegend variant="label">Notification Preferences</FieldLegend>
@@ -285,11 +285,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `FieldLegend` には、`legend` と `label` の 2 つのバリアントがあります。 `label` バリアントは、ラベルのサイズ変更と配置を適用します。 `FieldSet` をネストしている場合に便利です。
 
-### フィールド グループ
+### FieldGroup
 
-`Field` コンポーネントをスタックし、応答性の高い方向のコンテナー クエリを可能にするレイアウト ラッパー。
+`Field` コンポーネントをスタックし、応答性の高い方向に対するコンテナー クエリを可能にするレイアウト ラッパー。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -300,15 +300,15 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </FieldGroup>
 ```
 
-### フィールド
+### Field
 
-The core wrapper for a single field. Provides orientation control, invalid state styling, and spacing.
+単一フィールドのコア ラッパー。向きの制御、無効な状態のスタイル、および間隔を提供します。
 
-|小道具 |タイプ |デフォルト |
+| Prop           | Type                                          | Default      |
 | -------------- | -------------------------------------------- | ------------ |
 | `orientation`  | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
-| `className` | `string` |              |
-| `data-invalid` | `boolean` |              |
+| `className`    | `string`                                      |              |
+| `data-invalid` | `boolean`                                     |              |
 
 ```tsx
 <Field orientation="horizontal">
@@ -321,7 +321,7 @@ The core wrapper for a single field. Provides orientation control, invalid state
 
 ラベルがコントロールの横にあるときにコントロールと説明をグループ化するフレックス列。記載がない場合は不要です。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -337,22 +337,22 @@ The core wrapper for a single field. Provides orientation control, invalid state
 
 ### FieldLabel
 
-Label styled for both direct inputs and nested `Field` children.
+直接入力とネストされた `Field` 子の両方に対してスタイル設定されたラベル。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type      | Default |
 | ----------- | --------- | ------- |
-| `className` | `string` |         |
-| `asChild` | `boolean` | `false` |
+| `className` | `string`  |         |
+| `asChild`   | `boolean` | `false` |
 
 ```tsx
 <FieldLabel htmlFor="email">Email</FieldLabel>
 ```
 
-### フィールドタイトル
+### FieldTitle
 
 `FieldContent` 内にラベル スタイルを使用してタイトルをレンダリングします。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -363,11 +363,11 @@ Label styled for both direct inputs and nested `Field` children.
 </FieldContent>
 ```
 
-### フィールド説明
+### FieldDescription
 
 水平レイアウトで長い行のバランスを自動的に調整するヘルパー テキスト スロット。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -375,11 +375,11 @@ Label styled for both direct inputs and nested `Field` children.
 <FieldDescription>We never share your email with anyone.</FieldDescription>
 ```
 
-### フィールドセパレータ
+### FieldSeparator
 
 `FieldGroup` 内のセクションを区切る視覚的な区切り線。オプションのインライン コンテンツを受け入れます。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -391,15 +391,15 @@ Label styled for both direct inputs and nested `Field` children.
 
 子または `errors` 配列 (例: `react-hook-form` から) を受け入れる、アクセス可能なエラー コンテナー。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type                                        | Default |
 | ----------- | ------------------------------------------ | ------- |
-| `errors` | `Array<{ message?: string } \| undefined>` |         |
-| `className` | `string` |         |
+| `errors`    | `Array<{ message?: string } \| undefined>` |         |
+| `className` | `string`                                     |         |
 
 ```tsx
 <FieldError errors={errors.username} />
 ```
 
-When the `errors` array contains multiple messages, the component renders a list automatically.
+`errors` 配列に複数のメッセージが含まれている場合、コンポーネントはリストを自動的に表示します。
 
 `FieldError` は、Zod、Valibot、ArkType など、[標準スキーマ](https://standardschema.dev/) を実装するバリデーターによって生成された問題も受け入れます。スキーマの結果から `issues` 配列を直接渡して、ライブラリ全体で統一されたエラー リストをレンダリングします。

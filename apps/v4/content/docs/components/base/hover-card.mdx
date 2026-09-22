@@ -1,6 +1,6 @@
 ---
-title: Hover Card
-description: 晴眼者の場合、リンクの背後にあるコンテンツをプレビューできます。
+title: ホバー カード
+description: 晴眼者は、リンクの背後にあるコンテンツをプレビューできます。
 base: base
 component: true
 links:
@@ -20,7 +20,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -77,7 +77,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `HoverCard`:
+次の構成を使用して `HoverCard` を構築します。
 
 ```text
 HoverCard
@@ -85,10 +85,9 @@ HoverCard
 └── HoverCardContent
 ```
 
-## Trigger Delays
+## トリガー遅延
 
-トリガーで `delay` および `closeDelay` を使用して、カードが開くタイミングを制御し、
-が閉じます。
+トリガーで `delay` および `closeDelay` を使用して、カードが開閉するタイミングを制御します。
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -99,7 +98,7 @@ HoverCard
 </HoverCard>
 ```
 
-## Positioning
+## 位置
 
 `HoverCardContent` の `side` および `align` プロパティを使用して配置を制御します。
 
@@ -120,7 +119,7 @@ HoverCard
   previewClassName="h-80"
 />
 
-## Sides
+## サイド
 
 <ComponentPreview
   styleName="base-nova"
@@ -141,4 +140,4 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-See the [Base UI](https://base-ui.com/react/components/hover-card#api-reference) documentation for more information.
+詳細については、[Base UI](https://base-ui.com/react/components/hover-card#api-reference) ドキュメントを参照してください。

@@ -1,21 +1,21 @@
 ---
-title: GitHubレジストリ
-description: GitHubリポジトリをレジストリとして使います。
+title: GitHub レジストリ
+description: GitHub リポジトリをレジストリとして使います。
 ---
 
-**あらゆるGitHubリポジトリをレジストリにできます。**
+**あらゆる GitHub リポジトリをレジストリにできます。**
 
-リポジトリのルートに `registry.json` ファイルを追加し、共有したいファイルを記述すれば、ユーザーは `shadcn` CLIでインストールできます。
+リポジトリのルートに `registry.json` ファイルを追加し、共有したいファイルを記述すれば、ユーザーは `shadcn` CLI でインストールできます。
 
 ```bash
 npx shadcn@latest add <username>/<repo>/<item>
 ```
 
-レジストリサーバーを設定したり、生成したJSONファイルを公開したりする必要はありません。**GitHubリポジトリ自体がソースレジストリになります。**
+レジストリサーバーを設定したり、生成した JSON ファイルを公開したりする必要はありません。**GitHub リポジトリ自体がソースレジストリになります。**
 
 ## あらゆるファイルを配布する
 
-レジストリ項目は**コンポーネントやReactコードに限定されません。** リポジトリ内のあらゆるファイルを含められます：ソースファイル、設定、ドキュメント、テンプレート、ワークフロー、ルール、プロジェクトの規約などです。
+レジストリ項目は**コンポーネントや React コードに限定されません。** リポジトリ内のあらゆるファイルを含められます：ソースファイル、設定、ドキュメント、テンプレート、ワークフロー、ルール、プロジェクトの規約などです。
 
 <div className="not-prose my-6 overflow-hidden rounded-lg border text-sm">
   <div className="hidden grid-cols-[220px_1fr] border-b bg-muted/50 px-4 py-3 font-medium md:grid">
@@ -54,14 +54,14 @@ npx shadcn@latest add <username>/<repo>/<item>
       "docs/conventions.md",
     ],
     [
-      "Codemodと移行キット",
+      "Codemod と移行キット",
       "codemods/*",
       "scripts/migrate.ts",
       "docs/migration.md",
     ],
     ["テスト設定", "vitest.config.ts", "test/setup.ts", "docs/testing.md"],
     [
-      "CIとリリースのワークフロー",
+      "CI とリリースのワークフロー",
       ".github/workflows/ci.yml",
       ".github/workflows/release.yml",
     ],
@@ -72,11 +72,11 @@ npx shadcn@latest add <username>/<repo>/<item>
       "docs/automation.md",
     ],
     [
-      "Issueとプルリクエストのテンプレート",
+      "Issue とプルリクエストのテンプレート",
       ".github/ISSUE_TEMPLATE/*",
       ".github/pull_request_template.md",
     ],
-    ["MCP設定", ".mcp.json", ".cursor/mcp.json"],
+    ["MCP 設定", ".mcp.json", ".cursor/mcp.json"],
   ].map(([label, ...files]) => (
     <div
       className="grid gap-2 border-b px-4 py-3 last:border-b-0 md:grid-cols-[220px_1fr]"
@@ -92,27 +92,27 @@ npx shadcn@latest add <username>/<repo>/<item>
   ))}
 </div>
 
-## GitHubを使うべき場合
+## GitHub を使うべき場合
 
-次のような場合にGitHubレジストリを使います：
+次のような場合に GitHub レジストリを使います：
 
-- GitHubリポジトリに再利用可能なコードがすでにある。
+- GitHub リポジトリに再利用可能なコードがすでにある。
 - `owner/repo/item` から直接インストールしてほしい。
 - 同じリポジトリから設定ファイル、ルール、ドキュメント、テンプレート、ユーティリティ、その他のファイルを配布したい。
 - カスタムレジストリサーバーやリクエスト認証が必要ない。
 
 ## 要件
 
-GitHubレジストリは次を満たす必要があります：
+GitHub レジストリは次を満たす必要があります：
 
 - `github.com` のリポジトリであること。
 - リポジトリのルートに `registry.json` ファイルがあること。
 - 有効な `registry.json` と `registry-item.json` スキーマを使うこと。
 - リポジトリ内に存在するソースファイルを参照すること。
 
-公開リポジトリは設定なしで動作します。プライベートリポジトリはGitHubの認証情報で動作します。[プライベートリポジトリ](#プライベートリポジトリ) をご覧ください。
+公開リポジトリは設定なしで動作します。プライベートリポジトリは GitHub の認証情報で動作します。[プライベートリポジトリ](#プライベートリポジトリ) をご覧ください。
 
-GitHub EnterpriseホストはGitHubアドレスでは対応していません。リクエスト認証付きのカスタムレジストリサーバーを使う場合は、[認証](/docs/registry/authentication) 付きの [名前空間](/docs/registry/namespace) を使います。
+GitHub Enterprise ホストは GitHub アドレスでは対応していません。リクエスト認証付きのカスタムレジストリサーバーを使う場合は、[認証](/docs/registry/authentication) 付きの [名前空間](/docs/registry/namespace) を使います。
 
 ## ステップ1: registry.json の追加
 
@@ -188,7 +188,7 @@ git commit -m "add registry"
 git push
 ```
 
-ユーザーはGitHubから項目をインストールできるようになります。
+ユーザーは GitHub から項目をインストールできるようになります。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
@@ -198,7 +198,7 @@ npx shadcn@latest add acme/toolkit/project-conventions
 
 レジストリ項目は1つのファイルでも複数のファイルでもインストールできます。一緒に属するファイルは `files` 配列で宣言します。
 
-たとえば、テスト設定ではVitestの設定ファイル、セットアップファイル、短いチームガイドをインストールできます。
+たとえば、テスト設定では Vitest の設定ファイル、セットアップファイル、短いチームガイドをインストールできます。
 
 ```txt
 registry.json
@@ -278,15 +278,15 @@ npx shadcn@latest add acme/toolkit/editorconfig
 
 ## ステップ3: レジストリの検証
 
-レジストリを共有する前に、CLIで検証します。
+レジストリを共有する前に、CLI で検証します。
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit
 ```
 
-このコマンドはルートの `registry.json` を読み取り、includeを解決し、レジストリ項目を検証して、参照先のファイルが存在するか確認します。
+このコマンドはルートの `registry.json` を読み取り、include を解決し、レジストリ項目を検証して、参照先のファイルが存在するか確認します。
 
-ブランチ、タグ、コミットSHAを指定して検証することもできます。
+ブランチ、タグ、コミット SHA を指定して検証することもできます。
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit#v1.0.0
@@ -370,7 +370,7 @@ npx shadcn@latest add acme/toolkit/project-conventions
 
 ### 同じリポジトリ内の依存関係
 
-同じGitHubリポジトリ内の依存関係には、完全なGitHub項目アドレスを使います。
+同じ GitHub リポジトリ内の依存関係には、完全な GitHub 項目アドレスを使います。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -422,7 +422,7 @@ npx shadcn@latest add acme/toolkit/project-conventions
 }
 ```
 
-CI設定は、ユーザーが個別にインストールできるのと同じ整形・テストの既定値に依存できます。
+CI 設定は、ユーザーが個別にインストールできるのと同じ整形・テストの既定値に依存できます。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -480,7 +480,7 @@ CI設定は、ユーザーが個別にインストールできるのと同じ整
 
 ### 依存関係の ref
 
-Refは依存関係をまたいで継承されません。依存関係をピン留めしたい場合は、その依存関係自体にrefを含めます。
+Ref は依存関係をまたいで継承されません。依存関係をピン留めしたい場合は、その依存関係自体に ref を含めます。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -509,31 +509,31 @@ Refは依存関係をまたいで継承されません。依存関係をピン�
 
 ## 便利なコマンド
 
-GitHubレジストリ内のすべての項目を一覧表示します。
+GitHub レジストリ内のすべての項目を一覧表示します。
 
 ```bash
 npx shadcn@latest list acme/toolkit
 ```
 
-GitHubレジストリを検索します。
+GitHub レジストリを検索します。
 
 ```bash
 npx shadcn@latest search acme/toolkit -q conventions
 ```
 
-GitHubレジストリを検証します。
+GitHub レジストリを検証します。
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit
 ```
 
-GitHubレジストリから項目をインストールします。
+GitHub レジストリから項目をインストールします。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
 ```
 
-GitHubレジストリの項目を表示します。
+GitHub レジストリの項目を表示します。
 
 ```bash
 npx shadcn@latest view acme/toolkit/project-conventions
@@ -546,7 +546,7 @@ npx shadcn@latest add acme/toolkit/rules/agent
 ```
 
 <Callout>
-  GitHub項目アドレスでは、最初の2つのパスセグメントがGitHubのオーナーとリポジトリです。残りのセグメントはファイルパスではなくレジストリ項目名です。`.json`
+  GitHub 項目アドレスでは、最初の2つのパスセグメントが GitHub のオーナーとリポジトリです。残りのセグメントはファイルパスではなくレジストリ項目名です。`.json`
   で終わるアドレスはファイルパスとして扱われます。
 </Callout>
 
@@ -556,7 +556,7 @@ npx shadcn@latest add acme/toolkit/rules/agent
 npx shadcn@latest add acme/toolkit/project-conventions#v1.0.0
 ```
 
-完全なコミットSHAからインストールします。
+完全なコミット SHA からインストールします。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#c0ffee254729296a45d6691db565cf707a3fef5d
@@ -564,41 +564,41 @@ npx shadcn@latest add acme/toolkit/project-conventions#c0ffee254729296a45d6691db
 
 ## Ref
 
-ブランチ、タグ、コミットSHAからインストールするには `#ref` を使います。
+ブランチ、タグ、コミット SHA からインストールするには `#ref` を使います。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#main
 ```
 
-Refにはスラッシュを含められます。
+Ref にはスラッシュを含められます。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#feature/conventions
 ```
 
-refを指定しない場合、CLIはリポジトリの既定ブランチを使います。
+ref を指定しない場合、CLI はリポジトリの既定ブランチを使います。
 
-CLIはファイルを読み取る前に、Gitを使ってブランチ、タグ、短いrefをコミットSHAに解決します。40文字の完全なコミットSHAは直接使われ、Gitは必要ありません。
+CLI はファイルを読み取る前に、Git を使ってブランチ、タグ、短い ref をコミット SHA に解決します。40文字の完全なコミット SHA は直接使われ、Git は必要ありません。
 
 ## プライベートリポジトリ
 
-プライベートな `github.com` リポジトリもレジストリとして動作します。サーバーを設定したり、レジストリ側で何かを構成したりする必要はありません。リポジトリを読み取れれば、CLIはそこからインストールできます。
+プライベートな `github.com` リポジトリもレジストリとして動作します。サーバーを設定したり、レジストリ側で何かを構成したりする必要はありません。リポジトリを読み取れれば、CLI はそこからインストールできます。
 
 ### GitHub CLI を使う
 
-ローカル開発では、GitHub CLIで一度認証します：
+ローカル開発では、GitHub CLI で一度認証します：
 
 ```bash
 gh auth login
 ```
 
-他のGitHubレジストリと同じように、プライベートリポジトリからインストールします。
+他の GitHub レジストリと同じように、プライベートリポジトリからインストールします。
 
 ```bash
 npx shadcn@latest add acme/private-toolkit/project-conventions
 ```
 
-リポジトリが公開読み取りできない場合、CLIは保存済みの認証情報を使って `gh` 経由で読み取ります。トークンはGitHub CLI内に留まります。shadcnプロセスに入ることはありません。
+リポジトリが公開読み取りできない場合、CLI は保存済みの認証情報を使って `gh` 経由で読み取ります。トークンは GitHub CLI 内に留まります。shadcn プロセスに入ることはありません。
 
 認証情報を初めて使うコマンドでは、次の通知が表示されます：
 
@@ -608,7 +608,7 @@ npx shadcn@latest add acme/private-toolkit/project-conventions
 
 ### CI でトークンを使う
 
-GitHub CLIがインストールされていない環境では、`GH_TOKEN` または `GITHUB_TOKEN` を設定します：
+GitHub CLI がインストールされていない環境では、`GH_TOKEN` または `GITHUB_TOKEN` を設定します：
 
 ```bash
 GH_TOKEN=github_pat_xxx npx shadcn@latest add acme/private-toolkit/project-conventions
@@ -616,38 +616,38 @@ GH_TOKEN=github_pat_xxx npx shadcn@latest add acme/private-toolkit/project-conve
 
 - `GH_TOKEN` は `GITHUB_TOKEN` より優先されます。
 - リポジトリにスコープされたきめ細かい個人アクセストークンを使い、**Contents: Read-only** アクセスを付けます。これが推奨される認証情報です。
-- トークンが設定されている場合はGitHub CLIの代わりに使われ、`api.github.com` にのみ送信されます。
+- トークンが設定されている場合は GitHub CLI の代わりに使われ、`api.github.com` にのみ送信されます。
 
 <Callout>
-  GitHub Actionsでは、組み込みの `GITHUB_TOKEN`
-  は通常、そのワークフローを所有するリポジトリしか読み取れません。別のリポジトリのプライベートレジストリからインストールするには、きめ細かい個人アクセストークンまたはGitHub
-  Appのインストールトークンを使います。
+  GitHub Actions では、組み込みの `GITHUB_TOKEN`
+  は通常、そのワークフローを所有するリポジトリしか読み取れません。別のリポジトリのプライベートレジストリからインストールするには、きめ細かい個人アクセストークンまたは GitHub
+  App のインストールトークンを使います。
 </Callout>
 
 ### 仕組み
 
-- 公開リポジトリは常に匿名で読み取られます。認証情報は使われず、GitHub CLIが呼び出されることもありません。
-- CLIはまず匿名アクセスを試みます。リポジトリのルートの `registry.json` が公開読み取りできない場合にのみ認証情報を使います。
-- refの解決はまず `git ls-remote` を実行します。Gitは、たとえば `gh auth setup-git` でインストールされたものなど、構成済みの認証情報ヘルパーをすでに使っている場合があります。
-- プライベートファイルはGitHubのContents API経由で読み取られ、解決済みのコミットSHAにピン留めされます。
-- GitHubはプライベートリポジトリと存在しないリポジトリに同じnot-found応答を返します。認証情報でもリポジトリを読み取れない場合、CLIはどちらの場合か判断できません。
+- 公開リポジトリは常に匿名で読み取られます。認証情報は使われず、GitHub CLI が呼び出されることもありません。
+- CLI はまず匿名アクセスを試みます。リポジトリのルートの `registry.json` が公開読み取りできない場合にのみ認証情報を使います。
+- ref の解決はまず `git ls-remote` を実行します。Git は、たとえば `gh auth setup-git` でインストールされたものなど、構成済みの認証情報ヘルパーをすでに使っている場合があります。
+- プライベートファイルは GitHub の Contents API 経由で読み取られ、解決済みのコミット SHA にピン留めされます。
+- GitHub はプライベートリポジトリと存在しないリポジトリに同じ not-found 応答を返します。認証情報でもリポジトリを読み取れない場合、CLI はどちらの場合か判断できません。
 
 ### 制限事項
 
-- レジストリのソースファイルは1ファイルあたり5 MiBまでに制限されます。
-- GitHub Enterpriseホストには対応していません。GitHubアドレスは常に `github.com` に対して解決されます。
-- レジストリのソースファイルではシンボリックリンクを避けてください。匿名読み取りではシンボリックリンクのターゲットパスがテキストとして返され、Contents API経由の認証読み取りではターゲットファイルの内容が返されます。
+- レジストリのソースファイルは1ファイルあたり5 MiB までに制限されます。
+- GitHub Enterprise ホストには対応していません。GitHub アドレスは常に `github.com` に対して解決されます。
+- レジストリのソースファイルではシンボリックリンクを避けてください。匿名読み取りではシンボリックリンクのターゲットパスがテキストとして返され、Contents API 経由の認証読み取りではターゲットファイルの内容が返されます。
 
 ## インストール前の確認
 
-GitHubレジストリ項目はGitHubリポジトリからコードやプロジェクトファイルをインストールします。GitHub項目アドレスは他のサードパーティ製コード依存関係と同じように扱います。
+GitHub レジストリ項目は GitHub リポジトリからコードやプロジェクトファイルをインストールします。GitHub 項目アドレスは他のサードパーティ製コード依存関係と同じように扱います。
 
 管理していないソースからインストールする前に：
 
 - リポジトリとルートの `registry.json` を確認します。
 - 項目定義、特に `files`、`target`、`dependencies`、`devDependencies`、`registryDependencies`、`envVars` を確認します。
 - 外部レジストリへの依存関係を確認します。他のレジストリからファイルをインストールする場合があります。
-- 公開するインストールコマンドにはピン留めしたrefを使います。40文字の完全なコミットSHAが最も再現性の高い選択肢です。
+- 公開するインストールコマンドにはピン留めした ref を使います。40文字の完全なコミット SHA が最も再現性の高い選択肢です。
 - インストール前に `shadcn view acme/toolkit/project-conventions` で解決済みの項目ペイロードを確認します。
 - 項目の確認に支援がほしい場合は、`shadcn view` の出力をエージェントやレビューツールに渡します。
 - ファイルを書き込まずにインストールをプレビューするには `shadcn add acme/toolkit/project-conventions --dry-run` を使います。

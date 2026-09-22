@@ -1,6 +1,6 @@
 ---
 title: フィールド
-description: ラベル、コントロール、ヘルプ テキストを組み合わせて、アクセス可能なフォーム フィールドとグループ化された入力を構成します。
+description: ラベル、コントロール、ヘルプテキストを組み合わせて、アクセシブルなフォームフィールドとグループ化された入力を構成します。
 base: base
 component: true
 ---
@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -39,7 +39,7 @@ npx shadcn@latest add field
   styleName="base-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add field
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -137,7 +137,7 @@ FieldSet
         └── Input / Textarea / Switch / Select
 ```
 
-## 解剖学
+## 構造
 
 `Field` ファミリは、アクセシビリティ対応のフォームを作成するために設計されています。一般的なフィールドは次のように構成されています。
 
@@ -154,7 +154,7 @@ FieldSet
 - `FieldContent` は、ラベルと説明をグループ化するフレックス列です。記載がない場合は不要です。
 - 関連フィールドを `FieldGroup` でラップし、セマンティック グループ化に `FieldSet` を `FieldLegend` とともに使用します。
 
-## Form
+## フォーム
 
 `Field` コンポーネントと [React Hook Form](/docs/forms/react-hook-form)、[Tanstack Form](/docs/forms/tanstack-form)、または [Formisch](/docs/forms/formisch) を使用したフォームの構築については、[Form](/docs/forms) のドキュメントを参照してください。
 
@@ -166,7 +166,7 @@ FieldSet
 
 <ComponentPreview styleName="base-nova" name="field-textarea" />
 
-## Select
+## 選択
 
 <ComponentPreview styleName="base-nova" name="field-select" />
 
@@ -202,7 +202,7 @@ FieldSet
 
 ## フィールド グループ
 
-Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
+`FieldGroup` を使用して `Field` コンポーネントをスタックします。区切るには `FieldSeparator` を追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -212,7 +212,7 @@ Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -223,7 +223,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## レスポンシブ レイアウト
 
-- **Vertical fields:** Default orientation stacks label, control, and helper text—ideal for mobile-first layouts.
+- **垂直フィールド:** デフォルトの向きでは、ラベル、コントロール、ヘルパー テキストが縦に並びます。モバイルファーストのレイアウトに最適です。
 - **水平フィールド:** ラベルとコントロールを並べて配置するには、`Field` に `orientation="horizontal"` を設定します。 `FieldContent` と組み合わせて説明を統一します。
 - **レスポンシブ フィールド:** コンテナ対応の親内の自動列レイアウト用に `orientation="responsive"` を設定します。 `FieldGroup` に `@container/field-group` クラスを適用して、特定のブレークポイントで方向を切り替えます。
 
@@ -236,7 +236,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 ## 検証とエラー
 
 - `data-invalid` を `Field` に追加して、ブロック全体をエラー状態に切り替えます。
-- 支援技術の入力自体に `aria-invalid` を追加します。
+- 支援技術のために、入力自体に `aria-invalid` を追加します。
 - コントロールの直後または `FieldContent` 内に `FieldError` をレンダリングして、エラー メッセージをフィールドに合わせて配置します。
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
@@ -251,7 +251,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 - `FieldSet` および `FieldLegend` は、キーボードおよび支援技術ユーザー向けに関連するコントロールをグループ化します。
 - `Field` は `role="group"` を出力するため、ネストされたコントロールは結合時に `FieldLabel` および `FieldLegend` からラベル付けを継承します。
-- Apply `FieldSeparator` sparingly to ensure screen readers encounter clear section boundaries.
+- `FieldSeparator` は慎重に適用して、スクリーン リーダーが明確なセクション境界に遭遇するようにします。
 
 ## API リファレンス
 
@@ -272,7 +272,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### FieldLegend
 
-Legend element for a `FieldSet`. Switch to the `label` variant to align with label sizing.
+`FieldSet` の凡例要素。ラベルのサイズに合わせて `label` バリアントに切り替えます。
 
 | Prop        | Type                  | Default    |
 | ----------- | --------------------- | ---------- |
@@ -304,10 +304,10 @@ Legend element for a `FieldSet`. Switch to the `label` variant to align with lab
 
 単一フィールドのコア ラッパー。向きの制御、無効な状態のスタイル、および間隔を提供します。
 
-|小道具 |タイプ |デフォルト |
+| Prop           | Type                                          | Default      |
 | -------------- | -------------------------------------------- | ------------ |
-| `orientation` | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
-| `className` | `string` |              |
+| `orientation`  | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
+| `className`    | `string`                                      |              |
 | `data-invalid` | `boolean`                                    |              |
 
 ```tsx
@@ -335,7 +335,7 @@ Legend element for a `FieldSet`. Switch to the `label` variant to align with lab
 </Field>
 ```
 
-### フィールドラベル
+### FieldLabel
 
 直接入力とネストされた `Field` 子の両方に対してスタイル設定されたラベル。
 
@@ -349,7 +349,7 @@ Legend element for a `FieldSet`. Switch to the `label` variant to align with lab
 
 ### FieldTitle
 
-Renders a title with label styling inside `FieldContent`.
+`FieldContent` 内にラベル スタイルを使用してタイトルをレンダリングします。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -362,9 +362,9 @@ Renders a title with label styling inside `FieldContent`.
 </FieldContent>
 ```
 
-### フィールド説明
+### FieldDescription
 
-Helper text slot that automatically balances long lines in horizontal layouts.
+水平レイアウトで長い行のバランスを自動的に調整するヘルパー テキスト スロット。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -386,14 +386,14 @@ Helper text slot that automatically balances long lines in horizontal layouts.
 <FieldSeparator>Or continue with</FieldSeparator>
 ```
 
-### フィールドエラー
+### FieldError
 
 子または `errors` 配列 (例: `react-hook-form` から) を受け入れる、アクセス可能なエラー コンテナー。
 
-|小道具 |タイプ |デフォルト |
+| Prop        | Type                                        | Default |
 | ----------- | ------------------------------------------ | ------- |
-| `errors` | `Array<{ message?: string } \| undefined>` |         |
-| `className` | `string` |         |
+| `errors`    | `Array<{ message?: string } \| undefined>` |         |
+| `className` | `string`                                     |         |
 
 ```tsx
 <FieldError errors={errors.username} />

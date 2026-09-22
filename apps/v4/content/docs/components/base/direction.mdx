@@ -17,7 +17,7 @@ RTL モードでのコンポーネントのプレビューを次に示します�
   name="card-rtl"
   direction="rtl"
   previewClassName="h-auto"
-  スワイプおよび遷移状態の HideCode
+  hideCode
 />
 
 ## インストール
@@ -26,7 +26,7 @@ RTL モードでのコンポーネントのプレビューを次に示します�
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -63,7 +63,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import { DirectionProvider } from "@/components/ui/direction"
@@ -79,9 +79,9 @@ import { DirectionProvider } from "@/components/ui/direction"
 </html>
 ```
 
-## 使用方向
+## useDirection
 
-The `useDirection` hook is used to get the current direction of the application.
+`useDirection` フックは、アプリケーションの現在の方向を取得するために使用されます。
 
 ```tsx showLineNumbers
 import { useDirection } from "@/components/ui/direction"

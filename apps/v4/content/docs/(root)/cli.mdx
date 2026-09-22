@@ -5,11 +5,11 @@ description: shadcn CLI を使用してコンポーネントをプロジェク�
 
 import { TriangleAlertIcon } from "lucide-react"
 
-## Tailwind CSS v3 プロジェクトでは、init
+## init
 
 `init` コマンドを使用して、既存のプロジェクトの構成と依存関係を初期化するか、`--name` で新しいプロジェクトを作成します。
 
-に追加します。 `init` コマンドは、依存関係をインストールし、`cn` ユーティリティを追加し、プロジェクトの CSS 変数を構成します。
+`init` コマンドは、依存関係をインストールし、`cn` ユーティリティを追加し、プロジェクトの CSS 変数を構成します。
 
 ```bash
 npx shadcn@latest init
@@ -97,7 +97,7 @@ Options:
 npx shadcn@latest apply a2r6bw
 ```
 
-を移行する UI コンポーネントを再インストールせずに、プリセットのテーマまたはフォントのみを適用できます。
+UI コンポーネントを再インストールせずに、プリセットのテーマまたはフォントのみを適用できます。
 
 ```bash
 npx shadcn@latest apply a2r6bw --only theme
@@ -126,7 +126,7 @@ Options:
 
 ---
 
-## プリセット
+## preset
 
 `preset` コマンドを使用して、プリセット コードを検査し、既存のプロジェクトのプリセットを解決します。
 
@@ -157,7 +157,7 @@ Options:
   -h, --help  display help for command
 ```
 
-### プリセット解決
+### preset resolve
 
 `preset resolve` を使って現在のプロジェクトからプリセットを解決します。
 
@@ -184,7 +184,7 @@ Options:
   -h, --help        display help for command
 ```
 
-### プリセット URL
+### preset url
 
 `preset url` を使用して、プリセット コードの作成 URL を出力します。
 
@@ -206,7 +206,7 @@ Options:
   -h, --help  display help for command
 ```
 
-### プリセット オープン
+### preset open
 
 `preset open` を使用して、ブラウザでプリセット コードを開きます。
 
@@ -267,9 +267,9 @@ Options:
 
 ---
 
-## 検索
+## search
 
-を意味します。 `search` コマンドを使用して、レジストリから項目を検索します。アプリの
+`search` コマンドを使用して、レジストリから項目を検索します。
 
 ```bash
 npx shadcn@latest search [registry]
@@ -314,7 +314,7 @@ Options:
 
 ---
 
-## ビルド
+## build
 
 `build` コマンドを使用して、レジストリ JSON ファイルを生成します。
 
@@ -375,7 +375,7 @@ Options:
 
 ---
 
-## 情報
+## info
 
 `info` コマンドを使ってプロジェクトの情報を取得します。
 
@@ -398,7 +398,7 @@ Options:
 
 ---
 
-## 移行
+## migrate
 
 `migrate` コマンドを使用して、プロジェクトで移行を実行します。
 
@@ -438,7 +438,7 @@ Options:
 
 ---
 
-### 移行 cn
+### migrate cn
 
 `cn` 移行は `clsx`、`tailwind-merge`、`cnfast` を [`cn`](https://github.com/shadcn-ui/cn) に置き換えます。
 
@@ -466,13 +466,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-**後**
+**変更後**
 
 ```tsx
 export { cn } from "cn"
 ```
 
-に対してオープンなままです。 移行では、個別に使用される場合も個別の API が保持されます。
+この移行では、個別に使用されている場合、個別の API もそのまま保持されます:
 
 ```diff
 - import { clsx } from "clsx"
@@ -498,14 +498,14 @@ export { cn } from "cn"
 ```
 
 <Callout icon={<TriangleAlertIcon />}>
-`cn` のマージ エンジンは `tailwind-merge` v3 と同様に Tailwind CSS v4 に対応しています。
-  Tailwind CSS v3 を使用するプロジェクトは、引き続き `tailwind-merge` v2 を使用する必要があります。 A
-  `clsx` のみの移行が安全です。
+  `cn` のマージ エンジンは `tailwind-merge` v3 と同様に Tailwind CSS v4 に対応しています。
+  Tailwind CSS v3 を使用するプロジェクトは、引き続き `tailwind-merge` v2 を使用してください。
+  Tailwind CSS v3 プロジェクトでは、`clsx` のみの移行であれば安全です。
 </Callout>
 
-を移行します **特定のファイルを移行します**
+**特定のファイルを移行します**
 
-ではありません。 ファイル、ディレクトリ、またはグロブ パターンを移行できます。
+ファイル、ディレクトリ、またはグロブ パターンを移行できます:
 
 ```bash
 # Migrate a specific file.
@@ -521,7 +521,7 @@ npx shadcn@latest migrate cn "src/**/*.{ts,tsx}"
 
 ---
 
-### アイコン
+### migrate icons
 
 `icons` 移行はコンポーネントをあるアイコン ライブラリから別のライブラリへ移行します。
 
@@ -541,9 +541,9 @@ npx shadcn@latest migrate icons
 npx shadcn@latest migrate icons --from lucide --to phosphor --yes
 ```
 
-を移行します **特定のファイルを移行します**
+**特定のファイルを移行します**
 
-特定のファイルを移行したり、glob パターンを使用したりできます。対象を限定した実行では `components.json` は更新されません。
+特定のファイルを移行したり、グロブ パターンを使用したりできます。対象を限定した実行では `components.json` は更新されません。
 
 ```bash
 # Migrate a specific file.
@@ -557,7 +557,7 @@ npx shadcn@latest migrate icons "src/components/**" --from lucide --to tabler
 
 ---
 
-### ベースカラー
+### migrate base-color
 
 `base-color` の移行により、テーマがある基本色から別の基本色に切り替わります。
 
@@ -581,7 +581,7 @@ npx shadcn@latest migrate base-color --to zinc --yes
 
 ---
 
-### 移行 rtl
+### migrate rtl
 
 `rtl` 移行は RTL（右から左）の言語に対応するようコンポーネントを変換します。
 
@@ -595,9 +595,9 @@ npx shadcn@latest migrate rtl
 2. 物理的な CSS プロパティを論理的な同等のプロパティに変換します (例: `ml-4` → `ms-4`、`text-left` → `text-start`)
 3. 必要に応じて `rtl:` バリアントを追加します (例: `space-x-4` → `space-x-4 rtl:space-x-reverse`)
 
-を移行します **特定のファイルを移行します**
+**特定のファイルを移行します**
 
-特定のファイルを移行したり、glob パターンを使用したりできます。
+特定のファイルを移行したり、グロブ パターンを使用したりできます:
 
 ```bash
 # Migrate a specific file
@@ -611,9 +611,9 @@ npx shadcn@latest migrate rtl "src/components/ui/**"
 
 ---
 
-### 基数
+### migrate radix
 
-`radix` の移行により、個別のインポートが更新されます。 `@radix-ui/react-*` パッケージを統合 `radix-ui` パッケージに変更します。
+`radix` の移行により、個別の `@radix-ui/react-*` パッケージからのインポートが、統合された `radix-ui` パッケージへ更新されます。
 
 ```bash
 npx shadcn@latest migrate radix
@@ -622,7 +622,7 @@ npx shadcn@latest migrate radix
 これは次のことを行います:
 
 1. `@radix-ui/react-*` から `radix-ui` へインポートを変換します。
-2. `radix-ui` パッケージを `package.json`
+2. `radix-ui` パッケージを `package.json` に追加します。
 
 **変更前**
 
@@ -631,15 +631,15 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import * as SelectPrimitive from "@radix-ui/react-select"
 ```
 
-**後**
+**変更後**
 
 ```tsx
 import { Dialog as DialogPrimitive, Select as SelectPrimitive } from "radix-ui"
 ```
 
-を移行します **特定のファイルを移行します**
+**特定のファイルを移行します**
 
-You can migrate specific files or use glob patterns:
+特定のファイルを移行したり、グロブ パターンを使用したりできます:
 
 ```bash
 # Migrate a specific file.
@@ -662,8 +662,8 @@ npx shadcn@latest migrate radix "src/components/ui/**"
 `eject` コマンドを使用して、`shadcn/tailwind.css` をグローバル CSS ファイルにインライン化し、プロジェクトから `shadcn` 依存関係を削除します。
 
 <Callout icon={<TriangleAlertIcon />}>
-  を移行します。 **注: この操作は元に戻すことができません。** 取り出した後、将来の shadcn CLI
-  `shadcn/tailwind.css` への更新は自動的には適用されません。
+  **注意: この操作は元に戻せません。** `eject` を実行した後は、`shadcn/tailwind.css`
+  への今後の shadcn CLI の更新が自動的に適用されなくなります。
 </Callout>
 
 ```bash
@@ -678,7 +678,7 @@ npx shadcn@latest eject
 @import "shadcn/tailwind.css";
 ```
 
-**後**
+**変更後**
 
 ```css
 @import "tailwindcss";
@@ -715,7 +715,7 @@ npx shadcn@latest eject
 }
 ```
 
-**Monorepo**
+**モノリポジトリ**
 
 モノリポジトリでは、`components.json` およびグローバル CSS ファイルを含むワークスペースからコマンドを実行します。
 

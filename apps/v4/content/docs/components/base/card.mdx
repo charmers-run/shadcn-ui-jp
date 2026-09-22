@@ -1,6 +1,6 @@
 ---
 title: カード
-description: ヘッダー、コンテンツ、フッターを備えたカードを表示します。
+description: ヘッダー、コンテンツ、フッターを含むカードを表示します。
 base: base
 component: true
 ---
@@ -79,7 +79,7 @@ import {
 
 ## 構成
 
-Use the following composition to build a `Card`:
+`Card` を構築するには、次の構成を使用します。
 
 ```text
 Card
@@ -93,7 +93,7 @@ Card
 
 ## サイズ
 
-`size="sm"` プロパティを使用して、カードのサイズを小さく設定します。小さいサイズのバリエーションでは、より狭い間隔が使用されます。
+`size="sm"` プロップを使用して、カードのサイズを小さく設定します。小さいサイズのバリエーションでは、より狭い間隔が使用されます。
 
 <ComponentPreview
   styleName="base-nova"
@@ -119,9 +119,9 @@ Card
   previewClassName="h-[24rem]"
 />
 
-## Image
+## 画像
 
-Add an image before the card header to create a card with an image.
+画像付きのカードを作成するには、カード ヘッダーの前に画像を追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -146,7 +146,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `Card` コンポーネントは、カード コンテンツのルート コンテナーです。
 
-| Prop        | Type                | Default     |
+| プロップ    | タイプ              | デフォルト  |
 | ----------- | ------------------- | ----------- |
 | `size`      | `"default" \| "sm"` | `"default"` |
 | `className` | `string` | - |
@@ -155,15 +155,15 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `CardHeader` コンポーネントは、タイトル、説明、およびオプションのアクションに使用されます。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
 ### CardTitle
 
-The `CardTitle` component is used for the card title.
+`CardTitle` コンポーネントはカードのタイトルに使用されます。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
@@ -171,23 +171,23 @@ The `CardTitle` component is used for the card title.
 
 `CardDescription` コンポーネントは、タイトルの下のヘルパー テキストに使用されます。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
 ### CardAction
 
-The `CardAction` component places content in the top-right of the header (for example, a button or a badge).
+`CardAction` コンポーネントは、ヘッダーの右上にコンテンツ (ボタンやバッジなど) を配置します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
 ### CardContent
 
-The `CardContent` component is used for the main card body.
+`CardContent` コンポーネントはメイン カード本体に使用されます。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
@@ -195,7 +195,7 @@ The `CardContent` component is used for the main card body.
 
 `CardFooter` コンポーネントは、カード下部のアクションと二次コンテンツに使用されます。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
@@ -203,11 +203,11 @@ The `CardContent` component is used for the main card body.
 
 ### 間隔変数
 
-If you're upgrading from a previous version of the `Card` component, you'll need to apply the following updates to use the `--card-spacing` variable:
+`Card` コンポーネントの以前のバージョンからアップグレードする場合は、`--card-spacing` 変数を使用するために次の更新を適用する必要があります。
 
 <Steps>
 
-<Step>Update the Card root spacing classes.</Step>
+<Step>カードのルート間隔クラスを更新します。</Step>
 
 ハードコーディングされたギャップと垂直パディングを `--card-spacing` に置き換え、ルートにデフォルトと小さいサイズの値を設定します。
 
@@ -221,7 +221,7 @@ If you're upgrading from a previous version of the `Card` component, you'll need
 
 <Step>CardHeader 間隔クラスを更新します。</Step>
 
-Replace the horizontal padding and border spacing with the shared variable:
+水平方向のパディングと境界線の間隔を共有変数で置き換えます。
 
 ```diff
   className={cn(
@@ -233,7 +233,7 @@ Replace the horizontal padding and border spacing with the shared variable:
 
 <Step>CardContent および CardFooter 間隔クラスを更新します。</Step>
 
-Use `--card-spacing` for the content inset and footer padding:
+コンテンツ インセットとフッター パディングには `--card-spacing` を使用します。
 
 ```diff
   function CardContent({ className, ...props }: React.ComponentProps<"div">) {
@@ -258,7 +258,7 @@ Use `--card-spacing` for the content inset and footer padding:
 
 </Steps>
 
-After applying these changes, you can customize card spacing by setting `--card-spacing` on the `Card` with an arbitrary property class:
+これらの変更を適用した後、任意のプロパティ クラスを使用して `Card` に `--card-spacing` を設定することで、カードの間隔をカスタマイズできます。
 
 ```tsx
 function Example() {

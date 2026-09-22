@@ -33,7 +33,7 @@ npx shadcn@latest add button-group
 npm install radix-ui
 ```
 
-<Step>の場合 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="button-group"
@@ -68,7 +68,7 @@ import {
 
 ## 構成
 
-ペルシア語 / ヒジュラ語 / ジャラリ語カレンダーを有効にする方法については、[ヒジュラ語ガイド](#persian--hijri--jalali-calendar) も参照してください。
+`ButtonGroup` を構築するには、次の構成を使用します。
 
 ```text
 ButtonGroup
@@ -80,8 +80,8 @@ ButtonGroup
 ## アクセシビリティ
 
 - `ButtonGroup` コンポーネントの `role` 属性は `group` に設定されています。
-- Use <Kbd>Tab</Kbd> to navigate between the buttons in the group.
-- `aria-label` を使用して、バブルの視覚的な処理を変更します。
+- <Kbd>Tab</Kbd> を使用して、グループ内のボタン間を移動します。
+- ボタングループにラベルを付けるには、`aria-label` または `aria-labelledby` を使用します。
 
 ```tsx showLineNumbers
 <ButtonGroup aria-label="Button group">
@@ -90,18 +90,18 @@ ButtonGroup
 </ButtonGroup>
 ```
 
-## ButtonGroup と ToggleGroup
+## ButtonGroup と ToggleGroup の比較
 
-- Use the `ButtonGroup` component when you want to group buttons that perform an action.
+- アクションを実行するボタンをグループ化する場合は、`ButtonGroup` コンポーネントを使用します。
 - 状態を切り替えるボタンをグループ化する場合は、`ToggleGroup` コンポーネントを使用します。
 
-## 向き
+## 方向
 
-Set the `orientation` prop to change the button group layout.
+ボタン グループのレイアウトを変更するには、`orientation` プロップを設定します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-orientation" />
 
-## ラベル付け 反応
+## サイズ
 
 個々のボタンの `size` プロップを使用してボタンのサイズを制御します。
 
@@ -121,9 +121,9 @@ Set the `orientation` prop to change the button group layout.
 
 <ComponentPreview styleName="radix-nova" name="button-group-separator" />
 
-## スプリット
+## 分割
 
-Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
+`ButtonGroupSeparator` で区切られた 2 つのボタンを追加して、分割ボタン グループを作成します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-split" />
 
@@ -147,13 +147,13 @@ Create a split button group by adding two buttons separated by a `ButtonGroupSep
 
 ## 選択
 
-`Select` コンポーネントとペアにします。
+`Select` コンポーネントとペアリングします。
 
 <ComponentPreview styleName="radix-nova" name="button-group-select" />
 
 ## ポップオーバー
 
-`Popover` コンポーネントで使用します。
+`Popover` コンポーネントと一緒に使用します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-popover" />
 
@@ -171,11 +171,11 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### ButtonGroup
 
-`ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナです。
+`ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナーです。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | -------------- |
-デフォルト
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
 
 ```tsx
 <ButtonGroup>
@@ -197,9 +197,9 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 `ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | ------------- | ---------------------------- | ------------ |
-デフォルト
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
 
 ```tsx
 <ButtonGroup>
@@ -209,13 +209,13 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 </ButtonGroup>
 ```
 
-### ボタングループテキスト
+### ButtonGroupText
 
-Use this component to display text within a button group.
+このコンポーネントを使用して、ボタン グループ内のテキストを表示します。
 
-|小道具 |タイプ |デフォルト |
+|プロップ |タイプ |デフォルト |
 | --------- | --------- | ------- |
-デフォルト
+| `asChild` | `boolean` | `false` |
 
 ```tsx
 <ButtonGroup>
@@ -224,7 +224,7 @@ Use this component to display text within a button group.
 </ButtonGroup>
 ```
 
-Use the `asChild` prop to render a custom component as the text, for example a label.
+`asChild` プロップを使用して、カスタム コンポーネントをテキスト (ラベルなど) としてレンダリングします。
 
 ```tsx showLineNumbers
 import { ButtonGroupText } from "@/components/ui/button-group"

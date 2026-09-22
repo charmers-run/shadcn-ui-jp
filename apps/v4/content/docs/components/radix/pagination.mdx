@@ -13,7 +13,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">手動</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -103,13 +103,13 @@ Pagination
 
 ## シンプル
 
-ページ番号のみの単純なページネーション。
+ページ番号のみのシンプルなページネーション。
 
 <ComponentPreview styleName="radix-nova" name="pagination-simple" />
 
-## フォーム付きのアイコンのみ
+## アイコンのみ
 
-ページ番号を付けずに「前へ」ボタンと「次へ」ボタンだけを使用します。これは、ページごとの行セレクターを備えたデータ テーブルに便利です。
+ページ番号を付けずに「前へ」ボタンと「次へ」ボタンだけを使用します。これは、ページごとの行セレクターを備えたデータテーブルに便利です。
 
 <ComponentPreview styleName="radix-nova" name="pagination-icons-only" />
 
@@ -139,7 +139,7 @@ const PaginationLink = ({...props }: ) => (
 
 <Callout className="mt-6">
 
-**注:** これを自動的に行うために cli を更新しています。
+**注:** これを自動的に行うために CLI を更新しています。
 
 </Callout>
 
@@ -157,7 +157,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### RTL サポート
 
-If you're upgrading from a previous version of the `Pagination` component, you'll need to apply the following updates to add the `text` prop:
+以前のバージョンの `Pagination` コンポーネントからアップグレードする場合は、`text` プロパティを追加するために次の更新を適用する必要があります。
 
 <Steps>
 

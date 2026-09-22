@@ -1,6 +1,6 @@
 ---
 title: スケルトン
-description: コンテンツの読み込み中にプレースホルダーを表示するために使用します。
+description: コンテンツの読み込み中にプレースホルダーを表示します。
 base: radix
 component: true
 ---
@@ -13,7 +13,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,7 +35,7 @@ npx shadcn@latest add skeleton
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -79,6 +79,6 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="skeleton-rtl" direction="rtl" />

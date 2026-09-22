@@ -17,7 +17,7 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -39,7 +39,7 @@ npx shadcn@latest add alert
   styleName="radix-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -73,7 +73,7 @@ import {
 
 ## 構成
 
-次の構成を使用して `Alert` を構築します。
+次の構成を使用して、`Alert` を構築します。
 
 ```text
 Alert
@@ -105,7 +105,7 @@ Alert
 
 ## アクション
 
-Use `AlertAction` to add a button or other action element to the alert.
+`AlertAction` を使用して、ボタンまたはその他のアクション要素をアラートに追加します。
 
 <ComponentPreview
   name="alert-action"
@@ -113,9 +113,9 @@ Use `AlertAction` to add a button or other action element to the alert.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## カスタム カラー
+## カスタムカラー
 
-You can customize the alert colors by adding custom classes such as `bg-amber-50 dark:bg-amber-950` to the `Alert` component.
+`bg-amber-50 dark:bg-amber-950` などのカスタムクラスを `Alert` コンポーネントに追加することで、アラートの色をカスタマイズできます。
 
 <ComponentPreview
   name="alert-colors"
@@ -138,32 +138,32 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ### アラート
 
-`Alert` コンポーネントは、ユーザーの注意を引くためのコールアウトを表示します。
+`Alert` コンポーネントは、ユーザーの注意を促すコールアウトを表示します。
 
-| Prop      | Type                         | Default     |
+| プロパティ  | タイプ                         | デフォルト     |
 | --------- | ---------------------------- | ----------- |
 | `variant` | `"default" \| "destructive"` | `"default"` |
 
-### AlertTitle
+### アラートタイトル
 
 `AlertTitle` コンポーネントは、アラートのタイトルを表示します。
 
-| Prop        | Type     | Default |
+| プロパティ  | タイプ     | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | - |
 
-### AlertDescription
+### アラートの説明
 
 `AlertDescription` コンポーネントは、アラートの説明または内容を表示します。
 
-| Prop        | Type     | Default |
+| プロパティ  | タイプ     | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | - |
 
-### AlertAction
+### アラートアクション
 
-The `AlertAction` component displays an action element (like a button) positioned absolutely in the top-right corner of the alert.
+`AlertAction` コンポーネントは、アラートの右上隅に絶対配置されたアクション要素 (ボタンなど) を表示します。
 
-| Prop        | Type     | Default |
+| プロパティ  | タイプ     | デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | - |

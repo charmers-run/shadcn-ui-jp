@@ -33,7 +33,7 @@ npx shadcn@latest create --template start --rtl
 
 ### DirectionProvider を追加
 
-`dir="rtl"` 属性と `lang="ar"` 属性を `html` タグに追加します。 `lang="ar"` をターゲット言語に更新します。
+`dir="rtl"` 属性と `lang="ar"` 属性を `html` タグに追加します。`lang="ar"` は対象言語に更新してください。
 
 次に、`__root.tsx` で `direction="rtl"` prop を持つ `DirectionProvider` コンポーネントでアプリをラップします。
 
@@ -63,7 +63,7 @@ function RootComponent() {
 
 最適な RTL 体験のため、対象言語を適切にサポートするフォントの使用を推奨します。[Noto](https://fonts.google.com/noto) はこの用途に適したフォント ファミリーで、Inter や Geist ともよく合います。
 
-[フォントソース](https://fontsource.org/fonts/noto-sans-arabic) を使用してフォントをインストールします。
+[Fontsource](https://fontsource.org/fonts/noto-sans-arabic) を使用してフォントをインストールします。
 
 ```bash
 npm install @fontsource-variable/noto-sans-arabic

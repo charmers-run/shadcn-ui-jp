@@ -20,7 +20,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -48,7 +48,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import { HoverCard, HoverCardTrigger } from "@/components/ui/hover-card"
@@ -83,8 +83,7 @@ HoverCardTrigger
 
 ## トリガー遅延
 
-`HoverCardTrigger` で `delay` および `closeDelay` を使用して、カード
-が開閉します。
+`HoverCardTrigger` で `delay` および `closeDelay` を使用して、カードが開閉するタイミングを制御します。
 
 ```tsx showLineNumbers
 <HoverCardTrigger delay={100} closeDelay={200}>

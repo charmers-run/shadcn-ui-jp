@@ -68,8 +68,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 ## チェックされた状態
 
-制御されていないチェックボックスには `defaultSelected` を使用するか、`isSelected` および
-`onChange` は状態を制御します。
+非制御のチェックボックスには `defaultSelected` を使用し、状態を制御するには `isSelected` と
+`onChange` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -83,8 +83,8 @@ export function Example() {
 
 ## 無効な状態
 
-チェックボックスの `isInvalid` とフィールド ラッパーの `data-invalid` を
-は無効なスタイルを示します。
+チェックボックスに `isInvalid`、フィールド ラッパーに `data-invalid` を設定すると、
+無効なスタイルが表示されます。
 
 <ComponentPreview styleName="aria-nova" name="checkbox-invalid" />
 
@@ -96,7 +96,7 @@ export function Example() {
 
 ## 説明
 
-ヘルパー テキストとして `FieldContent` および `FieldDescription` を使用します。
+ヘルパー テキストには `FieldContent` と `FieldDescription` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="checkbox-description" />
 

@@ -1,6 +1,6 @@
 ---
 title: チャート
-description: 美しいグラフ。 Recharts を使用して構築されています。コピーしてアプリに貼り付けます。
+description: Recharts で構築された美しいチャート。アプリにコピーして貼り付けて使用できます。
 base: aria
 component: true
 ---
@@ -20,7 +20,7 @@ component: true
 
 **チャート**を紹介します。コピーしてアプリに貼り付けることができるグラフ コンポーネントのコレクション。
 
-に色を追加する チャートは、箱から出してすぐに見栄えがするように設計されています。これらは他のコンポーネントとうまく連携し、プロジェクトに合わせて完全にカスタマイズできます。
+チャートは、箱から出してすぐに見栄えがするように設計されています。これらは他のコンポーネントとうまく連携し、プロジェクトに合わせて完全にカスタマイズできます。
 
 [チャート ライブラリを参照](/charts)。
 
@@ -47,7 +47,7 @@ export function MyChart() {
 }
 ```
 
-リチャートはラッピングしておりません。これは、抽象概念に囚われないことを意味します。 Recharts の新しいバージョンがリリースされたら、公式アップグレード パスに従ってチャートをアップグレードできます。
+Recharts はラップしません。これは、抽象概念に囚われないことを意味します。 Recharts の新しいバージョンがリリースされたら、公式アップグレード パスに従ってチャートをアップグレードできます。
 
 **コンポーネントはあなたのものです**。
 
@@ -113,9 +113,9 @@ npm install recharts
 
 </CodeTabs>
 
-## 最初のグラフ
+## 初めてのチャート
 
-Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.
+最初のチャートを作成しましょう。バーチャートを作成し、グリッド、軸、ツールチップ、凡例を追加します。
 
 <Steps>
 
@@ -125,7 +125,7 @@ Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip
 
 <Callout className="mt-4">
 
-**注:** データは任意の形式にすることができます。以下のデータの形式に限定されません。 `dataKey` プロップを使用して、データをチャートにマップします。
+**注:** データは任意の形式にすることができます。以下のデータの形式に限定されません。 `dataKey` プロパティを使用して、データをチャートにマップします。
 
 </Callout>
 
@@ -250,7 +250,7 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 ### ツールチップの追加
 
-これまでのところ、Recharts のコンポーネントのみを使用してきました。 `chart` コンポーネントのカスタマイズのおかげで、箱から出してすぐに見栄えがよくなります。
+これまで、Recharts のコンポーネントのみを使用してきました。 `chart` コンポーネントのカスタマイズのおかげで、箱から出してすぐに見栄えがよくなります。
 
 ツールチップを追加するには、`chart` のカスタム `ChartTooltip` コンポーネントと `ChartTooltipContent` コンポーネントを使用します。
 
@@ -288,24 +288,23 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
   previewClassName="h-80"
 />
 
-カーソルを合わせるとツールチップが表示されます。簡単ですよね？ 2 つのコンポーネントで、美しいツール…1085 tokens truncated…hart comes with the `<ChartTooltip>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
-チャートには、`<ChartTooltip>` コンポーネントと `<ChartTooltipContent>` コンポーネントが付属しています。これら 2 つのコンポーネントを使用して、グラフにカスタム ツールチップを追加できます。
+カーソルを合わせるとツールチップが表示されます。簡単ですよね？ 2 つのコンポーネントで、美しいツールチップが表示されます。
 
 </Steps>
 
-### Add Legend
+### 凡例の追加
 
-We'll do the same for the legend. We'll use the `ChartLegend` and `ChartLegendContent` components from `chart`.
+凡例に対しても同じことを行います。 `chart` の `ChartLegend` コンポーネントと `ChartLegendContent` コンポーネントを使用します。
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `ChartLegend` and `ChartLegendContent` components.</Step>
+<Step>`ChartLegend` および `ChartLegendContent` コンポーネントをインポートします。</Step>
 
 ```tsx
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 ```
 
-<Step>Add the components to your chart.</Step>
+<Step>コンポーネントをチャートに追加します。</Step>
 
 ```tsx showLineNumbers {12}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -334,19 +333,19 @@ import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 
 </Steps>
 
-Done. You've built your first chart! What's next?
+完了しました。最初のチャートが作成されました。次は何でしょうか？
 
-- [Themes and Colors](/docs/components/aria/chart#theming)
-- [Tooltip](/docs/components/aria/chart#tooltip)
-- [Legend](/docs/components/aria/chart#legend)
+- [テーマと色](/docs/components/aria/chart#theming)
+- [ツールチップ](/docs/components/aria/chart#tooltip)
+- [凡例](/docs/components/aria/chart#legend)
 
-## Chart Config
+## チャート設定
 
-The chart config is where you define the labels, icons and colors for a chart.
+チャート設定では、チャートのラベル、アイコン、色を定義します。
 
-It is intentionally decoupled from chart data.
+チャート データから意図的に切り離されています。
 
-This allows you to share config and color tokens between charts. It can also work independently for cases where your data or color tokens live remotely or in a different format.
+これにより、チャート間で構成トークンとカラートークンを共有できるようになります。データまたはカラー トークンがリモートに存在する場合や、異なる形式で存在する場合でも、独立して機能することもできます。
 
 ```tsx showLineNumbers /ChartConfig/
 import { Monitor } from "lucide-react"
@@ -368,15 +367,15 @@ const chartConfig = {
 } satisfies ChartConfig
 ```
 
-## Theming
+## テーマ
 
-Charts have built-in support for theming. You can use css variables (recommended) or color values in any color format, such as hex, hsl or oklch.
+チャートにはテーマのサポートが組み込まれています。 CSS 変数 (推奨) または任意のカラー形式 (hex、hsl、oklch など) のカラー値を使用できます。
 
-### CSS Variables
+### CSS 変数
 
 <Steps className="mb-0 pt-2">
 
-<Step>Define your colors in your css file</Step>
+<Step>CSS ファイルで色を定義します</Step>
 
 ```css title="app/globals.css" showLineNumbers
 @layer base {
@@ -392,7 +391,7 @@ Charts have built-in support for theming. You can use css variables (recommended
 }
 ```
 
-<Step>Add the color to your `chartConfig`</Step>
+<Step>`chartConfig` に色を追加します</Step>
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -409,9 +408,9 @@ const chartConfig = {
 
 </Steps>
 
-### hex, hsl or oklch
+### hex、hsl、または oklch
 
-You can also define your colors directly in the chart config. Use the color format you prefer.
+チャート設定で直接色を定義することもできます。好みのカラー形式を使用してください。
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -434,17 +433,17 @@ const chartConfig = {
 } satisfies ChartConfig
 ```
 
-### Using Colors
+### 色の使用
 
-To use the theme colors in your chart, reference the colors using the format `var(--color-KEY)`.
+チャートでテーマの色を使用するには、`var(--color-KEY)` の形式を使用して色を参照します。
 
-#### Components
+#### コンポーネント
 
 ```tsx
 <Bar dataKey="desktop" fill="var(--color-desktop)" />
 ```
 
-#### Chart Data
+#### チャート データ
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartData = [
@@ -461,15 +460,15 @@ const chartData = [
 
 ## ツールチップ
 
-A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.
+チャート ツールチップには、ラベル、名前、インジケーター、および値が含まれます。これらを組み合わせて使用して、ツールチップをカスタマイズできます。
 
 <ComponentPreview styleName="aria-nova" name="chart-tooltip" hideCode />
 
-You can turn on/off any of these using the `hideLabel`, `hideIndicator` props and customize the indicator style using the `indicator` prop.
+`hideLabel`、`hideIndicator` プロパティを使用してこれらのオン/オフを切り替え、`indicator` プロパティを使用してインジケーターのスタイルをカスタマイズできます。
 
-Use `labelKey` and `nameKey` to use a custom key for the tooltip label and name.
+ツールチップのラベルと名前にカスタム キーを使用するには、`labelKey` および `nameKey` を使用します。
 
-Chart comes with the `<ChartTooltip>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
+チャートには、`<ChartTooltip>` コンポーネントと `<ChartTooltipContent>` コンポーネントが付属しています。これら 2 つのコンポーネントを使用して、グラフにカスタム ツールチップを追加できます。
 
 ```tsx title="components/example-chart.tsx"
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -481,9 +480,9 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 ### プロパティ
 
-次のプロパティを使用してツールヒントをカスタマイズします。
+ツールチップをカスタマイズするには、次のプロパティを使用します。
 
-|小道具 |タイプ |説明 |
+|プロパティ |タイプ |説明 |
 | :-------------- | :----------------------- | :------------------------------------------- |
 | `labelKey` | 文字列 | ラベルに使用する構成キーまたはデータキー。 |
 | `nameKey` | 文字列 | 名前に使用する構成キーまたはデータキー。 |
@@ -497,7 +496,7 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 ### カスタム
 
-ツールヒントのラベルと名前にカスタム キーを使用するには、`labelKey` プロパティと `nameKey` プロパティを使用します。
+ツールチップのラベルと名前にカスタム キーを使用するには、`labelKey` および `nameKey` プロパティを使用します。
 
 ```tsx showLineNumbers /browser/
 const chartData = [
@@ -528,7 +527,7 @@ const chartConfig = {
 
 これにより、ラベルに `Total Visitors` が使用され、ツールチップ名に `Chrome` と `Safari` が使用されます。
 
-## レジェンド
+## 凡例
 
 カスタム `<ChartLegend>` および `<ChartLegendContent>` コンポーネントを使用して、グラフに凡例を追加できます。
 
@@ -574,9 +573,9 @@ const chartConfig = {
 
 ## アクセシビリティ
 
-`accessibilityLayer` プロップをオンにして、アクセス可能なレイヤーをチャートに追加できます。
+`accessibilityLayer` プロパティをオンにして、アクセス可能なレイヤーをチャートに追加できます。
 
-このプロップは、チャートにキーボード アクセスとスクリーン リーダーのサポートを追加します。
+このプロパティは、チャートにキーボード アクセスとスクリーン リーダーのサポートを追加します。
 
 ```tsx title="components/example-chart.tsx"
 <LineChart accessibilityLayer />

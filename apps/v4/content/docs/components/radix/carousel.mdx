@@ -1,6 +1,6 @@
 ---
 title: カルーセル
-description: Embra を使用して構築されたモーションとスワイプを備えたカルーセル。
+description: Embla を使用して構築されたモーションとスワイプを備えたカルーセル。
 base: radix
 component: true
 links:
@@ -24,7 +24,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">状態を制御するための手動</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -39,7 +39,7 @@ npx shadcn@latest add carousel
 
 <Steps className="mb-0 pt-2">
 
-<Step>次の依存関係をインストールします:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install embla-carousel-react
@@ -154,7 +154,7 @@ Carousel
 
 ## 方向
 
-`orientation` プロップを使用して、カルーセルの方向を設定します。
+`orientation` プロパティを使用して、カルーセルの方向を設定します。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -174,7 +174,7 @@ Carousel
 
 ## オプション
 
-`opts` プロパティを使用して、オプションをカルーセルに渡すことができます。詳細については、[Embla Carousel ドキュメント](https://www.embla-carousel.com/api/options/) を参照してください。
+`opts` プロパティを使用して、カルーセルにオプションを渡すことができます。詳細については、[Embla Carousel ドキュメント](https://www.embla-carousel.com/api/options/) を参照してください。
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -330,4 +330,4 @@ RTL 言語用にカルーセルをローカライズする場合、テキスト�
 
 ## API リファレンス
 
-プロップとプラグインの詳細については、[Embla Carousel docs](https://www.embla-carousel.com/api/) を参照してください。
+プロパティとプラグインの詳細については、[Embla Carousel docs](https://www.embla-carousel.com/api/) を参照してください。

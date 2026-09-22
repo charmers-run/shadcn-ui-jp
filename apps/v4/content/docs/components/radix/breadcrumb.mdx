@@ -80,7 +80,7 @@ import {
 
 ## 構成
 
-次の構成を使用して `Breadcrumb` を構築します。
+次の構成を使用して、`Breadcrumb` を構築します。
 
 ```text
 Breadcrumb
@@ -97,19 +97,19 @@ Breadcrumb
 
 ## 基本
 
-A basic breadcrumb with a home link and a components link.
+ホーム リンクとコンポーネント リンクを含む基本的なブレッドクラム。
 
 <ComponentPreview styleName="radix-nova" name="breadcrumb-basic" />
 
-## カスタム区切り
+## カスタム区切り文字
 
-カスタム コンポーネントを `<BreadcrumbSeparator />` の `children` として使用して、カスタム セパレータを作成します。
+カスタム コンポーネントを `<BreadcrumbSeparator />` の `children` として使用して、カスタム セパレーターを作成します。
 
 <ComponentPreview styleName="radix-nova" name="breadcrumb-separator" />
 
 ## ドロップダウン
 
-You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+`<BreadcrumbItem />` を `<DropdownMenu />` と組み合わせて、パンくずリストにドロップダウンを作成できます。
 
 <ComponentPreview styleName="radix-nova" name="breadcrumb-dropdown" />
 
@@ -123,15 +123,15 @@ You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropd
   previewClassName="p-2"
 />
 
-## リンク コンポーネント
+## リンクコンポーネント
 
-To use a custom link component from your routing library, you can use the `asChild` prop on `<BreadcrumbLink />`.
+ルーティング ライブラリのカスタム リンク コンポーネントを使用するには、`<BreadcrumbLink />` で `asChild` プロパティを使用できます。
 
 <ComponentPreview styleName="radix-nova" name="breadcrumb-link" />
 
 ## RTL
 
-shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -142,7 +142,7 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 
 ## API リファレンス
 
-### Breadcrumb
+### ブレッドクラム
 
 `Breadcrumb` コンポーネントは、すべてのブレッドクラム コンポーネントをラップするルート ナビゲーション要素です。
 
@@ -150,17 +150,17 @@ shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/
 | ----------- | -------- | ------- |
 | `className` | `string` | - |
 
-### BreadcrumbList
+### ブレッドクラムリスト
 
-The `BreadcrumbList` component displays the ordered list of breadcrumb items.
+`BreadcrumbList` コンポーネントは、ブレッドクラム項目の順序付きリストを表示します。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | - |
 
-### BreadcrumbItem
+### ブレッドクラム項目
 
-The `BreadcrumbItem` component wraps individual breadcrumb items.
+`BreadcrumbItem` コンポーネントは、個々のブレッドクラム項目をラップします。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
@@ -168,7 +168,7 @@ The `BreadcrumbItem` component wraps individual breadcrumb items.
 
 ### ブレッドクラムリンク
 
-The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
+`BreadcrumbLink` コンポーネントは、パンくずリストにクリック可能なリンクを表示します。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
@@ -176,24 +176,24 @@ The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
 
 ### ブレッドクラムページ
 
-The `BreadcrumbPage` component displays the current page in the breadcrumb (non-clickable).
+`BreadcrumbPage` コンポーネントは、ブレッドクラムに現在のページを表示します (クリック不可)。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | - |
 
-### BreadcrumbSeparator
+### ブレッドクラム区切り文字
 
-The `BreadcrumbSeparator` component displays a separator between breadcrumb items. You can pass custom children to override the default separator icon.
+`BreadcrumbSeparator` コンポーネントは、ブレッドクラム項目間の区切り文字を表示します。カスタムの子要素を渡すことで、デフォルトの区切りアイコンをオーバーライドできます。
 
-| Prop        | Type              | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | ----------------- | ------- |
 | `children` | `React.ReactNode` | - |
 | `className` | `string`          | -       |
 
-### BreadcrumbEllipsis
+### ブレッドクラム省略記号
 
-The `BreadcrumbEllipsis` component displays an ellipsis indicator for collapsed breadcrumb items.
+`BreadcrumbEllipsis` コンポーネントは、折りたたまれたブレッドクラム項目の省略記号インジケーターを表示します。
 
 |小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |

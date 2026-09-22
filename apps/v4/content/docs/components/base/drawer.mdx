@@ -11,10 +11,8 @@ links:
 <ComponentPreview styleName="base-rhea" name="drawer-demo" />
 
 <Callout>
-  The drawer component now uses [Base
-  UI](https://base-ui.com/react/components/drawer)。
-  installed the previous version, see the [migration
-  guide](#migrating-from-vaul).
+  ドロワー コンポーネントは現在 [Base UI](https://base-ui.com/react/components/drawer)
+  を使用しています。以前のバージョンをインストールしていた場合は、[移行ガイド](#migrating-from-vaul)を参照してください。
 </Callout>
 
 ## インストール
@@ -23,7 +21,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -59,7 +57,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-Add the following to your global styles. On iOS Safari, the drawer overlay is absolutely positioned and requires a positioned `body` to cover the viewport after the page is scrolled. See the [Base UI docs](https://base-ui.com/react/overview/quick-start#ios-26-safari) for details.
+以下をグローバル スタイルに追加してください。iOS Safari では、ドロワーのオーバーレイは絶対配置されており、ページがスクロールされた後にビューポートを覆うために `body` の位置指定が必要です。詳細については、[Base UI のドキュメント](https://base-ui.com/react/overview/quick-start#ios-26-safari)を参照してください。
 
 ```css
 body {
@@ -67,7 +65,7 @@ body {
 }
 ```
 
-## 使用法
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -113,19 +111,19 @@ Drawer
     └── DrawerFooter
 ```
 
-`DrawerContent` composes the portal, overlay, viewport, and popup from Base UI. For lower-level control, `DrawerPortal`, `DrawerOverlay`, and `DrawerSwipeHandle` are also exported.
+`DrawerContent` は、Base UI のポータル、オーバーレイ、ビューポート、ポップアップを組み合わせたものです。より低レベルの制御が必要な場合は、`DrawerPortal`、`DrawerOverlay`、`DrawerSwipeHandle` もエクスポートされています。
 
-## Custom Sizes
+## カスタム サイズ
 
-A vertical drawer sizes itself to its content and is capped at `calc(100dvh - 6rem)` by default. A side drawer spans `75%` of the viewport width, or `24rem` on larger screens.
+垂直方向のドロワーはコンテンツに合わせてサイズが決まり、デフォルトでは `calc(100dvh - 6rem)` が上限になります。サイド ドロワーはビューポート幅の `75%`、大きな画面では `24rem` を占めます。
 
-などの Vul プロパティ 垂直ドロワーの高さをカスタマイズするには、`DrawerContent` の `h-*` および `max-h-*` ユーティリティを使用します。
+垂直ドロワーの高さをカスタマイズするには、`DrawerContent` の `h-*` および `max-h-*` ユーティリティを使用します。
 
 ```tsx
 <DrawerContent className="h-[50vh]">
 ```
 
-To customize the width of a side drawer, use the `w-*` and `max-w-*` utilities on `DrawerContent`.
+サイド ドロワーの幅をカスタマイズするには、`DrawerContent` の `w-*` および `max-w-*` ユーティリティを使用します。
 
 ```tsx
 <DrawerContent className="w-96">
@@ -151,26 +149,26 @@ To customize the width of a side drawer, use the `w-*` and `max-w-*` utilities o
 
 ドロワーは、スタイル レベルのカスタマイズ用の CSS 変数を公開します。 `DrawerContent` にサイズ変数を設定します。 CSS の `[data-slot=drawer-overlay]` にオーバーレイ変数を設定します。
 
-| Variable                       | Default                | Description                                                             |
+| 変数                            | デフォルト              | 説明                                                                     |
 | ------------------------------ | ---------------------- | ----------------------------------------------------------------------- |
-| を使用するようになりました。 `--drawer-inset` | `0px` |引き出しをビューポートの端から浮かせます。                              |
-| `--drawer-bleed-background`    | `var(--color-popover)` | Fills the gap behind the drawer on swipe overshoot.                     |
-| `--drawer-overlay-min-opacity` | `0` |最小オーバーレイ不透明度。スナップポイントがアクティブな場合のデフォルトは `0.5` です。 |
+| `--drawer-inset` | `0px` |ドロワーをビューポートの端から浮かせます。                              |
+| `--drawer-bleed-background`    | `var(--color-popover)` | スワイプのオーバーシュート時にドロワーの背後の隙間を埋めます。                     |
+| `--drawer-overlay-min-opacity` | `0` |最小オーバーレイ不透明度。スナップ ポイントが有効な場合のデフォルトは `0.5` です。 |
 
 ドロワーは、`DrawerContent` の `data-[swipe-direction=down]:` やその子孫の `group-data-[swipe-axis=y]/drawer-popup:` などのバリアントでターゲットにできるデータ属性も設定します。
 
-| Attribute                 | Values                        | Set when                              |
+| 属性                       | 値                             | 設定されるタイミング                     |
 | ------------------------- | ----------------------------- | ------------------------------------- |
 | `data-swipe-direction` | `up`、`right`、`down`、`left` |いつも。                               |
-| `data-swipe-axis` | `x`、`y` |いつも。                               | Vaul の代わりに
-| `data-snap-points`        | Present                       | The drawer has snap points.           |
-| `data-expanded` |現在 |引き出しは完全なスナップポイントにあります。 |
-| `data-swiping`            | Present                       | A swipe is in progress.               |
-| `data-nested-drawer-open` |現在 |入れ子の引き出しが上部に開きます。       |
+| `data-swipe-axis` | `x`、`y` |いつも。                               |
+| `data-snap-points`        | あり                       | ドロワーにスナップ ポイントがあります。           |
+| `data-expanded` |あり |ドロワーが完全なスナップ ポイントにあります。 |
+| `data-swiping`            | あり                       | スワイプが進行中です。               |
+| `data-nested-drawer-open` |あり |入れ子のドロワーが上部に開きます。       |
 
 ## 位置
 
-`swipeDirection` プロップを使用して引き出しの側面を設定します。
+`swipeDirection` プロップを使用してドロワーの側面を設定します。
 
 使用可能なオプションは、`up`、`right`、`down`、および `left` です。
 
@@ -178,27 +176,27 @@ To customize the width of a side drawer, use the `w-*` and `max-w-*` utilities o
 
 ## スワイプ ハンドル
 
-`Drawer` で `showSwipeHandle` を使用して、スワイプ ハンドルをレンダリングします。軸固有のスタイルの
+`Drawer` で `showSwipeHandle` を使用して、スワイプ ハンドルをレンダリングします。
 
 <ComponentPreview styleName="base-rhea" name="drawer-swipe-handle" />
 
 ## ネスト
 
-Open drawers from inside another drawer. Parent drawers stay mounted and stack behind the frontmost drawer.
+別のドロワー内から新しいドロワーを開きます。親ドロワーはマウントされたまま残り、最前面のドロワーの背後に積み重なります。
 
 <ComponentPreview styleName="base-rhea" name="drawer-nested" />
 
 ## 非モーダル
 
-`modal={false}` を設定すると、ドロワーが開いているときにページの残りの部分と対話できるようになります。 `disablePointerDismissal`と組み合わせると、外付けプレスのドロワー閉まりを防止します。 `modal="trap-focus"` を使用すると、スクロールとポインターの操作を制限せずにドロワー内にフォーカスを維持できます。
+`modal={false}` を設定すると、ドロワーが開いている間もページの残りの部分を操作できるようになります。`disablePointerDismissal` と組み合わせると、外側を押してもドロワーが閉じないようにできます。`modal="trap-focus"` を使用すると、スクロールやポインター操作を制限せずにドロワー内にフォーカスを維持できます。
 
 <ComponentPreview styleName="base-rhea" name="drawer-non-modal" />
 
-## スナップポイント
+## スナップ ポイント
 
-Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1` represent fractions of the viewport. Numbers greater than `1` are treated as pixel values. String values support `px` and `rem` units. Snap points apply to vertical drawers.
+`snapPoints` を使用して、ドロワーを事前設定された高さにスナップします。 `0` と `1` の間の数字はビューポートの小数を表します。 `1` より大きい数値はピクセル値として扱われます。文字列値は `px` および `rem` 単位をサポートします。スナップ ポイントは垂直ドロワーに適用されます。
 
-制御された `snapPoint` および `onSnapPointChange` プロパティを使用して、アクティブなスナップ ポイントを追跡します。完全なスナップ ポイントで、ドロワーは `data-expanded` 属性を取得し、`data-expanded:` バリアントでスタイルを設定できます。
+制御された `snapPoint` プロップと `onSnapPointChange` プロップを使用して、アクティブなスナップ ポイントを追跡します。完全なスナップ ポイントに達すると、ドロワーに `data-expanded` 属性が設定され、`data-expanded:` バリアントでスタイルを指定できます。
 
 <ComponentPreview styleName="base-rhea" name="drawer-snap-points" />
 
@@ -208,11 +206,9 @@ Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1`
 
 <ComponentPreview styleName="base-rhea" name="drawer-dialog" />
 
-## Vaull からの移行
+## Vaul からの移行
 
-基本ドロワーは [Base UI](https://base-ui.com/react/components/drawer)
-。以前のベース ドロワーをインストールした場合は、使用方法を更新してください
-。
+Base ドロワーは現在 [Base UI](https://base-ui.com/react/components/drawer) を使用しています。以前のバージョンをインストールしていた場合は、以下の手順に従って使用箇所を更新してください。
 
 <Steps>
 
@@ -225,8 +221,7 @@ Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1`
 
 <Step>`direction` を `swipeDirection` に置き換えます。</Step>
 
-`bottom` の代わりに `down` を使用し、`top` の代わりに `up` を使用します。 `left` および `right`
-stay the same.
+`bottom` の代わりに `down` を使用し、`top` の代わりに `up` を使用します。`left` と `right` は変更ありません。
 
 ```diff
 - <Drawer direction="bottom">
@@ -235,7 +230,7 @@ stay the same.
 
 <Step>`asChild` を `render` に置き換えます。</Step>
 
-For `DrawerTrigger`, pass the trigger element to the `render` prop.
+`DrawerTrigger` の場合は、トリガー要素を `render` プロップに渡します。
 
 ```diff
 - <DrawerTrigger asChild>
@@ -246,7 +241,7 @@ For `DrawerTrigger`, pass the trigger element to the `render` prop.
 + </DrawerTrigger>
 ```
 
-For `DrawerClose`, pass the close element to the `render` prop.
+`DrawerClose` の場合は、閉じる要素を `render` プロップに渡します。
 
 ```diff
 - <DrawerClose asChild>
@@ -257,10 +252,9 @@ For `DrawerClose`, pass the close element to the `render` prop.
 + </DrawerClose>
 ```
 
-<Step>スナップ ポイントの小道具を更新します。</Step>
+<Step>スナップ ポイントのプロップを更新します。</Step>
 
-If you use snap points, rename the controlled snap point props and the sequential
-スナップポイントプロップ。
+スナップ ポイントを使用している場合は、制御されたスナップ ポイントのプロップと、連続スナップ ポイントのプロップの名前を変更してください。
 
 ```diff
   <Drawer
@@ -274,7 +268,7 @@ If you use snap points, rename the controlled snap point props and the sequentia
   >
 ```
 
-<Step>アニメーションとフォーカスの小道具を更新します。</Step>
+<Step>アニメーションとフォーカスのプロップを更新します。</Step>
 
 ```diff
 - <Drawer onAnimationEnd={(open) => setDone(open)}>
@@ -286,12 +280,9 @@ If you use snap points, rename the controlled snap point props and the sequentia
 + <DrawerContent initialFocus={false}>
 ```
 
-<Step>Vaull のみの小道具を確認します。</Step>
+<Step>Vaul 専用のプロップを確認します。</Step>
 
-`handleOnly`、`repositionInputs`、
-`shouldScaleBackground` には、ベース ドロワー
-API。 `disablePointerDismissal`、`modal`、`snapPoints`、
-or controlled `open` state for the behavior you need.
+`handleOnly`、`repositionInputs`、`shouldScaleBackground` に相当するものは、Base UI ドロワー API にはありません。必要な動作に応じて、`disablePointerDismissal`、`modal`、`snapPoints`、または制御された `open` 状態などの Base UI プロップを使用してください。
 
 ```diff
 - <Drawer handleOnly repositionInputs={false} shouldScaleBackground>
@@ -305,21 +296,17 @@ or controlled `open` state for the behavior you need.
 
 <Step>カスタム データ属性セレクターを更新します。</Step>
 
-Replace Vaul's `data-vaul-drawer-direction` selectors with Base UI's
-`data-swipe-direction` セレクター。
+Vaul の `data-vaul-drawer-direction` セレクターを、Base UI の `data-swipe-direction` セレクターに置き換えます。
 
 ```diff
 - <DrawerContent className="data-[vaul-drawer-direction=bottom]:max-h-[50vh]">
 + <DrawerContent className="data-[swipe-direction=down]:max-h-[50vh]">
 ```
 
-などの Base UI プロパティを使用する Base UI は、`data-swiping`、`data-starting-style`、
-`data-ending-style`。
-`DrawerContent` can use `group-data-[swipe-axis=x]/drawer-popup` and
-`group-data-[swipe-axis=y]/drawer-popup`。
+Base UI は、スワイプとトランジションの状態に応じて `data-swiping`、`data-starting-style`、`data-ending-style` も公開します。`DrawerContent` の子孫では、軸ごとのスタイル指定に `group-data-[swipe-axis=x]/drawer-popup` と `group-data-[swipe-axis=y]/drawer-popup` を使用できます。
 
 </Steps>
 
 ## API リファレンス
 
-See the [Base UI documentation](https://base-ui.com/react/components/drawer) for the full API reference.
+完全な API リファレンスについては、[Base UI ドキュメント](https://base-ui.com/react/components/drawer) を参照してください。

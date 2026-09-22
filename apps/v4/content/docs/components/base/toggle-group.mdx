@@ -1,6 +1,6 @@
 ---
-title: グループ
-description: オンまたはオフを切り替えることができる 2 つの状態のボタンのセット。
+title: トグルグループ
+description: オンまたはオフを切り替えられる 2 状態ボタンのセット。
 base: base
 component: true
 links:
@@ -16,7 +16,7 @@ links:
 
 <TabsList>
   <TabsTrigger value="cli">コマンド</TabsTrigger>
-  <TabsTrigger value="manual">マニュアル</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## 使用法
+## 使い方
 
 ```tsx
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
@@ -100,7 +100,7 @@ ToggleGroup
 
 <ComponentPreview styleName="base-nova" name="toggle-group-vertical" />
 
-## の切り替え無効化
+## 無効
 
 <ComponentPreview styleName="base-nova" name="toggle-group-disabled" />
 

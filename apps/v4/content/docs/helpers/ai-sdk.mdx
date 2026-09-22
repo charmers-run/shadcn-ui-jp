@@ -215,8 +215,8 @@ chat.assistant(({ writer }) => {
 呼び出した順序で `assistant()` に渡されます。
 
 - [テキスト](#テキスト)と[推論](#推論)
-- [ツール呼び出し](#tool-calls)
-- [データ](#data)
+- [ツール呼び出し](#ツール呼び出し)
+- [データ](#データ)
 - [ファイル](#ファイル)と[ソース](#ソース)
 - [ステップ開始](#ステップ開始)と[カスタム パーツ](#カスタム-パーツ)
 
@@ -819,7 +819,7 @@ const chat = createChat({
 
 ---
 
-## APIリファレンス
+## API リファレンス
 
 上記のセクションでは一般的なフローを説明しました。このリファレンスには、すべての公開されている
 エクスポートとオプションを一覧にしています。
@@ -954,17 +954,17 @@ type FilePayload = {
 
 #### ツール オプション
 
-| Option             | Type                      | Description                                                                                     |
+| オプション | 型 | 説明 |
 | ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------- |
 | `toolCallId` | `string` | 特定のツール呼び出し ID を使用します。 |
 | `title` | `string` | ツール パーツに表示用タイトルを追加します。 |
 | `toolMetadata` | `Record<string, unknown>` | プロバイダーまたはアプリケーションのメタデータを追加します。 |
 | `providerExecuted` | `boolean` | プロバイダーによって実行された呼び出しとして記録します。 |
-| `input` | `TOOLS[NAME]["input"]` |入力ツールの入力を設定します。                                                                       |
+| `input` | `TOOLS[NAME]["input"]` | 型付きツール入力を設定します。 |
 | `output` | `TOOLS[NAME]["output"]` | 型付きの出力で直ちに完了します。`needsApproval` の場合は承認後にストリーミングします。 |
 | `errorText` | `string` | エラーで直ちに完了します。`needsApproval` の場合は承認後にストリーミングします。 |
 | `dynamic` | `boolean` | `tool-<name>` の代わりに `dynamic-tool` パーツを出力します。 |
-| `needsApproval` | `boolean` |ユーザーの決定の後にターンを一時停止します。 [人間参加者](#human-in-the-loop) を参照してください。         |
+| `needsApproval` | `boolean` |ユーザーの決定の後にターンを一時停止します。 [ヒューマン・イン・ザ・ループ](#ヒューマン・イン・ザ・ループ) を参照してください。         |
 | `approvalId` | `string` | 特定の承認 ID を使用します。 |
 
 `tool()` は `sleep(delayMs)`、`output(value)`、`error(errorText?)`、`denied()` を持つハンドルを

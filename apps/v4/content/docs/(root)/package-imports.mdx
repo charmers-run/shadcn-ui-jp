@@ -3,12 +3,9 @@ title: パッケージインポート
 description: package.json インポートを使用して shadcn/ui を構成します。
 ---
 
-`shadcn` CLI は [パッケージのインポート](https://nodejs.org/api/packages.html#imports) をサポートします
-コンポーネントのインストール、インポートの書き換え、サードパーティの解決用
-レジストリ。
+`shadcn` CLI は [パッケージのインポート](https://nodejs.org/api/packages.html#imports) をサポートしています。コンポーネントのインストール、インポートの書き換え、サードパーティレジストリの解決に使用されます。
 
-パッケージのインポートにより、プライベート `#...` インポート エイリアスを使用できます。
-`tsconfig.json` の `compilerOptions.paths` の代わりに `package.json`。
+パッケージのインポートにより、`tsconfig.json` の `compilerOptions.paths` の代わりに `package.json` でプライベートな `#...` インポートエイリアスを使用できます。
 
 ## 例
 
@@ -32,20 +29,19 @@ import { cn } from "#lib/utils"
 ```
 
 <Callout className="mt-6">
-パッケージのインポート指定子は、`#` で始まる必要があります。 TypeScript 5 以降を使用してください
-`moduleResolution: "bundler"` および `resolvePackageJsonImports: true`。
+パッケージのインポート指定子は `#` で始まる必要があります。TypeScript 5 以降を使用し、
+`moduleResolution: "bundler"` および `resolvePackageJsonImports: true` を設定してください。
 </Callout>
 
 ## アプリ
 
-Next.js、Vite、TanStack の場合 インストールするアプリを開始します
-コンポーネントを同じワークスペースに追加します。
+Next.js、Vite、TanStack Start のようなアプリでは、コンポーネントを同じワークスペースにインストールして追加します。
 
 <Steps>
 
 ### `package.json` を構成する
 
-shadcn/ui インストール ターゲットのインポートを追加します。
+shadcn/ui のインストール先に対応するインポートを追加します。
 
 ```json title="package.json" showLineNumbers
 {
@@ -57,8 +53,7 @@ shadcn/ui インストール ターゲットのインポートを追加します
 }
 ```
 
-アプリが `src` ディレクトリを使用しない場合は、ターゲットから `src/` を削除します。のために
-例：
+アプリが `src` ディレクトリを使用しない場合は、ターゲットから `src/` を削除します。たとえば:
 
 ```json title="package.json" showLineNumbers
 {
@@ -101,18 +96,15 @@ shadcn/ui インストール ターゲットのインポートを追加します
 }
 ```
 
-`ui` エイリアスは `#components/ui` を使用します。それはまだカバーされています
-`#components/*` を `package.json` にインポートします。
+`ui` エイリアスは `#components/ui` を使用しますが、これは `package.json` の `#components/*` インポートでまだカバーされています。
 
-`utils` エイリアスは `#lib/utils` を使用します。これは `#lib/*` でカバーされているため、次のことはできません。
-別途 `#utils` インポートが必要です。
+`utils` エイリアスは `#lib/utils` を使用します。これは `#lib/*` でカバーされているため、別途 `#utils` インポートを追加する必要はありません。
 
 </Steps>
 
 ## モノレポ
 
-モノリポジトリでは、各パッケージ内のファイルとパッケージにパッケージ インポートを使用します。
-ワークスペース間で共有されるファイルのエクスポート。
+モノレポでは、各パッケージ内のファイルにはパッケージインポートを使用し、ワークスペース間で共有するファイルにはエクスポートを使用します。
 
 アプリのワークスペースの場合:
 
@@ -175,7 +167,7 @@ shadcn/ui インストール ターゲットのインポートを追加します
 }
 ```
 
-`apps/web` から `add` を実行すると、アプリのローカル ファイルは `#...` インポートを使用し、
+`apps/web` から `add` を実行すると、アプリのローカルファイルは `#...` インポートを使用し、
 共有 UI ファイルは `@workspace/ui` からインポートされます。
 
 ```tsx
@@ -185,8 +177,7 @@ import { LoginForm } from "#components/login-form"
 
 ## ファイル拡張子
 
-`package.json#imports` のターゲット パターンは、インポートを生成するかどうかを制御します。
-ファイル拡張子を含めます。
+`package.json#imports` のターゲットパターンは、生成されるインポートにファイル拡張子を含めるかどうかを制御します。
 
 ```json title="package.json" showLineNumbers
 {
@@ -218,7 +209,7 @@ import { Button } from "#components/ui/button"
 import { Button } from "#components/ui/button.tsx"
 ```
 
-ほとんどのアプリでは、ターゲット パターンで拡張子を使用します。
+ほとんどのアプリでは、ターゲットパターンで拡張子を使用します。
 
 ## トラブルシューティング
 
@@ -230,5 +221,4 @@ TypeScript が `#...` インポートを解決できない場合は、次のこ�
 - `resolvePackageJsonImports` が有効になっています
 - コンポーネントの追加後に一致するターゲットが存在する
 
-コンポーネントがインストールされているが、インポートが依然として `@/...` を指している場合は、次のことを確認してください。
-`components.json` は、パッケージのインポートと同じ `#...` エイリアスを使用します。
+コンポーネントをインストールしたにもかかわらず、インポートが依然として `@/...` を指している場合は、`components.json` がパッケージのインポートと同じ `#...` エイリアスを使用しているか確認してください。
