@@ -116,6 +116,19 @@ export default function RootLayout({
           }}
         />
         <meta name="theme-color" content={META_THEME_COLORS.light} />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DZL74PY81K"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DZL74PY81K');
+          `}
+        </Script>
       </head>
       <body
         className={cn(
