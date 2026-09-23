@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "shadcn-ui-jp",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
+  url: "https://shadcn-ui-jp.pages.dev/",
+  ogImage: "https://shadcn-ui-jp.pages.dev/og.jpg",
   description:
     "shadcn/ui の公式ドキュメントを日本語で読めるように翻訳した、 コミュニティ運営の非公式サイトです。",
   links: {
