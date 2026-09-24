@@ -124,6 +124,12 @@ const nextConfig = {
         destination: "/docs/cli",
         permanent: true,
       },
+      // shadcn/create redirects
+      {
+        source: "/create",
+        destination: "https://ui.shadcn.com/create",
+        permanent: true,
+      },
     ]
   },
 }
