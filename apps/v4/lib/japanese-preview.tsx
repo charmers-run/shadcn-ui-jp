@@ -393,7 +393,6 @@ const TRANSLATIONS: Record<string, string> = {
     "キーボードフォーカスまたはマウスホバー時に、要素に関連する情報を表示するポップアップです。",
   "Styles for headings, paragraphs, lists, etc.":
     "見出し、段落、リストなどのスタイルです。",
-  shimmer: "シマー",
   "Scroll Fade": "スクロールフェード",
   Content: "コンテンツ",
   Team: "チーム",
